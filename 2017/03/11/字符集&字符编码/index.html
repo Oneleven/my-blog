@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>字符集和字符编码 | Oneleven&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
+
+字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
+字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="字符集和字符编码">
+<meta property="og:url" content="http://yoursite.com/2017/03/11/字符集&字符编码/index.html">
+<meta property="og:site_name" content="Oneleven's Blog">
+<meta property="og:description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
+
+字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
+字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
+<meta property="og:updated_time" content="2017-03-11T05:40:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="字符集和字符编码">
+<meta name="twitter:description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
+
+字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
+字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
+  
+    <link rel="alternate" href="/atom.xml" title="Oneleven&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Oneleven&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-字符集&amp;字符编码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/11/字符集&字符编码/" class="article-date">
+  <time datetime="2017-03-11T05:35:57.000Z" itemprop="datePublished">2017-03-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      字符集和字符编码
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="字符集和字符编码"><a href="#字符集和字符编码" class="headerlink" title="字符集和字符编码"></a>字符集和字符编码</h3><p>计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。</p>
+<ul>
+<li>字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。</li>
+<li>字符编码（Character Encoding）：规定把字符集中的字符编码成计算机可以接受的存储对象，以便文本在计算机中存储和传递。</li>
+<li>常用的字符集：ASCII字符集、GB2312字符集、BIG5字符集、GB18030字符集、Unicode字符集等</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">字符集</th>
+<th style="text-align:center">字符编码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>ASCII</strong>(american standard code for information interchange)美国信息交换标准代码</td>
+<td style="text-align:center">主要显示现代英语</td>
+<td style="text-align:center">7位（bits）表示一个字符，共2^7，128个字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>EASCII</strong></td>
+<td style="text-align:center">追加扩展了一些欧洲常用字符</td>
+<td style="text-align:center">8位（bits）表示一个字符，共2^8，256个字符</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>GB2312</strong></td>
+<td style="text-align:center">国标，用于汉字</td>
+<td style="text-align:center">小于127的字符意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字。 在ASCII里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的”全角”字符，而原来在127号以下的那些就叫”半角”字符了。</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>GB18030</strong></td>
+<td style="text-align:center">对gb2312追加扩展，支持国内少数名族文字</td>
+<td style="text-align:center">采用多字节编码，与utf-8相同</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>GBK</strong></td>
+<td style="text-align:center">微软利用GB 2312未使用的编码空间，收录GB 13000.1-93全部字符制定了GBK编码</td>
+<td style="text-align:center">字符有一字节和双字节编码</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>BIG5</strong></td>
+<td style="text-align:center">繁体字</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Unicode</strong></td>
+<td style="text-align:center">万国码</td>
+<td style="text-align:center">uft-32（每个字符都使用4个字节，造成存储浪费） / utf-16 / utf-8</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/03/11/字符集&字符编码/" data-id="cj04ue01r0001gp87nf4jajzb" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符集-字符编码/">字符集 字符编码</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/11/test/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          test
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符集-字符编码/">字符集 字符编码</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/字符集-字符编码/" style="font-size: 10px;">字符集 字符编码</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/11/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/11/字符集&字符编码/">字符集和字符编码</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Oneleven<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
