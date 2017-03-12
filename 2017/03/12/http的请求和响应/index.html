@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="字符集 字符编码," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -87,25 +87,22 @@
 
 
 
-<meta name="description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
-
-字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
-字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
+<meta name="description" content="HTTPhttp（HyperText Transfer Protocol），超文本传输协议，它是一种网络协议，所有的www文件都必须遵守这个标准。可以说，web是建立在http协议上通信的。
+DNSdns（DomainName System），域名系统（域名解析系统），主要让用户在互联网上通过域名找到对应的ip地址，而不用去记住能够被机器直接读取的IP数串。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字符集和字符编码">
-<meta property="og:url" content="http://yoursite.com/2017/03/11/字符集&字符编码/index.html">
+<meta property="og:title" content="请求和响应">
+<meta property="og:url" content="http://yoursite.com/2017/03/12/http的请求和响应/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
-
-字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
-字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
-<meta property="og:updated_time" content="2017-03-11T07:47:26.000Z">
+<meta property="og:description" content="HTTPhttp（HyperText Transfer Protocol），超文本传输协议，它是一种网络协议，所有的www文件都必须遵守这个标准。可以说，web是建立在http协议上通信的。
+DNSdns（DomainName System），域名系统（域名解析系统），主要让用户在互联网上通过域名找到对应的ip地址，而不用去记住能够被机器直接读取的IP数串。">
+<meta property="og:image" content="http://i1.piimg.com/567571/78a38ad43a74e00e.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tNc79gy1fdk6um7qutj31420k2go9.jpg">
+<meta property="og:updated_time" content="2017-03-12T11:00:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字符集和字符编码">
-<meta name="twitter:description" content="字符集和字符编码计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。
-
-字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。
-字符编码（Character Encoding）：规定把字符集中的字符编码成计算机">
+<meta name="twitter:title" content="请求和响应">
+<meta name="twitter:description" content="HTTPhttp（HyperText Transfer Protocol），超文本传输协议，它是一种网络协议，所有的www文件都必须遵守这个标准。可以说，web是建立在http协议上通信的。
+DNSdns（DomainName System），域名系统（域名解析系统），主要让用户在互联网上通过域名找到对应的ip地址，而不用去记住能够被机器直接读取的IP数串。">
+<meta name="twitter:image" content="http://i1.piimg.com/567571/78a38ad43a74e00e.jpg">
 
 
 
@@ -133,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/11/字符集&字符编码/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/12/http的请求和响应/"/>
 
 
 
 
 
-  <title> 字符集和字符编码 | Oneleven's Blog </title>
+  <title> 请求和响应 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -282,7 +279,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/11/字符集&字符编码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/http的请求和响应/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -303,7 +300,7 @@
             
             
               
-                字符集和字符编码
+                请求和响应
               
             
           </h1>
@@ -318,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T13:35:57+08:00">
-                2017-03-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-12T17:06:18+08:00">
+                2017-03-12
               </time>
             
 
@@ -354,55 +351,115 @@
       
 
       
-        <h3 id="字符集和字符编码"><a href="#字符集和字符编码" class="headerlink" title="字符集和字符编码"></a>字符集和字符编码</h3><p>计算机中存储的信息都是用二进制数表示的（即0和1，逢二进一，这和计算机逻辑电路中的接通和断开两个物理状态对应），而我们在屏幕上看到的英文汉字是二进制数转换的结果。</p>
+        <h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>http（HyperText Transfer Protocol），超文本传输协议，它是一种网络协议，所有的www文件都必须遵守这个标准。可以说，web是建立在http协议上通信的。</p>
+<h3 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h3><p>dns（DomainName System），域名系统（域名解析系统），主要让用户在互联网上通过域名找到对应的ip地址，而不用去记住能够被机器直接读取的IP数串。</p>
+<a id="more"></a>
 <ul>
-<li>字符集（Charset）：是一个系统支持的所有抽象字符的集合。字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、数字等。</li>
-<li>字符编码（Character Encoding）：规定把字符集中的字符编码成计算机可以接受的存储对象，以便文本在计算机中存储和传递。<a id="more"></a></li>
-<li>常用的字符集：ASCII字符集、GB2312字符集、BIG5字符集、GB18030字符集、Unicode字符集等</li>
+<li>输入：域名  ， 输出：IP</li>
+<li>一个域名对应的ip可以有很多（eg：ping baidu.com)</li>
+<li>一个域名对应的ip是由<strong>域名所有者</strong>指定的</li>
+<li>改 hosts 可以手动指定域名对应的 IP</li>
 </ul>
+<p>　<img src="http://i1.piimg.com/567571/78a38ad43a74e00e.jpg" alt="vim host"></p>
+<ul>
+<li>DNS 可能有缓存，浏览器或者运营商</li>
+</ul>
+<h3 id="端口"><a href="#端口" class="headerlink" title="端口"></a>端口</h3><ul>
+<li>TCP 或 UDP 协议的规则，一个端口对应一个服务</li>
+<li>0 到 1023 号端口是保留端口（只有管理员才能用）</li>
+<li>常用端口<ul>
+<li>21 端口 - FTP</li>
+<li>80 端口 - HTTP</li>
+<li>53 端口 - DNS</li>
+<li>443 端口 - HTTPS</li>
+<li>1080 端口 - SOCKS 代理</li>
+</ul>
+</li>
+</ul>
+<h3 id="请求和响应"><a href="#请求和响应" class="headerlink" title="请求和响应"></a>请求和响应</h3><p>我们在浏览器中输入Google网址到Google网页跳转出来，就经历了一次完整的请求和响应。请求由客户端（即浏览器）发出，响应由服务器端发出。</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tNc79gy1fdk6um7qutj31420k2go9.jpg" alt=""></p>
+<h4 id="请求分析"><a href="#请求分析" class="headerlink" title="请求分析"></a>请求分析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">请求行:（请求方法 路径 协议／版本号） #eg: GET /index.html HTTP/1.1</div><div class="line">请求头: 请求首部字段</div><div class="line">       通用首部字段</div><div class="line">       实体首部字段</div><div class="line">空格</div><div class="line">消息体:（aaa=bbbb&amp;ccc=ddd）</div></pre></td></tr></table></figure>
+<p>注：一般的请求方法有：POST \DELETE \PUT \PATCH \GET \HEAD \OPTIONS \CONNECT \TRACK</p>
+<h4 id="响应分析"><a href="#响应分析" class="headerlink" title="响应分析"></a>响应分析</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">状态行 （协议／版本号 状态码 状态描述）#eg:TTP/1.1 200 OK</div><div class="line">响应头：响应首部字段</div><div class="line">       通用首部字段</div><div class="line">       实体首部字段</div><div class="line">空格</div><div class="line">消息体</div></pre></td></tr></table></figure>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态码的类别：</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
-<th style="text-align:center">字符集</th>
-<th style="text-align:center">字符编码</th>
+<th>类别</th>
+<th>原因</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>ASCII</strong>(american standard code for information interchange)美国信息交换标准代码</td>
-<td style="text-align:center">主要显示现代英语</td>
-<td style="text-align:center">7位（bits）表示一个字符，共2^7，128个字符</td>
+<td style="text-align:center">1XX</td>
+<td>Informational（信息状态码）</td>
+<td>接收的请求正在处理</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>EASCII</strong></td>
-<td style="text-align:center">追加扩展了一些欧洲常用字符</td>
-<td style="text-align:center">8位（bits）表示一个字符，共2^8，256个字符</td>
+<td style="text-align:center">2XX</td>
+<td>Success（成功状态码）</td>
+<td>请求正常，200</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>GB2312</strong></td>
-<td style="text-align:center">国标，用于汉字</td>
-<td style="text-align:center">小于127的字符意义与原来相同，但两个大于127的字符连在一起时，就表示一个汉字。 在ASCII里本来就有的数字、标点、字母都统统重新编了两个字节长的编码，这就是常说的”全角”字符，而原来在127号以下的那些就叫”半角”字符了。</td>
+<td style="text-align:center">3XX</td>
+<td>Redirection（重定向状态码）</td>
+<td>301、302(move temporarily )</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>GB18030</strong></td>
-<td style="text-align:center">对gb2312追加扩展，支持国内少数名族文字</td>
-<td style="text-align:center">采用多字节编码，与utf-8相同</td>
+<td style="text-align:center">4XX</td>
+<td>Client Error（客户端错误状态码）</td>
+<td>403、404、414</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>GBK</strong></td>
-<td style="text-align:center">微软利用GB 2312未使用的编码空间，收录GB 13000.1-93全部字符制定了GBK编码</td>
-<td style="text-align:center">字符有一字节和双字节编码</td>
+<td style="text-align:center">5XX</td>
+<td>Sever Error（服务器端错误状态码）</td>
+<td>500（internal sever error)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>一些常见的状态码</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>状态描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200：OK</td>
+<td>请求成功</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>BIG5</strong></td>
-<td style="text-align:center">繁体字</td>
-<td style="text-align:center"></td>
+<td>301:moved permanently</td>
+<td>请求的资源重定向了，永久移动到新位置（并且浏览器缓存这个结果）</td>
 </tr>
 <tr>
-<td style="text-align:center"><strong>Unicode</strong></td>
-<td style="text-align:center">万国码</td>
-<td style="text-align:center">uft-32（每个字符都使用4个字节，造成存储浪费） / utf-16 / utf-8</td>
+<td>302：move temporarily</td>
+<td>请求的资源临时从不同的 URI响应请求。 （浏览器不缓存这个结果）</td>
+</tr>
+<tr>
+<td>403:forbidden</td>
+<td>服务器拒绝访问。</td>
+</tr>
+<tr>
+<td>404:not found</td>
+<td>请求失败，请求的资源未在服务器上发现。</td>
+</tr>
+<tr>
+<td>405:method not allowed</td>
+<td>请求行中指定的请求方法不能被用于请求相应的资源。</td>
+</tr>
+<tr>
+<td>414:request-url too long</td>
+<td>请求的uri长度超过了服务器能够理解的长度，因此拒绝提供服务。</td>
+</tr>
+<tr>
+<td>500:internet server error</td>
+<td>服务器遇到了一个未曾预料的状况，导致它无法完成对请求的处理</td>
 </tr>
 </tbody>
 </table>
@@ -427,12 +484,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/字符集-字符编码/" rel="tag"># 字符集 字符编码</a>
-          
-        </div>
-      
 
       
         
@@ -442,15 +493,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/11/SSH验证/" rel="next" title="SSH验证">
+                <i class="fa fa-chevron-left"></i> SSH验证
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/11/input 标签详解/" rel="prev" title="input 标签详解">
-                input 标签详解 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -599,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符集和字符编码"><span class="nav-number">1.</span> <span class="nav-text">字符集和字符编码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP"><span class="nav-number">1.</span> <span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS"><span class="nav-number">2.</span> <span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#端口"><span class="nav-number">3.</span> <span class="nav-text">端口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#请求和响应"><span class="nav-number">4.</span> <span class="nav-text">请求和响应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求分析"><span class="nav-number">4.1.</span> <span class="nav-text">请求分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应分析"><span class="nav-number">4.2.</span> <span class="nav-text">响应分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#状态码"><span class="nav-number">4.3.</span> <span class="nav-text">状态码</span></a></li></ol></li></ol></div>
             
 
           </div>
