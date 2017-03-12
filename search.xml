@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[post和get请求]]></title>
+      <url>%2F2017%2F03%2F12%2Fpost%E5%92%8Cget%E8%AF%B7%E6%B1%82%2F</url>
+      <content type="text"><![CDATA[get和post的区别GET和POST本质上就是TCP链接，并无差别。但是由于HTTP的规定和浏览器/服务器的限制，导致他们在应用过程中体现出一些不同（唯一的区别是语义区别：get是获取数据，post是提交数据） 表象的区别： get post 一般没有请求消息体 有请求消息体 请求的参数包含在请求行的URL中 参数放在请求的消息体里 url中传送的参数长度有限制（浏览器一般设置2k个字节，超出部分返回414错误） post消息体大小没有限制【事实上也有限制，根据服务器的设定（一般几兆）】 安全性相对较低（get提交数据后账号和密码明文出现在url上） 相对较高 注：*get和post参数的大小都是有限制的，是人为对浏览器或服务器设置的限制。 ​ *post和get的安全性只是相对这两者比较而言的，事实上两种方式都不安全。 ​]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[请求和响应]]></title>
       <url>%2F2017%2F03%2F12%2Fhttp%E7%9A%84%E8%AF%B7%E6%B1%82%E5%92%8C%E5%93%8D%E5%BA%94%2F</url>
       <content type="text"><![CDATA[HTTPhttp（HyperText Transfer Protocol），超文本传输协议，它是一种网络协议，所有的www文件都必须遵守这个标准。可以说，web是建立在http协议上通信的。 DNSdns（DomainName System），域名系统（域名解析系统），主要让用户在互联网上通过域名找到对应的ip地址，而不用去记住能够被机器直接读取的IP数串。 输入：域名 ， 输出：IP 一个域名对应的ip可以有很多（eg：ping baidu.com) 一个域名对应的ip是由域名所有者指定的 改 hosts 可以手动指定域名对应的 IP DNS 可能有缓存，浏览器或者运营商 端口 TCP 或 UDP 协议的规则，一个端口对应一个服务 0 到 1023 号端口是保留端口（只有管理员才能用） 常用端口 21 端口 - FTP 80 端口 - HTTP 53 端口 - DNS 443 端口 - HTTPS 1080 端口 - SOCKS 代理 请求和响应我们在浏览器中输入Google网址到Google网页跳转出来，就经历了一次完整的请求和响应。请求由客户端（即浏览器）发出，响应由服务器端发出。 请求分析123456请求行:（请求方法 路径 协议／版本号） #eg: GET /index.html HTTP/1.1请求头: 请求首部字段 通用首部字段 实体首部字段空格消息体:（aaa=bbbb&amp;ccc=ddd） 注：一般的请求方法有：POST \DELETE \PUT \PATCH \GET \HEAD \OPTIONS \CONNECT \TRACK 响应分析123456状态行 （协议／版本号 状态码 状态描述）#eg:TTP/1.1 200 OK响应头：响应首部字段 通用首部字段 实体首部字段空格消息体 状态码状态码的类别： 类别 原因 1XX Informational（信息状态码） 接收的请求正在处理 2XX Success（成功状态码） 请求正常，200 3XX Redirection（重定向状态码） 301、302(move temporarily ) 4XX Client Error（客户端错误状态码） 403、404、414 5XX Sever Error（服务器端错误状态码） 500（internal sever error) 一些常见的状态码 状态码 状态描述 200：OK 请求成功 301:moved permanently 请求的资源重定向了，永久移动到新位置（并且浏览器缓存这个结果） 302：move temporarily 请求的资源临时从不同的 URI响应请求。 （浏览器不缓存这个结果） 403:forbidden 服务器拒绝访问。 404:not found 请求失败，请求的资源未在服务器上发现。 405:method not allowed 请求行中指定的请求方法不能被用于请求相应的资源。 414:request-url too long 请求的uri长度超过了服务器能够理解的长度，因此拒绝提供服务。 500:internet server error 服务器遇到了一个未曾预料的状况，导致它无法完成对请求的处理]]></content>
