@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[css浮动]]></title>
+      <url>%2F2017%2F03%2F20%2Fcss%E6%B5%AE%E5%8A%A8%2F</url>
+      <content type="text"><![CDATA[浮动float CSS的 float 属性可以使一个元素脱离正常的文档流，然后被安放到它所在容器的的左端或者右端，并且其他的文本和行内元素环绕它。 元素只能左右浮动，不能上下移动 一个浮动会尽量向左/右 移动，直到它的外边缘碰到包含框或者另一个浮动框的边框为止 浮动元素之后的元素会围绕它，之前的元素不受影响 语法 说明 float: left 表明元素必须浮动在其所在的块容器左侧 float: right 表明元素必须浮动在其所在的块容器右侧 清除浮动clear clear属性规定了元素的哪一侧不允许浮动元素 语法 说明 clear : left 在左侧不允许浮动元素 clear : right 在右侧不允许浮动元素 clear : both 在左右两侧均不允许浮动元素 清除浮动的几种方法 从上面两张图可以看到，当内层元素加了浮动之后，div的高度塌缩了，因为内层元素此时已经脱离了文档流，父元素不再包含它。为了避免这种情况，可以清除浮动来使父元素撑开。 使用一个空标签：空标签位置不同效果也不同。 通过 ::after 伪元素 设置clear属性:.parent::after这中间没有空格！！ 123456/* new clearfix */.clearfix::after &#123; #css3为了更好地区分伪类和伪元素，用两个冒号:表示 content: &quot;&quot;; #通过content属性来添加样式（显示生效）使用一个空标签 display: block; #::after表示在当前元素的内容后插入一个子元素（行内元素） clear: both;&#125; 给父元素设置display: inline-block属性: 由块状元素转为行内元素，而行内元素可以根据里面的内容自适应高宽（为了显示出相同的效果，这里加了width：100%）。 给父元素设置overflow:auto或hidden属性：]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[flex布局（display:flex）]]></title>
       <url>%2F2017%2F03%2F19%2Fflex%E5%B8%83%E5%B1%80%EF%BC%88display-flex%EF%BC%89%2F</url>
       <content type="text"><![CDATA[基本概念flex布局适用于简单的线性布局，可以实现空间自动分配和自动对齐。（flexible：弹性，灵活的） flex container的属性 属性 描述 1、flex-direction 方向 2、flex-wrap 换行 3、flex-flow 上面两个的简写 4、justify-content 主轴方向对齐方式 5、align-items 侧轴对齐方式 6、align-content 多行/列内容对齐方式（用的较少） flex-direction：row（从左往右排列，默认）、row-reverse（右往左）、column（上往下）、column-reverse 注：这个属性的排序默认不换行，flex item再多也会自适应调节比例排成一行/列（且此时会无视flex item自身设置的宽/高）。 flex-wrap：wrap flex-flow：row nowarp justify-content： space-between：空间均衡地放在flex item中间，两边的flex item会顶到两侧 space-around：空间均衡地放在flex item周围，最两侧的flex item也有空间包围 flex-start：flex item都往起点靠 flex-end：flex item都往终点靠 center：flex item都放在中间 align-items： stretch：与flex item最长的那一个对齐，是个默认值 flex-start：所有的flex item都往上靠 flex-end：所有的flex item都往下靠 center：居中 baseline：文字基线对齐 align-content：space-around、space-between、flex-start、flex-end flex item的属性 属性 描述 1、flex-grow 增长比例（空间过多时） 2、flex-shrink 收缩比例（空间不够时） 3、flex-basis 默认大小（一般不用） 4、flex 上面三个的缩写 5、order 顺序（代替双飞翼） 6、align-self 自身的对齐方式 flex-grow：数值（1、2、3等），flex item按这个数值的比例分配多余的空间（1表示全部占有） flex-shrink：数值（1、2、3等），flex item按收缩比例分配 flex-basis：200px ， 一开始默认占200px大小的固定空间 order：数值（1、2、3等），改变flex item的空间顺序 align-self： flex-end，flex-start ， center ， 每个独立flex-item对齐。 使用flex布局实例 手机页面布局（topbar+main+tabs) 产品列表（ul&gt;li*9 pc页面布局 完美居中]]></content>
