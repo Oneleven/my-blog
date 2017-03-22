@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[CSS定位position]]></title>
+      <url>%2F2017%2F03%2F22%2FCSS%E5%AE%9A%E4%BD%8Dposition%2F</url>
+      <content type="text"><![CDATA[position属性指定一个元素（静态的，相对的，绝对或固定）的定位方法的类型。 relative相对定位position:relative ：元素先放置在未添加定位时的位置，再在不改变页面布局的前提下调整元素位置（因此会在此元素未添加定位时所在位置留下空白）。通过“left”,”top”,”right”,”bottom”来规定位置。 *相对定位的元素并未脱离文档流 注：图二chlid1相对自己原来的位置向右移动了50px，但是child2作为一个行内元素并没有向前移动，去占据child1留下来的空白位置（说明child1原来的位置仍然被它占据着） absolute绝对定位position:absolute ：不为元素预留空间，通过指定元素相对于最近的非 static 定位祖先元素的偏移，来确定元素位置(如果没有祖先元素，则用它所在的包含块来定位）。绝对定位的元素可以设置外边距（margins），且不会与其他边距合并。通过“left”,”top”,”right”,”bottom”来规定位置。 *绝对定位的元素脱离了文档流 有非 static 定位的祖先元素 当最近的祖先元素添加position:relative 后，child1根据它来定位。 child1设置了absolute绝对定位后，它的宽度变成了30px，变成了块状元素，即使后面再次声明display:inline; ，它还是以块状元素来显示。 没有非 static 定位的祖先元素 可以看到child1并非根据body以及html来定位。经查css spec（如下图），在没有非static定位的祖先元素的时候，absolute定位是根据根元素的包含块（containing block）来定位的，根元素的包含块也叫初始包含块（initial containing block）, 而初始包含块取自视口的尺寸，并且被固定在画布开始的位置。 fixed绝对定位position:fixed ：不为元素预留空间，而是通过指定元素相对于屏幕视口（viewport）的位置来指定元素位置。元素的位置在屏幕滚动时不会改变。打印时，元素会出现在的每页的固定位置。当元素祖先的 transform 属性非 none 时，容器由视口改为该祖先。通过“left”,”top”,”right”,”bottom”来规定位置。 *绝对定位的元素脱离了文档流，比浮动元素更高一层。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[css浮动]]></title>
       <url>%2F2017%2F03%2F20%2Fcss%E6%B5%AE%E5%8A%A8%2F</url>
       <content type="text"><![CDATA[浮动float CSS的 float 属性可以使一个元素脱离正常的文档流，然后被安放到它所在容器的的左端或者右端，并且其他的文本和行内元素环绕它。 元素只能左右浮动，不能上下移动 一个浮动会尽量向左/右 移动，直到它的外边缘碰到包含框或者另一个浮动框的边框为止 浮动元素之后的元素会围绕它，之前的元素不受影响 语法 说明 float: left 表明元素必须浮动在其所在的块容器左侧 float: right 表明元素必须浮动在其所在的块容器右侧 清除浮动clear clear属性规定了元素的哪一侧不允许浮动元素 语法 说明 clear : left 在左侧不允许浮动元素 clear : right 在右侧不允许浮动元素 clear : both 在左右两侧均不允许浮动元素 清除浮动的几种方法 从上面两张图可以看到，当内层元素加了浮动之后，div的高度塌缩了，因为内层元素此时已经脱离了文档流，父元素不再包含它。为了避免这种情况，可以清除浮动来使父元素撑开。 使用一个空标签：空标签位置不同效果也不同。 通过 ::after 伪元素 设置clear属性:.parent::after这中间没有空格！！ 123456/* new clearfix */.clearfix::after &#123; #css3为了更好地区分伪类和伪元素，用两个冒号:表示 content: &quot;&quot;; #通过content属性来添加样式（显示生效）使用一个空标签 display: block; #::after表示在当前元素的内容后插入一个子元素（行内元素） clear: both;&#125; 给父元素设置display: inline-block属性: 由块状元素转为行内元素，而行内元素可以根据里面的内容自适应高宽（为了显示出相同的效果，这里加了width：100%）。 给父元素设置overflow:auto或hidden属性：]]></content>
