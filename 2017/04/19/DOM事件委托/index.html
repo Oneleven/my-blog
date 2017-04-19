@@ -99,6 +99,7 @@ TOM（代码）得到通知">
 TOM （代码）订阅/关注/监听了 XXX（用户）
 XXX （用户）发生了变化
 TOM（代码）得到通知">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fesek8gdh2j31kw0t1th0.jpg">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fens5t3qp7j31kw0sw479.jpg">
 <meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fensjvi5f6j31kw0pcgqy.jpg">
 <meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fensr3xksxj31kw0ld0xq.jpg">
@@ -108,14 +109,14 @@ TOM（代码）得到通知">
 <meta property="og:image" content="http://i4.buimg.com/567571/cf15f38186493534.gif">
 <meta property="og:image" content="http://i2.muimg.com/567571/5b885f1fa133616a.gif">
 <meta property="og:image" content="http://i1.piimg.com/567571/012e6bb9004a1f85.gif">
-<meta property="og:updated_time" content="2017-04-19T15:13:24.000Z">
+<meta property="og:updated_time" content="2017-04-19T15:25:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM事件委托">
 <meta name="twitter:description" content="事件的三个特点
 TOM （代码）订阅/关注/监听了 XXX（用户）
 XXX （用户）发生了变化
 TOM（代码）得到通知">
-<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fens5t3qp7j31kw0sw479.jpg">
+<meta name="twitter:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fesek8gdh2j31kw0t1th0.jpg">
 
 
 
@@ -437,18 +438,16 @@ TOM（代码）得到通知">
 </ul>
 </li>
 <li><p>W3C事件模型：支持两种阶段</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">button.addEventListener(&apos;click&apos;,fn,true)  //永远别用</div><div class="line">button.addEventListener(&apos;click&apos;,fun)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">button.addEventListener(&apos;click&apos;,fn,true)  //永远别用</div><div class="line">button.addEventListener(&apos;click&apos;,fn)</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h4 id="如何监听事件"><a href="#如何监听事件" class="headerlink" title="如何监听事件"></a>如何监听事件</h4><p>当同一个对象使用.onclick的写法触发多个方法的时候，后一个方法会把前一个方法覆盖掉，也就是说，在对象的onclick事件发生时，只会执行最后绑定的方法。而用事件监听则不会有覆盖的现象，每个绑定的事件都会被执行。</p>
 <ol>
-<li>DOM level 0 事件： button.onclick = function(){}<ul>
-<li><a href="http://js.jirengu.com/jaxe/1/edit?html,output" target="_blank" rel="external">http://js.jirengu.com/jaxe/1/edit?html,output4</a></li>
-</ul>
-</li>
+<li>DOM level 0 事件： button.onclick = function(){}</li>
 <li>DOM level 2 事件： button.addEventListener(‘click’, function(){})</li>
 </ol>
 <h4 id="e／event"><a href="#e／event" class="headerlink" title="e／event"></a>e／event</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">child1.addEventListener(&apos;click&apos;,function(e)&#123;</div><div class="line">  console.log(e)</div><div class="line">&#125;)</div><div class="line">//当出发事件的时候，e告诉你相关事件的任何信息</div></pre></td></tr></table></figure>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fesek8gdh2j31kw0t1th0.jpg" alt=""></p>
 <h4 id="e-target-amp-e-currentTarget"><a href="#e-target-amp-e-currentTarget" class="headerlink" title="e.target&amp;e.currentTarget"></a>e.target&amp;e.currentTarget</h4><ul>
 <li>target：触发事件的元素，即点击的元素</li>
 <li>currentEvent：被监听的元素</li>
