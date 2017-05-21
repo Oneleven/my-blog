@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="this," />
 
 
 
@@ -87,15 +87,16 @@
 
 
 
-<meta name="description" content="Start from zero">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Oneleven's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/公钥/index.html">
+<meta name="description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS中的this值">
+<meta property="og:url" content="http://yoursite.com/2017/05/21/JS中的this值/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="Start from zero">
+<meta property="og:description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
+<meta property="og:updated_time" content="2017-05-21T11:49:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oneleven's Blog">
-<meta name="twitter:description" content="Start from zero">
+<meta name="twitter:title" content="JS中的this值">
+<meta name="twitter:description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/公钥/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/21/JS中的this值/"/>
 
 
 
 
 
-  <title> 标签: 公钥 | Oneleven's Blog </title>
+  <title> JS中的this值 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +164,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,46 +292,173 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        公钥
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/JS中的this值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS中的this值
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T19:47:10+08:00">
+                2017-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h4 id="什么是This"><a href="#什么是This" class="headerlink" title="什么是This"></a>什么是This</h4><p>this总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，<code>this</code>就是这个对象（环境）。也可以近似地认为，<code>this</code>是所有函数运行时的一个隐藏参数，指向函数的运行环境。</p>
+<a id="more"></a>
+<ul>
+<li><p>如果一个函数在全局环境中运行，那么<code>this</code>就是指顶层对象（浏览器中为<code>window</code>对象）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function fn()&#123;</div><div class="line">  console.log(this)   //window</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数的call"><a href="#函数的call" class="headerlink" title="函数的call"></a>函数的call</h4><p>任何函数都可以用function.prototype.call()的形式来调用，其中call的第一个参数会变为函数里的this，call的其他参数组成函数里面的arguments。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function f()&#123;</div><div class="line">  console.log(this)</div><div class="line">  console.log(arguments)</div><div class="line">&#125;</div><div class="line">var a =&#123;name:&apos;tom&apos;&#125;</div><div class="line">f.call(a,1,2,3) </div><div class="line"></div><div class="line">*call第一个参数会当作this，后面的会当做arguments</div><div class="line">*每次进入函数之前，都会创造this和arguments这两件事情</div><div class="line">---------------</div><div class="line">f()等价于f.call（）</div><div class="line">object.f(1,2,3)等价于 obj.f.call(obj,1,2,3)  //this为obj</div></pre></td></tr></table></figure>
+<p><strong>this 就是你 call 一个函数时，传入的第一个参数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">var A = &#123;</div><div class="line">  name: &apos;Tom&apos;,</div><div class="line">  describe: function () &#123;</div><div class="line">    return &apos;姓名：&apos;+ this.name;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">var B = &#123;</div><div class="line">  name: &apos;Jack&apos;</div><div class="line">&#125;;</div><div class="line">B.describe = A.describe;</div><div class="line"></div><div class="line">A.describe()  //&quot;姓名：Tom&quot;</div><div class="line">B.describe()  // &quot;姓名：Jack&quot;</div><div class="line">--------------</div><div class="line">A.describe() 转换为 A.describe.call(A)，this就是A，那么this.name即 Tom；</div><div class="line">同样的，B.describe() 可以转换为B.describe.call(B),this就是B，那么this.name即Jack</div></pre></td></tr></table></figure>
+<h4 id="如何确定this的值"><a href="#如何确定this的值" class="headerlink" title="如何确定this的值"></a>如何确定this的值</h4><p>1.看源码中对应的函数是怎么被call的</p>
+<p>2.看文档</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">btn.addEventListener(&apos;click&apos; ,function handler()&#123;</div><div class="line">  console.log(this) // 请问这里的 this 是什么</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>EventTarget.addEventListener()处理过程中 <code>this</code> 的值的问题，在MDN文档中是这样说的：</p>
+<blockquote>
+<p>通常来说this的值是触发事件的元素的引用，这种特性在多个相似的元素使用同一个通用事件监听器时非常让人满意。</p>
+<p>当使用 <code>addEventListener()</code> 为一个元素注册事件的时候，句柄里的 this 值是该元素的引用。其与传递给句柄的 event 参数的 currentTarget 属性的值一样。</p>
+</blockquote>
+<p>所以，上面this指的就是事件被监听的元素btn</p>
+</li>
+</ul>
+<p>3.打印出来console.log(this)</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/11/SSH验证/" itemprop="url">
-              
-                <span itemprop="name">SSH验证</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-11T23:16:54+08:00"
-              content="2017-03-11" >
-          03-11
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/this/" rel="tag"># this</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/API获取元素的几种方法”/" rel="next" title="DOM API获取元素的几种方法">
+                <i class="fa fa-chevron-left"></i> DOM API获取元素的几种方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -338,6 +466,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -357,8 +489,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat1.jpeg"
@@ -449,6 +590,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是This"><span class="nav-number">1.</span> <span class="nav-text">什么是This</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数的call"><span class="nav-number">2.</span> <span class="nav-text">函数的call</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何确定this的值"><span class="nav-number">3.</span> <span class="nav-text">如何确定this的值</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -561,6 +718,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
