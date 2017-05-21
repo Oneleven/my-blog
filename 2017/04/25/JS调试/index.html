@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="DOM," />
+  <meta name="keywords" content="调试," />
 
 
 
@@ -87,37 +87,37 @@
 
 
 
-<meta name="description" content="DOM节点DOM的最小组成单位叫做节点（node）。文档的树形结构（DOM树），就是由各种不同类型的节点组成。节点有以下7种类型
-
-Document：整个文档树的顶层节点（root node）
-DocumentType: doctype标签
-Element：网页的各种HTML标签
-Attribute：网页元素的属性（如calss=”aa”)
-Text：标签之间包含的文本内容
-Comment：注释">
+<meta name="description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
+debug 就是找">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOM API获取元素的几种方法">
-<meta property="og:url" content="http://yoursite.com/2017/04/19/API获取元素的几种方法”/index.html">
+<meta property="og:title" content="JS调试">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/JS调试/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="DOM节点DOM的最小组成单位叫做节点（node）。文档的树形结构（DOM树），就是由各种不同类型的节点组成。节点有以下7种类型
-
-Document：整个文档树的顶层节点（root node）
-DocumentType: doctype标签
-Element：网页的各种HTML标签
-Attribute：网页元素的属性（如calss=”aa”)
-Text：标签之间包含的文本内容
-Comment：注释">
-<meta property="og:updated_time" content="2017-04-19T15:33:52.000Z">
+<meta property="og:description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
+debug 就是找">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen7wggum1j311m0ic0w3.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen818dfv4j318002swfj.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ff4o8pj31kw0qvwlc.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8nhqywxj31i40o80xr.jpg">
+<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8rwyb3vj31ic0i2whg.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ueqy5vj31i80gqjuf.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8sykyjaj31jm0km78l.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenftc0efrj31kw0b6abs.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenfp8a3e4j31kw0iozp1.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fengizjnk2j31kw0iiaci.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fengnn1ohej31fc0i2dis.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh0ir7a4j31aa0kqn0b.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenh70jgsvj31020gymzb.jpg">
+<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh8j885aj30y20g0tae.jpg">
+<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenhbzvuczj30v60fstal.jpg">
+<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fenhyd8n4vj310k0h240t.jpg">
+<meta property="og:updated_time" content="2017-05-21T11:57:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DOM API获取元素的几种方法">
-<meta name="twitter:description" content="DOM节点DOM的最小组成单位叫做节点（node）。文档的树形结构（DOM树），就是由各种不同类型的节点组成。节点有以下7种类型
-
-Document：整个文档树的顶层节点（root node）
-DocumentType: doctype标签
-Element：网页的各种HTML标签
-Attribute：网页元素的属性（如calss=”aa”)
-Text：标签之间包含的文本内容
-Comment：注释">
+<meta name="twitter:title" content="JS调试">
+<meta name="twitter:description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
+debug 就是找">
+<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg">
 
 
 
@@ -145,13 +145,13 @@ Comment：注释">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/19/API获取元素的几种方法”/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/25/JS调试/"/>
 
 
 
 
 
-  <title> DOM API获取元素的几种方法 | Oneleven's Blog </title>
+  <title> JS调试 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -323,7 +323,7 @@ Comment：注释">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/19/API获取元素的几种方法”/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/JS调试/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -344,7 +344,7 @@ Comment：注释">
             
             
               
-                DOM API获取元素的几种方法
+                JS调试
               
             
           </h1>
@@ -359,8 +359,8 @@ Comment：注释">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-19T23:28:29+08:00">
-                2017-04-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T19:54:11+08:00">
+                2017-04-25
               </time>
             
 
@@ -369,28 +369,6 @@ Comment：注释">
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -417,47 +395,78 @@ Comment：注释">
       
 
       
-        <h4 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h4><p>DOM的最小组成单位叫做节点（node）。文档的树形结构（DOM树），就是由各种不同类型的节点组成。节点有以下7种类型</p>
-<ul>
-<li>Document：整个文档树的顶层节点（root node）</li>
-<li>DocumentType: doctype标签</li>
-<li>Element：网页的各种HTML标签</li>
-<li>Attribute：网页元素的属性（如calss=”aa”)</li>
-<li>Text：标签之间包含的文本内容</li>
-<li>Comment：注释</li>
-<li>DocumentFragment：文档片段</li>
-</ul>
+        <h4 id="史上第一个bug"><a href="#史上第一个bug" class="headerlink" title="史上第一个bug"></a>史上第一个bug</h4><p>1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。</p>
+<p>debug 就是找出 bug 的过程。</p>
 <a id="more"></a>
-<h4 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h4><p>除了根节点<code>&lt;html&gt;</code>，它的下级节点与周围节点存在三种关系</p>
+<h4 id="打字会错"><a href="#打字会错" class="headerlink" title="打字会错"></a>打字会错</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">iOS 写成 ios</div><div class="line">JavaScript 写成 Javascript</div><div class="line">vertical 写成 verticel</div><div class="line">props 写成 porps</div><div class="line">半角空格写成全角空格</div><div class="line">ls -la 写成 ls-la</div></pre></td></tr></table></figure>
+<h4 id="html的bug"><a href="#html的bug" class="headerlink" title="html的bug"></a>html的bug</h4><ul>
+<li><p>用<a href="https://validator.w3.org/#validate_by_input这个网址来检查错误（validator验证器）" target="_blank" rel="external">https://validator.w3.org/#validate_by_input这个网址来检查错误（validator验证器）</a></p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg" alt=""></p>
+</li>
+<li><p>用WebStorm检查（语法错误以及拼写错误）</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen7wggum1j311m0ic0w3.jpg" alt=""></p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fen818dfv4j318002swfj.jpg" alt=""></p>
+</li>
+</ul>
+<h4 id="CSS的bug"><a href="#CSS的bug" class="headerlink" title="CSS的bug"></a>CSS的bug</h4><p>用border以及开发者工具</p>
 <ul>
-<li>父节点关系：parentNode</li>
-<li>子节点关系：childNodes<ul>
-<li>firstChild：第一个子节点</li>
-<li>lastChild：最后一个子节点</li>
+<li>没有样式，选择器没有选择到，(.tabsb li b 后面多了个逗号<code>,</code>)</li>
 </ul>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ff4o8pj31kw0qvwlc.jpg" alt=""></p>
+<ul>
+<li><p>CSS错误的注释会毁掉下面一行</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8nhqywxj31i40o80xr.jpg" alt=""></p>
 </li>
-<li>同级节点关系：sibling<ul>
-<li>nextSibling：紧邻在后的那个同级节点</li>
-<li>previousSibling：紧邻在前的那个同级节点</li>
-</ul>
+<li><p>用border大法可以清楚地看到由于浮动而造成的符元素内容塌陷</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8rwyb3vj31ic0i2whg.jpg" alt=""></p>
+</li>
+<li><p>当使用border会影响布局的时候，用outlne代替，它不会占用盒模型位置</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ueqy5vj31i80gqjuf.jpg" alt=""></p>
+<p><strong>VS.</strong></p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8sykyjaj31jm0km78l.jpg" alt=""></p>
 </li>
 </ul>
-<h4 id="document-querySelector"><a href="#document-querySelector" class="headerlink" title="document.querySelector()"></a>document.querySelector()</h4><p>接受一个<strong>css选择器</strong>作为参数，返回匹配该选择器的<strong>第一个节点</strong>，如果没有匹配的节点返回null。</p>
-<p>语法：<code>element = document.querySelector(selectors)</code> ，selectors是一个字符串，包含一个或者多个css选择器，多个<strong>以逗号分隔</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var element1 = document.querySelector(&apos;.myclass&apos;)</div><div class="line">var element2 = document.querySelector(&apos;p&apos;)  //返回第一个p元素</div><div class="line">var element3 = document.querySelector(&apos;p.myclass&apos;) //返回文档中class=&quot;myclass&quot;的第一个&lt;p&gt;元素</div></pre></td></tr></table></figure>
-<p><em>*</em>document.querySelectorAll()：返回一个NodeList对象，包含所有匹配给定选择器的节点</p>
-<h4 id="document-getElementsByTagName"><a href="#document-getElementsByTagName" class="headerlink" title="document.getElementsByTagName()"></a>document.getElementsByTagName()</h4><p>返回一个包括所有给定标签名称的元素集合，如果没有匹配的元素，返回一个空集。可以在任意一个元素上调用该方法。（从给定的父节点开始往下找，如果是div.getElementsByTagName()，则从div这个节点开始往下找）</p>
-<p>语法：<code>var elements = document.getElementsByTagName(name)</code>，name是一个字符串。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = document.getElementsByTagName(&apos;p&apos;)</div><div class="line">//返回当前文档的全部p元素节点</div></pre></td></tr></table></figure>
-<h4 id="document-getElementsByClassName"><a href="#document-getElementsByClassName" class="headerlink" title="document.getElementsByClassName()"></a>document.getElementsByClassName()</h4><p>返回一个包含所有指定class名称的元素集合，可以在任意元素上调用该方法。</p>
-<p>语法：<code>var elements = document.getElementsByClassName(names)</code>，names是一个字符串，如果含有多个class名称，<strong>用空格分隔</strong>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document.getElementsByClassName(&apos;red test&apos;)</div><div class="line">//返回所有calss名为 red 和 test 的元素</div></pre></td></tr></table></figure>
-<h4 id="document-getElementById"><a href="#document-getElementById" class="headerlink" title="document.getElementById()"></a>document.getElementById()</h4><p>返回拥有指定id的第一个元素，如果不存在则返回null</p>
-<p>语法：<code>element = document.getElementById(id)</code>，id为大小写敏感的字符串</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">document.getElementById(&apos;myid&apos;)</div><div class="line">//返回一个id为myid的元素</div></pre></td></tr></table></figure>
-<h4 id="Node-firstChild"><a href="#Node-firstChild" class="headerlink" title="Node.firstChild"></a>Node.firstChild</h4><p>返回树中节点的第一个子节点，如果无子节点，则返回null。（注：空白符节点会充当一个文本节点，可以Node.firstChild.firstChild…的形式使用）</p>
-<p>类似的还有：Node.lastChild \ Node.nextSibling \ Node.previousSibling \ Node.parentNode</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;p id=&quot;para-01&quot;&gt;</div><div class="line">  &lt;span&gt;First span&lt;/span&gt;</div><div class="line">&lt;/p&gt;</div><div class="line">&lt;script&gt;</div><div class="line">  var p01 = document.getElementById(&apos;para-01&apos;);</div><div class="line">  alert(p01.firstChild.nodeName)</div><div class="line">&lt;/script&gt;</div><div class="line">//返回#text , 因为换行符和空格充当了一个文本节点</div></pre></td></tr></table></figure>
+<h4 id="JavaScript的bug"><a href="#JavaScript的bug" class="headerlink" title="JavaScript的bug"></a>JavaScript的bug</h4><ol>
+<li>确定你的代码运行了</li>
+<li>上帝视角<ol>
+<li>拼写错误</li>
+<li>拼写错误</li>
+<li>拼写错误</li>
+<li>其他错误（用 WebStorm 可以避免拼写错误）</li>
+</ol>
+</li>
+<li>用 console.log 或者 console.assert 验证</li>
+</ol>
+<ul>
+<li><p>html文件映射到浏览器页面，直接在浏览器中修改调试</p>
+<ol>
+<li><p>打开谷歌开发者工具 — setting — workspace — add folder </p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenftc0efrj31kw0b6abs.jpg" alt=""></p>
+</li>
+<li><p>映射 Map to File System Resource</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenfp8a3e4j31kw0iozp1.jpg" alt=""></p>
+</li>
+<li><p>按下<code>esc</code>，出现控制台，就可以实时修改了，修改完按下保存再刷新，进行调试。</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fengizjnk2j31kw0iiaci.jpg" alt=""></p>
+</li>
+</ol>
+</li>
+<li><p><strong>Uncaught ReferenceError:appel is not defined</strong>：用了一个未声明过的变量。（reference error 引用错误）<br><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fengnn1ohej31fc0i2dis.jpg" alt=""></p>
+<p>把它打印出来是什么类型</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh0ir7a4j31aa0kqn0b.jpg" alt=""></p>
+</li>
+<li><p><strong>Uncaught TypeError: obj.fooo is not a function</strong>：不是一个函数 （type error类型错误）</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenh70jgsvj31020gymzb.jpg" alt=""></p>
+<p>打印出来，属性不报错，返回undefined （<strong>变量未声明直接用回报错，属性没声明直接用不报错</strong>）</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh8j885aj30y20g0tae.jpg" alt=""></p>
+</li>
+<li><p><strong>Uncaught SyntaxError: Unexpected token function</strong> ：未意料到的字符 function ，说明语法有错误（<code>foo:function</code>） （syntax error语法错误）</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenhbzvuczj30v60fstal.jpg" alt=""></p>
+</li>
+<li><p><strong>Uncaught TypeError : Cannot read property ‘join’ of undefined</strong>：jion前面的出现错误</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fenhyd8n4vj310k0h240t.jpg" alt=""></p>
+</li>
+</ul>
 
       
     </div>
@@ -481,7 +490,7 @@ Comment：注释">
       
         <div class="post-tags">
           
-            <a href="/tags/DOM/" rel="tag"># DOM</a>
+            <a href="/tags/调试/" rel="tag"># 调试</a>
           
         </div>
       
@@ -494,8 +503,8 @@ Comment：注释">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/19/DOM事件委托/" rel="next" title="DOM事件委托">
-                <i class="fa fa-chevron-left"></i> DOM事件委托
+              <a href="/2017/04/19/API获取元素的几种方法”/" rel="next" title="DOM API获取元素的几种方法">
+                <i class="fa fa-chevron-left"></i> DOM API获取元素的几种方法
               </a>
             
           </div>
@@ -504,8 +513,8 @@ Comment：注释">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/25/JS调试/" rel="prev" title="JS调试">
-                JS调试 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/21/JS中的this值/" rel="prev" title="JS中的this值">
+                JS中的this值 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,7 +673,7 @@ Comment：注释">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM节点"><span class="nav-number">1.</span> <span class="nav-text">DOM节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#节点间的关系"><span class="nav-number">2.</span> <span class="nav-text">节点间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-querySelector"><span class="nav-number">3.</span> <span class="nav-text">document.querySelector()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-getElementsByTagName"><span class="nav-number">4.</span> <span class="nav-text">document.getElementsByTagName()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-getElementsByClassName"><span class="nav-number">5.</span> <span class="nav-text">document.getElementsByClassName()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#document-getElementById"><span class="nav-number">6.</span> <span class="nav-text">document.getElementById()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Node-firstChild"><span class="nav-number">7.</span> <span class="nav-text">Node.firstChild</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#史上第一个bug"><span class="nav-number">1.</span> <span class="nav-text">史上第一个bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打字会错"><span class="nav-number">2.</span> <span class="nav-text">打字会错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html的bug"><span class="nav-number">3.</span> <span class="nav-text">html的bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS的bug"><span class="nav-number">4.</span> <span class="nav-text">CSS的bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript的bug"><span class="nav-number">5.</span> <span class="nav-text">JavaScript的bug</span></a></li></ol></div>
             
 
           </div>
