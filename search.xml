@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[工厂模式&new]]></title>
-      <url>%2F2017%2F07%2F21%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-new%2F</url>
+      <url>%2F2017%2F06%2F05%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F-new%2F</url>
       <content type="text"><![CDATA[工厂模式用函数构造一个对象，并且返回这个对象，叫做工厂模式（可以批量生产）。 工厂模式虽然解决了创建 多个相似对象的问题，但却没有解决对象识别的问题(即怎样知道一个对象的类型) 123456789function Dog(name,age)&#123; var dogs=&#123;&#125; dogs.name=name dogs.age=age dogs.leg=4 dogs.type=&apos;短腿&apos; return dogs&#125;Dog(&apos;tom&apos;,6) // Object &#123;name: &quot;tom&quot;, age: 6, leg: 4, type: &quot;短腿&quot;&#125; 构造函数模式（即new）12345678910111213141516171819202122function Dog(name,age)&#123; var dogs=&#123;&#125; ----1.new帮忙创建临时对象 dogs.name=name dogs.age=age dogs.__proto__=Rdogs -----2.new帮忙绑定原型，并同意叫做prototype return dogs -----3.帮忙return&#125;Rdogs=&#123; leg:4, type:&apos;短腿&apos;&#125;Dog(&apos;tom&apos;,18) -----------------------------使用new,把共有的特性放在原型链上，私有的属性放在构造函数上function Dog(name,age)&#123; -----构造函数一般函数名首字母大写 this.name=name ------构造函数依赖 new、this this.age=age -----构造函数什么都不返回，只有new才能帮它return对象&#125;Dog.prototype=&#123; leg:4, type:&apos;短腿&apos;&#125;new Dog(&apos;tom&apos;,18) debugger一下，可以看到this已经有共有属性了，这是因为下面定义对象的时候内存里马上就赋值了，上面的是函数，等着调用才会去执行。 new会帮你return，但是如果自己写上return的话，会怎么样？（new会帮你return this，在new之前的构造函数里加了自己的return，那么new执行不到，所以构造函数不要瞎return） 如果构造函数里自己写了return this，而调用的时候不写new，会出现什么呢？（直接调用一个函数，this就是window） 生成对象并且改变this（帮你生成一个对象，this指向这个对象） 如果我不想加 new，但是又想实现跟 new 一样的功能（加条件判断，帮忙加new） jQuery是一个构造函数，返回一个对象，返回的对象有原型，所以它有new，做了以上类似的处理，所以我们调用的时候不需要些new new会帮忙添加constructor属性 如果像上面那样写Dog.prototype={}，这样就引向了另外一块地址，把原来的constructor属性覆盖了，所以推荐把constructor属性加上去constructor:Dog]]></content>
     </entry>
 
