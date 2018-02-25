@@ -1,0 +1,1132 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="小结," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="字体，文本基础
+font-size，font-family，font-weight（regular或者bold加粗），line-height
+
+
+text-align：文本对齐方向 left，right，center
+text-indent：文本第一行缩进距离
+text-decoration：文本下划线none，overline，line-through，underline 
+text-trans">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css小结">
+<meta property="og:url" content="http://yoursite.com/2017/06/18/css总结篇/index.html">
+<meta property="og:site_name" content="Oneleven's Blog">
+<meta property="og:description" content="字体，文本基础
+font-size，font-family，font-weight（regular或者bold加粗），line-height
+
+
+text-align：文本对齐方向 left，right，center
+text-indent：文本第一行缩进距离
+text-decoration：文本下划线none，overline，line-through，underline 
+text-trans">
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/8554143/22967003/97af8828-f39f-11e6-82db-55405160eea3.gif">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-1-31/79417051.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-1-31/65739659.jpg">
+<meta property="og:updated_time" content="2018-02-25T13:29:39.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css小结">
+<meta name="twitter:description" content="字体，文本基础
+font-size，font-family，font-weight（regular或者bold加粗），line-height
+
+
+text-align：文本对齐方向 left，right，center
+text-indent：文本第一行缩进距离
+text-decoration：文本下划线none，overline，line-through，underline 
+text-trans">
+<meta name="twitter:image" content="https://cloud.githubusercontent.com/assets/8554143/22967003/97af8828-f39f-11e6-82db-55405160eea3.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/18/css总结篇/"/>
+
+
+
+
+
+  <title> css小结 | Oneleven's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93493881-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Oneleven's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/css总结篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                css小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T21:12:32+08:00">
+                2017-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="字体，文本基础"><a href="#字体，文本基础" class="headerlink" title="字体，文本基础"></a>字体，文本基础</h5><ul>
+<li>font-size，font-family，font-weight（regular或者bold加粗），line-height</li>
+</ul>
+<ul>
+<li>text-align：文本对齐方向 left，right，center</li>
+<li>text-indent：文本第一行缩进距离</li>
+<li>text-decoration：文本下划线none，overline，line-through，underline </li>
+<li>text-transform：改变大小写none，uppercase，lowercase，capitalize（首字母大写）</li>
+<li>direction：文本方向 ltr，rtl</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>word-spacing：单词间隔</li>
+<li>letter-spacing：字母间隔</li>
+<li>white-space：<ul>
+<li>normal（多个空格变为一个，换行变空格）</li>
+<li>pre（正常）</li>
+<li>nowrap（在normal的基础上阻止换行）</li>
+<li>pre-wrap：保留空格，会自动换行</li>
+<li>pre-line：合并空白符，保留换行符</li>
+</ul>
+</li>
+</ul>
+<h5 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h5><ul>
+<li><p>text-overflow：</p>
+<ul>
+<li><p>clip(修剪)，隐藏超出文本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">overflow:hidden</div><div class="line">text-oveflow:clip</div></pre></td></tr></table></figure>
+</li>
+<li><p>ellipsis(省略)，需要其他属性配合</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">overflow:hidden</div><div class="line">text-overflow:ellipsis</div><div class="line">white-space:nowrap</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>word-wrap：允许长单词换行</p>
+<ul>
+<li>normal：只在允许的断字点换行，单词过长不会换行会超出文本</li>
+<li>break-word：在长单词或 URL 地址内部进行换行。</li>
+</ul>
+</li>
+<li><p>word-break：</p>
+<ul>
+<li>normal：浏览器默认规则换行</li>
+<li>break-all：允许拆单词换行</li>
+<li>keep-all：只能在半角空格或者连字符换行</li>
+</ul>
+</li>
+</ul>
+<h5 id="背景background"><a href="#背景background" class="headerlink" title="背景background"></a>背景background</h5><ul>
+<li><p>background-attachment：背景图像是否跟着滚动scroll，fixed</p>
+</li>
+<li><p>background-color</p>
+</li>
+<li><p>background-image：url(‘URL’)</p>
+</li>
+<li><p>background-position：x y（中间没有逗号），top/center/bottom  left/center/right</p>
+</li>
+<li><p>background-repeat：no-repeat， repeat-x， repeat-y ， repeat</p>
+<p>简写：<code>background: #fff  url(test.jpg)  no-repeat  fixed  0 0</code></p>
+</li>
+<li><p>background-size：<code>background-size: length|percentage|cover|contain</code></p>
+<p>background-origin：如果background-attachment为fixed则无效</p>
+<p>​                    padding-box（相对padding边）</p>
+<p>​                     border-box（相对border边）</p>
+<p>​                     content-box（相对于内容框）</p>
+<p>background-clip：规定背景的绘制区域：padding-box ; border-box ; content-box</p>
+</li>
+</ul>
+<h5 id="边框border"><a href="#边框border" class="headerlink" title="边框border"></a>边框border</h5><p>简写：border：1px solid（dashed虚线）red；</p>
+<p>用border画三角形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">p&#123;</div><div class="line">  height:0;</div><div class="line">  width:0;</div><div class="line">  border-top:30px solid rgba(0,0,0,0);</div><div class="line">  border-left:30px solid rgba(0,0,0,0);</div><div class="line">  border-right:30px solid rgba(0,0,0,0);</div><div class="line">  border-bottom:30px solid blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="padding和margin"><a href="#padding和margin" class="headerlink" title="padding和margin"></a>padding和margin</h5><ul>
+<li>margin可以是负数</li>
+<li>外边距合并，当两个垂直外边距相遇时，会重叠形成一个外边距（以较大的为准）</li>
+</ul>
+<h5 id="盒模型box-sizing"><a href="#盒模型box-sizing" class="headerlink" title="盒模型box-sizing"></a>盒模型box-sizing</h5><ul>
+<li>box-sizing: content-box , 标准盒模型，宽高只包含content的宽高</li>
+<li>box-sizing: border-box , ie盒模型，宽高包括了content，padding和border</li>
+</ul>
+<h5 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h5><ol>
+<li><p>组合选择</p>
+<ul>
+<li>E,F: 多元素选择器</li>
+<li>E F: 后代选择器</li>
+<li>E&gt;F: 直接子元素选择器</li>
+<li>E+F: 直接相邻选择器</li>
+<li>E~F: 普通相邻选择器（无论直接相邻与否）</li>
+</ul>
+</li>
+<li><p>属性选择</p>
+<ul>
+<li>E[attr] :匹配所有具有attr属性的元素 ，div[id] ,取到所有具有id属性的div</li>
+<li>E[attr=value] : 匹配属性值为value的元素，div[id=”haha”]</li>
+<li>E[attr<em>=value]: 匹配包含value值的元素，` div[class </em>=aaa]<code>可以选到</code><div class="aaa bbb">`</div></li>
+</ul>
+</li>
+<li><p>伪类选择器</p>
+<ul>
+<li><p>E:first-child: 匹配元素E的第一个子元素  / E:last-child</p>
+</li>
+<li><p>E:link：所有未被电击的链接</p>
+<p>E:visited:  已被点击的链接</p>
+<p>E:hover: 鼠标悬停 （必须在前两个之前）</p>
+<p>E:active: 鼠标点击未释放 （必须在hover之前)</p>
+</li>
+<li><p>E:nth-child(n) :匹配第n个子元素，n从1开始(也可取odd，even，2n+1)  / E:nth-last-child(n)</p>
+</li>
+<li><p>E:not(selector)</p>
+</li>
+</ul>
+</li>
+<li><p>伪元素选择器</p>
+<ul>
+<li>E::fefore</li>
+<li>E::after ：在E元素之后插入生成的内容</li>
+</ul>
+</li>
+</ol>
+<h5 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h5><ul>
+<li>static: 正常文档流</li>
+<li>relative: 相对于<strong>元素本身</strong>进行定位，移动的距离会占据文档流空间。</li>
+<li>absolute: 绝对定位，<strong>脱离文档流</strong> ，相对于static定位以外的第一个祖先元素进行定位。</li>
+<li>fixed: 相对于浏览器窗口进行定位</li>
+<li><strong>粘性定位sticky:</strong> 必须指定top，bottom，left，right中的其中一个值，如top:30px，这个值表示当元素距离页面视口顶部距离大于 30px 时，元素以 relative 定位表现，而当元素距离页面视口小于 30px 时，元素表现为 fixed 定位，会固定在目标位。 可以用于导航栏固定</li>
+</ul>
+<p><img src="https://cloud.githubusercontent.com/assets/8554143/22967003/97af8828-f39f-11e6-82db-55405160eea3.gif" alt=""></p>
+<h5 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h5><p>清楚浮动，在父元素后添加一个伪元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.parent:after&#123;</div><div class="line">  content:&quot;&quot;;</div><div class="line">  display:block;</div><div class="line">  clear:both</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="负边距margin"><a href="#负边距margin" class="headerlink" title="负边距margin"></a>负边距margin</h5><p>当 margin-top 、 margin-left 为负值的时候，会把元素上移、左移，同时⽂档流中的位置也发生相应变化,这点与 position:relative 的元素设置top、left后元素还占据原来位置不同。</p>
+<ul>
+<li><p>垂直居中:利用绝对定位元素的复边距实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">position:absolute;</div><div class="line">top:50%;</div><div class="line">left:50%;</div><div class="line">margin-top:-？px;  //根据实际元素计算出其自身高度和长度一半的负间距</div><div class="line">margin-left:-？px;</div></pre></td></tr></table></figure>
+</li>
+<li><p>负边距对float元素：可以覆盖往负边距方向移动</p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-1-31/79417051.jpg" alt=""></p>
+</li>
+<li><p>多列布局：固定右边列、</p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-1-31/65739659.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="display"><a href="#display" class="headerlink" title="display"></a>display</h5><ul>
+<li>display: inline（行内元素） ， block（块元素） ， inline-block（表现和行内元素一致，但是支持宽高设定）</li>
+</ul>
+<ul>
+<li>display:none: 把元素从文档中删除，不会渲染</li>
+<li>visibility:hidden: 隐藏，还在文档中，而且占据文档流</li>
+</ul>
+<h5 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h5><p>text-shadow: x轴  y轴 模糊半径  颜色</p>
+<p><code>text-shdow: 2px 2px 3px #333;</code></p>
+<h5 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h5><p><code>box-shadow:inset(内阴影) x-offset y-offset blur-radius(阴影模糊半径) spread-radius(阴影扩展半径) color</code></p>
+<h5 id="渐变"><a href="#渐变" class="headerlink" title="渐变"></a>渐变</h5><ul>
+<li><p>线性渐变：<code>linear-gradient(direction, color-stop1, color-stop2, ...)</code></p>
+<ul>
+<li>direction：to top \ to right \ to bottom \ to left</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background:linear-gradient(to top,#ddd,red)  //用逗号分隔！</div></pre></td></tr></table></figure>
+</li>
+<li><p>径向渐变：<code>background: radial-gradient(shape size at position, start-color, ..., last-color);</code></p>
+<ul>
+<li>shape：ellipse（默认），椭圆径向渐变 / circle：圆形</li>
+<li>at position：at center /  at top / at bottom / <strong>at 10px 20px / at x% y%</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background:radial-gradient(circle at top,red,yellow) //注意逗号位置</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="过渡和动画"><a href="#过渡和动画" class="headerlink" title="过渡和动画"></a>过渡和动画</h5><ul>
+<li><p><code>transition: property duration timing-function delay;</code> </p>
+<ul>
+<li>property：属性，height，width等</li>
+<li>duration：需要多少时间完成</li>
+<li>timing-function：linear（匀速），ease-in（加速），ease-out（减速），cubic-bezier(<em>n</em>,<em>n</em>,<em>n</em>,<em>n</em>)</li>
+<li>delay：多少秒后开始</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transition: width 1s ease-out 2s</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>animation: name duration timing-function delay iteration-count direction fill-mode play-state;</code></p>
+<ul>
+<li>iteration-count：播放次数</li>
+<li>direction ：reverse（倒放）</li>
+<li>direction fill-mode：forwards（停在最后的状态） / backwords</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">div:hover&#123;</div><div class="line">  animation: rainbow 1s</div><div class="line">&#125;</div><div class="line"></div><div class="line">@keyframes rainbow&#123;</div><div class="line">  0% &#123; background: #c00; &#125;</div><div class="line">  50% &#123; background: orange; &#125;</div><div class="line">  100% &#123; background: yellowgreen; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>另外一点需要注意的是，浏览器从一个状态向另一个状态过渡，是平滑过渡。steps函数可以实现分步过渡（一卡一卡的感觉）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div:hover &#123;</div><div class="line">animation: 1s rainbow infinite steps(10);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="变形"><a href="#变形" class="headerlink" title="变形"></a>变形</h5><p>transform-origin：定位变形的点</p>
+<p>transform：</p>
+<ul>
+<li><p>translate：<code>translateX(x) / translateY(y)</code> 水平移动</p>
+</li>
+<li><p>rotate：<code>rotateX(deg) / rotateY(deg)/ rotateZ(deg)</code> 沿X,Y,Z轴旋转</p>
+<p><code>perspective:number</code>：透视，一般和旋转配合使用，数字越小，透视效果越明显</p>
+</li>
+<li><p>skew：<code>skew(deg , deg) / skewX(deg) /skewY(deg)</code></p>
+</li>
+<li><p>scale：<code>scale(x,y) / scaleX(x)  / scaleY(y)</code> 缩放</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/小结/" rel="tag"># 小结</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/13/闭包/" rel="next" title="闭包">
+                <i class="fa fa-chevron-left"></i> 闭包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/25/AJAX/" rel="prev" title="页面局部刷新的里程碑：AJAX">
+                页面局部刷新的里程碑：AJAX <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cat1.jpeg"
+               alt="Oneleven" />
+          <p class="site-author-name" itemprop="name">Oneleven</p>
+           
+              <p class="site-description motion-element" itemprop="description">Start from zero</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Oneleven" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/1853938530/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/oneleven101/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#字体，文本基础"><span class="nav-number">1.</span> <span class="nav-text">字体，文本基础</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文本"><span class="nav-number">2.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#背景background"><span class="nav-number">3.</span> <span class="nav-text">背景background</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#边框border"><span class="nav-number">4.</span> <span class="nav-text">边框border</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#padding和margin"><span class="nav-number">5.</span> <span class="nav-text">padding和margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#盒模型box-sizing"><span class="nav-number">6.</span> <span class="nav-text">盒模型box-sizing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CSS选择器"><span class="nav-number">7.</span> <span class="nav-text">CSS选择器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位"><span class="nav-number">8.</span> <span class="nav-text">定位</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮动"><span class="nav-number">9.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#负边距margin"><span class="nav-number">10.</span> <span class="nav-text">负边距margin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#display"><span class="nav-number">11.</span> <span class="nav-text">display</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#text-shadow"><span class="nav-number">12.</span> <span class="nav-text">text-shadow</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#box-shadow"><span class="nav-number">13.</span> <span class="nav-text">box-shadow</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#渐变"><span class="nav-number">14.</span> <span class="nav-text">渐变</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#过渡和动画"><span class="nav-number">15.</span> <span class="nav-text">过渡和动画</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#变形"><span class="nav-number">16.</span> <span class="nav-text">变形</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Oneleven</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
