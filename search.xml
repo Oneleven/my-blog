@@ -3,7 +3,14 @@
   
     
     <entry>
-      <title><![CDATA[JS中的this值]]></title>
+      <title><![CDATA[像素和viewport]]></title>
+      <url>%2F2018%2F03%2F26%2F%E5%83%8F%E7%B4%A0%E5%92%8Cviewport%2F</url>
+      <content type="text"><![CDATA[三种像素的概念 css像素：在写样式代码的时候使用到的逻辑像素，是一个抽象的概念，实际并不存在 设备独立像素（dip）：独立于设备的用于逻辑上衡量像素的单位，是一个总体概念，包括了css像素 设备像素：物理像素，设备能控制显示的最小单位 12在pc端100%未缩放的情况下，一个设备独立像素 = 1个设备像素如果放大到200%，那么可以说一个设备独立像素 = 2个设备像素（1个虚拟像素实际上占用了电脑屏幕的2个物理像素） ppi和dpr的概念 ppi：屏幕像素密度。即每英寸像素数，即在一个对角线长度为1英寸的正方形内所拥有的像素数，并非没英寸面积 dpr：设备像素比，设备像素/设备独立像素，在js中可以通过window.devicePixelRatio 来获取。 1dpr为2时，使用4（2*2）个设备像素显示1个css像素 图片缩放大小 = 图片css大小 * dpr所以我们要在非标准屏幕上以同样大小显示同一张图片时，需要缩放图片大小。 viewport1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no&quot;, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0&gt; 视觉视窗：设备的屏幕区域，用户通过屏幕所看到的页面内容，对应的是css像素，会随着页面的缩小放大而改变。 布局视窗：document.documentElement.clientWidth ，布局视窗的宽高值是在页面没添加viewport 时所获得的值，一般为980px 理想视窗：就是优化布局视窗，viewport的终极形态。 1234#理想视窗会随着设备的翻转而改变，user-scalable=yes可以防止缩放也可以翻转&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=yes&quot;&gt;# 全部禁止&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot;&gt; 各种宽高 window.screen.height/width ：表示的是设备独立像素！比如ip6（分辨率为1334*750），但是用这个属性测出来的是375*667。乘以设备像素比dpr正好是分辨率的值。 window.innerHeight/innerWidth ：屏幕可视宽高，包含了滚动条的宽高 window.outerHeight ： document.documentElement.clientWidth/clientHeight ：屏幕可视区域宽高，不包括滚动条和工具条，和$(window).width() 结果一样 document.body.clientWidth element.offsetWidth/Height ：本身宽高+padding+滚动条+border element.offsetTop/offsetLeft ：相对位置 element.scrollWidth/scrollHeight ：包含溢出内容的尺寸 element.scrollTop/scrollLeft]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[gif、jpg、png图像的区别]]></title>
       <url>%2F2018%2F03%2F25%2Fgif%E3%80%81jpg%E3%80%81png%E5%90%84%E7%A7%8D%E5%9B%BE%E5%83%8F%E6%A0%BC%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
       <content type="text"><![CDATA[索引色&amp;直接色 索引色（Index Color）：用一个数字来代表一种颜色，存储图片的时候，存储一个数字的组合，同时存储数字到颜色的映射。这种只能存储有限种颜色，256色。 直接色（Direct Color）：使用四个数字代表一种颜色，分别是红、绿、蓝、透明度。可以表示2的32次方种颜色（grba表示） 点阵图&amp;矢量图 点阵图：构成点阵图的最小单位是像素。每个像素都有自己的颜色信息。在对点阵图缩放时会失真。 矢量图：记录的是元素形状和颜色的算法，并将运算结果呈现出来。无论缩放与否，对应的图像的算法是不变的。所以对矢量图缩放时不会失真。 gif是无损的采用索引色的点阵图。适用于企业logo，线条绘制等（对颜色不高，体积小的场景） 优点：用gif格式保存图片不会降低图片质量 ​ 支持动图和透明度 缺点：只支持 8bit的索引色，只能存储256种不同的颜色 jpeg一种有损压缩的采用直接色的点阵图。 优点：采用直接色，有丰富的色彩，适合存储颜色丰富的照片 缺点：在不影响人类可分辨图片质量的前提下，尽可能地压缩文件大小。因此在压缩的过程中图像的质量会遭到破坏。不适用于线条绘制，文字或者图标（png和gif适合） png-8是png的索引色版本。无损的使用索引色的点阵图 优点：是gif格式的替代者，在相同的图片效果下，比gif提及更小 ​ 支持透明度的调节 缺点：动画浏览器支持得没有gif好 png-24是png的直接色版本。无损的使用直接色的点阵图 优点：色彩更全，支持透明度 缺点：提及比jpg，gif，png-8都要大，是jpg大小的5倍，但是显示效果提升不明显。 svg是无损的矢量图，适合用来绘制企业logo和icon等。 优点：可以方便地修改svg图片]]></content>
     </entry>
