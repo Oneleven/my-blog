@@ -97,7 +97,7 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
 <meta property="og:description" content="ECMAScript与JavaScript
 ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象
 JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成">
-<meta property="og:updated_time" content="2018-03-28T15:38:56.619Z">
+<meta property="og:updated_time" content="2018-03-29T14:12:58.189Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级程序读书笔记（1）">
 <meta name="twitter:description" content="ECMAScript与JavaScript
@@ -487,9 +487,29 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
 </li>
 <li><p>++ &amp; –操作符适用于任何值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &quot;z&quot;  a++  //NaN 对于不能转化为数字的值，结果为NaN（非数字）</div><div class="line">var b = &apos;true&apos;  b++ //2 布尔值true和false转化为1和0</div></pre></td></tr></table></figure>
-<p>​</p>
 </li>
 </ul>
+<h5 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h5><ul>
+<li><p>逻辑非：<code>!</code> ，返回相反的布尔值</p>
+</li>
+<li><p>逻辑或：<code>a||b||c</code> ，最后一个值可以作为保底值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 || false  //1   第一个值为true的情况下就不会对第二个值求值</div><div class="line">null || 2   //2</div></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑与：<code>a &amp;&amp; b &amp;&amp; c</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 &amp;&amp; 2  //2  都为真的情况下返回第二个值</div><div class="line">undefined &amp;&amp;2 //undefined</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="运算操作符"><a href="#运算操作符" class="headerlink" title="运算操作符"></a>运算操作符</h5><ul>
+<li><p>取余数：<code>var result = 26 % 5 //1</code> </p>
+</li>
+<li><p>加法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var result1 = 5+5 //10</div><div class="line">var result2 = &quot;5&quot;+5  //&quot;55&quot;   字符串+数值 =&gt;字符串</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="switch…case…语句"><a href="#switch…case…语句" class="headerlink" title="switch…case…语句"></a>switch…case…语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># 每个case后面添加break，可以避免同时执行多个case</div><div class="line">switch(expression)&#123;</div><div class="line">  case value:statement</div><div class="line">  	break;</div><div class="line">  case value:statement</div><div class="line">  	break;</div><div class="line">  defalut:statement</div><div class="line">&#125;</div><div class="line">--------------</div><div class="line">var num = 25</div><div class="line">switch(true)&#123;</div><div class="line">  case num&lt;20:</div><div class="line">  	console.log(&apos;less than 20&apos;)</div><div class="line">  	break;</div><div class="line">  default:</div><div class="line">  	console.log(&apos;more than 19&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h5><p>参数在函数内部是用一个数组来表示的，可以传递任意数量的参数，并且可以通过arguments 对象来访问这些参数数组。arguments对象是个类数组，可以通过arguments[0]等访问，arguments.length表示传进来的传参数个数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">  console.log(...arguments)</div><div class="line">  console.log(arguments.length)</div><div class="line">&#125;</div><div class="line">test(1,2,3,4)   //1 2 3 4   4</div></pre></td></tr></table></figure>
+<h5 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h5><p>未指定返回值的函数返回的是一个特殊的undefined值</p>
 
       
     </div>
@@ -692,7 +712,7 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#ECMAScript与JavaScript"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript与JavaScript</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文档对象模型DOM"><span class="nav-number">2.</span> <span class="nav-text">文档对象模型DOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器对象模型BOM"><span class="nav-number">3.</span> <span class="nav-text">浏览器对象模型BOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-script-gt-加载外部js文件标签的位置"><span class="nav-number">4.</span> <span class="nav-text"><script>加载外部js文件标签的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标识符"><span class="nav-number">5.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关键字和保留字"><span class="nav-number">6.</span> <span class="nav-text">关键字和保留字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#boolean"><span class="nav-number">8.</span> <span class="nav-text">boolean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#number"><span class="nav-number">9.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NaN"><span class="nav-number">10.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数值转换"><span class="nav-number">11.</span> <span class="nav-text">数值转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符字面量（转义序列）"><span class="nav-number">12.</span> <span class="nav-text">字符字面量（转义序列）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#递增递减操作符-amp-–"><span class="nav-number">13.</span> <span class="nav-text">递增递减操作符++ & –</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#ECMAScript与JavaScript"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript与JavaScript</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文档对象模型DOM"><span class="nav-number">2.</span> <span class="nav-text">文档对象模型DOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器对象模型BOM"><span class="nav-number">3.</span> <span class="nav-text">浏览器对象模型BOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-script-gt-加载外部js文件标签的位置"><span class="nav-number">4.</span> <span class="nav-text"><script>加载外部js文件标签的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标识符"><span class="nav-number">5.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关键字和保留字"><span class="nav-number">6.</span> <span class="nav-text">关键字和保留字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#boolean"><span class="nav-number">8.</span> <span class="nav-text">boolean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#number"><span class="nav-number">9.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NaN"><span class="nav-number">10.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数值转换"><span class="nav-number">11.</span> <span class="nav-text">数值转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符字面量（转义序列）"><span class="nav-number">12.</span> <span class="nav-text">字符字面量（转义序列）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#递增递减操作符-amp-–"><span class="nav-number">13.</span> <span class="nav-text">递增递减操作符++ & –</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">14.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运算操作符"><span class="nav-number">15.</span> <span class="nav-text">运算操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#switch…case…语句"><span class="nav-number">16.</span> <span class="nav-text">switch…case…语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的参数"><span class="nav-number">17.</span> <span class="nav-text">函数的参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的返回值"><span class="nav-number">18.</span> <span class="nav-text">函数的返回值</span></a></li></ol></div>
             
 
           </div>
