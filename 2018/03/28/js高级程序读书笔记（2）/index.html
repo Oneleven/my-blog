@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="调试," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,37 +87,28 @@
 
 
 
-<meta name="description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
-debug 就是找">
+<meta name="description" content="复制
+基本类型：从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本。两个值是独立的。基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中。
+12345var num1 = 5var num2 = num1num1 ++num1  //6num2  //5
+
+引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在堆内存中的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS调试">
-<meta property="og:url" content="http://yoursite.com/2017/04/25/JS调试/index.html">
+<meta property="og:title" content="JS高级程序读书笔记（1）">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/js高级程序读书笔记（2）/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
-debug 就是找">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen7wggum1j311m0ic0w3.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen818dfv4j318002swfj.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ff4o8pj31kw0qvwlc.jpg">
-<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8nhqywxj31i40o80xr.jpg">
-<meta property="og:image" content="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8rwyb3vj31ic0i2whg.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ueqy5vj31i80gqjuf.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8sykyjaj31jm0km78l.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenftc0efrj31kw0b6abs.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenfp8a3e4j31kw0iozp1.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fengizjnk2j31kw0iiaci.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fengnn1ohej31fc0i2dis.jpg">
-<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh0ir7a4j31aa0kqn0b.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenh70jgsvj31020gymzb.jpg">
-<meta property="og:image" content="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh8j885aj30y20g0tae.jpg">
-<meta property="og:image" content="https://ww4.sinaimg.cn/large/006tKfTcgy1fenhbzvuczj30v60fstal.jpg">
-<meta property="og:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fenhyd8n4vj310k0h240t.jpg">
-<meta property="og:updated_time" content="2017-05-21T11:57:15.000Z">
+<meta property="og:description" content="复制
+基本类型：从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本。两个值是独立的。基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中。
+12345var num1 = 5var num2 = num1num1 ++num1  //6num2  //5
+
+引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在堆内存中的">
+<meta property="og:updated_time" content="2018-03-30T15:14:40.830Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS调试">
-<meta name="twitter:description" content="史上第一个bug1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。
-debug 就是找">
-<meta name="twitter:image" content="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg">
+<meta name="twitter:title" content="JS高级程序读书笔记（1）">
+<meta name="twitter:description" content="复制
+基本类型：从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本。两个值是独立的。基本类型值在内存中占据固定大小的空间，因此被保存在栈内存中。
+12345var num1 = 5var num2 = num1num1 ++num1  //6num2  //5
+
+引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在堆内存中的">
 
 
 
@@ -145,13 +136,13 @@ debug 就是找">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/25/JS调试/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（2）/"/>
 
 
 
 
 
-  <title> JS调试 | Oneleven's Blog </title>
+  <title> JS高级程序读书笔记（1） | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -323,7 +314,7 @@ debug 就是找">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/JS调试/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（2）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -344,7 +335,7 @@ debug 就是找">
             
             
               
-                JS调试
+                JS高级程序读书笔记（1）
               
             
           </h1>
@@ -359,8 +350,8 @@ debug 就是找">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T19:54:11+08:00">
-                2017-04-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T23:38:13+08:00">
+                2018-03-28
               </time>
             
 
@@ -369,6 +360,28 @@ debug 就是找">
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -395,76 +408,106 @@ debug 就是找">
       
 
       
-        <h4 id="史上第一个bug"><a href="#史上第一个bug" class="headerlink" title="史上第一个bug"></a>史上第一个bug</h4><p>1947年9月9日，葛丽丝·霍普（Grace Hopper）发现了第一个电脑上的bug。当在Mark II计算机上工作时，整个团队都搞不清楚为什么电脑不能正常运作了。经过大家的深度挖掘，发现原来是一只飞蛾意外飞入了一台电脑内部而引起的故障。这个团队把错误解除了，并在日记本中记录下了这一事件。也因此，人们逐渐开始用“Bug”（原意为“虫子”）来称呼计算机中的隐错。</p>
-<p>debug 就是找出 bug 的过程。</p>
+        <h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><ul>
+<li><p>基本类型：从一个变量向另一个变量复制基本类型的值，会创建这个值的一个副本。<strong>两个值是独立的</strong>。基本类型值在内存中占据固定大小的空间，因此被保存在<strong>栈内存</strong>中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var num1 = 5</div><div class="line">var num2 = num1</div><div class="line">num1 ++</div><div class="line">num1  //6</div><div class="line">num2  //5</div></pre></td></tr></table></figure>
+</li>
+<li><p>引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在<strong>堆内存</strong>中的同一个对象。</p>
+</li>
+</ul>
 <a id="more"></a>
-<h4 id="打字会错"><a href="#打字会错" class="headerlink" title="打字会错"></a>打字会错</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">iOS 写成 ios</div><div class="line">JavaScript 写成 Javascript</div><div class="line">vertical 写成 verticel</div><div class="line">props 写成 porps</div><div class="line">半角空格写成全角空格</div><div class="line">ls -la 写成 ls-la</div></pre></td></tr></table></figure>
-<h4 id="html的bug"><a href="#html的bug" class="headerlink" title="html的bug"></a>html的bug</h4><ul>
-<li><p>用<a href="https://validator.w3.org/#validate_by_input这个网址来检查错误（validator验证器）" target="_blank" rel="external">https://validator.w3.org/#validate_by_input这个网址来检查错误（validator验证器）</a></p>
-<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fen7nm9alyj30zk0wo79s.jpg" alt=""></p>
+<h5 id="执行环境-amp-作用域"><a href="#执行环境-amp-作用域" class="headerlink" title="执行环境&amp;作用域"></a>执行环境&amp;作用域</h5><ul>
+<li><p>执行环境有<strong>全局执行环境</strong>和<strong>函数执行环境</strong>之分。全局执行环境（window对象）是最外围的一个执行环境，关闭网页或浏览器时全局执行环境被销毁</p>
 </li>
-<li><p>用WebStorm检查（语法错误以及拼写错误）</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen7wggum1j311m0ic0w3.jpg" alt=""></p>
-<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fen818dfv4j318002swfj.jpg" alt=""></p>
+<li><p>每个函数都有自己的执行环境，当执行流进入一个函数时，函数的环境就会被推入一个环境栈中。而在函数执行之后，栈将其环境弹出，把控制权返回给之前的执行环境。</p>
 </li>
-</ul>
-<h4 id="CSS的bug"><a href="#CSS的bug" class="headerlink" title="CSS的bug"></a>CSS的bug</h4><p>用border以及开发者工具</p>
-<ul>
-<li>没有样式，选择器没有选择到，(.tabsb li b 后面多了个逗号<code>,</code>)</li>
-</ul>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ff4o8pj31kw0qvwlc.jpg" alt=""></p>
-<ul>
-<li><p>CSS错误的注释会毁掉下面一行</p>
-<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8nhqywxj31i40o80xr.jpg" alt=""></p>
-</li>
-<li><p>用border大法可以清楚地看到由于浮动而造成的符元素内容塌陷</p>
-<p><img src="https://ww2.sinaimg.cn/large/006tKfTcgy1fen8rwyb3vj31ic0i2whg.jpg" alt=""></p>
-</li>
-<li><p>当使用border会影响布局的时候，用outlne代替，它不会占用盒模型位置</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8ueqy5vj31i80gqjuf.jpg" alt=""></p>
-<p><strong>VS.</strong></p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fen8sykyjaj31jm0km78l.jpg" alt=""></p>
+<li><p><strong>每次进入一个新的执行环境，都会创建一个用于搜索变量和函数的作用域链。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">当引用一个变量时，会从当前作用域开始搜索查询，然后逐级向上搜索，如果一直追溯到全局环境没找到这个变量，说明该变量尚未声明。</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="JavaScript的bug"><a href="#JavaScript的bug" class="headerlink" title="JavaScript的bug"></a>JavaScript的bug</h4><ol>
-<li>确定你的代码运行了</li>
-<li>上帝视角<ol>
-<li>拼写错误</li>
-<li>拼写错误</li>
-<li>拼写错误</li>
-<li>其他错误（用 WebStorm 可以避免拼写错误）</li>
-</ol>
+<h5 id="垃圾收集"><a href="#垃圾收集" class="headerlink" title="垃圾收集"></a>垃圾收集</h5><ul>
+<li><p>JS具有自动垃圾收集机制，即找出那些不再使用的变量打上标记，然后释放其占用的内存空间。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">最常用的垃圾收集方式是标记清除（mark-and-sweep），垃圾收集器在运行的时候会给存储在内存中的所有变量加上标记----&gt; 去掉环境中的变量和被环境中变量引用的变量的标记 -----&gt; 在此之后变量被打上标记视为准备删除的变量</div></pre></td></tr></table></figure>
 </li>
-<li>用 console.log 或者 console.assert 验证</li>
-</ol>
+<li><p>内存管理—解除引用：一旦数据不再有用，可将其设置为null</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function fn(name)&#123;</div><div class="line">  var localPerson = new Object()</div><div class="line">  localPerson.name = name</div><div class="line">  return localPerson</div><div class="line">&#125;</div><div class="line">var globalPerson = fn(&apos;tom&apos;)</div><div class="line">globalPerson = null   //对于全局变量而言，需要手动解除</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="对象的属性表示"><a href="#对象的属性表示" class="headerlink" title="对象的属性表示"></a>对象的属性表示</h5><ul>
+<li>person.name === person[“name”] ，使用方括号语法时，里面的属性是字符串的形式</li>
+<li>person[“first name”]，如果属性名中包含会导致语法错误的字符，或者属性名使用的是关键字或保留字，也可以使用方括号表示法</li>
+</ul>
+<h5 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h5><ul>
+<li><p>给数组添加新的项：<code>var arr = [1, 2, 3, 4]</code></p>
 <ul>
-<li><p>html文件映射到浏览器页面，直接在浏览器中修改调试</p>
-<ol>
-<li><p>打开谷歌开发者工具 — setting — workspace — add folder </p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenftc0efrj31kw0b6abs.jpg" alt=""></p>
+<li><p><code>arr[arr.length] = 5  //[1, 2, 3, 4, 5]</code></p>
 </li>
-<li><p>映射 Map to File System Resource</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenfp8a3e4j31kw0iozp1.jpg" alt=""></p>
+<li><p><code>arr.push(5,6)</code>   //返回数组长度6 ，原数组变为[1, 2, 3, 4, 5, 6]</p>
+<p><code>arr.pop()</code></p>
+<p><code>arr.unshift()</code></p>
+<p><code>arr.shift()</code></p>
 </li>
-<li><p>按下<code>esc</code>，出现控制台，就可以实时修改了，修改完按下保存再刷新，进行调试。</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fengizjnk2j31kw0iiaci.jpg" alt=""></p>
+<li><p><code>arr.splice(index, howmany, itmes)</code></p>
 </li>
-</ol>
+</ul>
 </li>
-<li><p><strong>Uncaught ReferenceError:appel is not defined</strong>：用了一个未声明过的变量。（reference error 引用错误）<br><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fengnn1ohej31fc0i2dis.jpg" alt=""></p>
-<p>把它打印出来是什么类型</p>
-<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh0ir7a4j31aa0kqn0b.jpg" alt=""></p>
+<li><p>判断数组：<code>Array.isArray(arr)</code></p>
 </li>
-<li><p><strong>Uncaught TypeError: obj.fooo is not a function</strong>：不是一个函数 （type error类型错误）</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenh70jgsvj31020gymzb.jpg" alt=""></p>
-<p>打印出来，属性不报错，返回undefined （<strong>变量未声明直接用回报错，属性没声明直接用不报错</strong>）</p>
-<p><img src="https://ww3.sinaimg.cn/large/006tKfTcgy1fenh8j885aj30y20g0tae.jpg" alt=""></p>
+<li><p>重排序方法</p>
+<ul>
+<li><p><code>arr.reverse()</code></p>
 </li>
-<li><p><strong>Uncaught SyntaxError: Unexpected token function</strong> ：未意料到的字符 function ，说明语法有错误（<code>foo:function</code>） （syntax error语法错误）</p>
-<p><img src="https://ww4.sinaimg.cn/large/006tKfTcgy1fenhbzvuczj30v60fstal.jpg" alt=""></p>
+<li><p><code>arr.sort(value1,value2)</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var arr1 = [3,5,2,4,1]</div><div class="line">var arr2 = arr1.sort((value1,value2)=&gt;&#123;</div><div class="line">  return value1 - value2</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>Uncaught TypeError : Cannot read property ‘join’ of undefined</strong>：jion前面的出现错误</p>
-<p><img src="https://ww1.sinaimg.cn/large/006tKfTcgy1fenhyd8n4vj310k0h240t.jpg" alt=""></p>
+</ul>
+</li>
+<li><p><code>arr.concat()</code></p>
+<ul>
+<li><p><code>arr.slice(start,end)</code></p>
+</li>
+<li><p>位置方法：<code>arr.indexOf(searchElement,startIndex)</code> ：没有找到就返回-1 </p>
+<p>string也有<code>atr.indexOf()</code> 方法（根据内容找index），<code>str.charAt(index)</code> （根据index找内容）</p>
+</li>
+</ul>
+</li>
+<li><p>迭代方法</p>
+<ul>
+<li><p><code>forEach(item, index, array)</code> ：没有返回值</p>
+</li>
+<li><p><code>map(item, index, array)</code> ：返回数组</p>
+</li>
+<li><p><code>filter(item, index, array)</code> ：返回满足条件true的数组</p>
+</li>
+<li><p><code>every(item, index, array)</code> ：返回布尔值</p>
+</li>
+<li><p><code>some(item, index, array)</code> ：返回布尔值</p>
+</li>
+</ul>
+</li>
+<li><p>归并方法：<code>reduce(preValue, currentValue, currentIndex, array, initialValue)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#数组求和</div><div class="line">var arr = [1,2,3,4]</div><div class="line">var sum = arr.reduce((pre,cur)&#123;</div><div class="line">  return pre+cur</div><div class="line">&#125;,7)</div><div class="line">sum // 17</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h5><blockquote>
+<p>1970年1月1日午夜（零时）开始经过的毫秒数保存日期</p>
+</blockquote>
+<ul>
+<li><p>Date.now()：返回距离1970年1月1日的毫秒数</p>
+</li>
+<li><p>指定生成日期<code>new Date(&quot;Mar 18, 1992&quot;)</code>或者 <code>new Date(1992,2,18,17,03,55)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">new Date(&quot;Mar 18, 1992&quot;) 字符串格式</div><div class="line">----------</div><div class="line">new Date(1992,2,18,17,03,55) 分别对应年，月（从0开始），日，时(0~23),分，秒</div><div class="line">//Wed Mar 18 1992 17:03:55 GMT+0800 (中国标准时间)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>toString()</code>和 <code>toLocalString()</code>和<code>valueOf()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = New Date()</div><div class="line">a.toString()   //&quot;Fri Mar 30 2018 16:14:34 GMT+0800 (中国标准时间)&quot;</div><div class="line">a.toLocalString()  //&quot;2018/3/30&quot; 返回当地时间格式</div><div class="line">a.valueOf()  //1522397674376 返回毫秒数</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>getFullYear()</code>：年份</p>
+<p><code>getMonth()</code>：月份，0表示1月</p>
+<p><code>getDate()</code>：天数</p>
+<p><code>getDay()</code>：返回星期几，0表示周日</p>
+<p><code>getHours()</code>：小时</p>
+<p><code>getMinutes()</code>：分钟</p>
+<p><code>getSeconds()</code>：秒</p>
 </li>
 </ul>
 
@@ -490,7 +533,7 @@ debug 就是找">
       
         <div class="post-tags">
           
-            <a href="/tags/调试/" rel="tag"># 调试</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -503,8 +546,8 @@ debug 就是找">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/19/API获取元素的几种方法”/" rel="next" title="DOM API获取元素的几种方法">
-                <i class="fa fa-chevron-left"></i> DOM API获取元素的几种方法
+              <a href="/2018/03/27/网络是怎样连接的-第一第二章笔记/" rel="next" title="网络是怎样连接的-第一第二章读书笔记">
+                <i class="fa fa-chevron-left"></i> 网络是怎样连接的-第一第二章读书笔记
               </a>
             
           </div>
@@ -513,8 +556,8 @@ debug 就是找">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/21/JS中的this值/" rel="prev" title="JS中的this值">
-                JS中的this值 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/28/js高级程序读书笔记（1）/" rel="prev" title="JS高级程序读书笔记（1）">
+                JS高级程序读书笔记（1） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,7 +716,7 @@ debug 就是找">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#史上第一个bug"><span class="nav-number">1.</span> <span class="nav-text">史上第一个bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打字会错"><span class="nav-number">2.</span> <span class="nav-text">打字会错</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html的bug"><span class="nav-number">3.</span> <span class="nav-text">html的bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS的bug"><span class="nav-number">4.</span> <span class="nav-text">CSS的bug</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScript的bug"><span class="nav-number">5.</span> <span class="nav-text">JavaScript的bug</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">1.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行环境-amp-作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境&作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性表示"><span class="nav-number">4.</span> <span class="nav-text">对象的属性表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Date"><span class="nav-number">6.</span> <span class="nav-text">Date</span></a></li></ol></div>
             
 
           </div>
