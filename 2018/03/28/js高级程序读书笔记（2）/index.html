@@ -101,7 +101,7 @@
 12345var num1 = 5var num2 = num1num1 ++num1  //6num2  //5
 
 引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在堆内存中的">
-<meta property="og:updated_time" content="2018-03-30T15:14:40.830Z">
+<meta property="og:updated_time" content="2018-04-02T16:48:25.705Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级程序读书笔记（1）">
 <meta name="twitter:description" content="复制
@@ -510,6 +510,29 @@
 <p><code>getSeconds()</code>：秒</p>
 </li>
 </ul>
+<p>#####this</p>
+<p>this引用的是<strong>函数执行时所在的环境对象</strong>（谁调用指向谁），es6的箭头函数体内的this引用的是<strong>函数定义时的环境对象</strong></p>
+<h5 id="函数的属性和方法"><a href="#函数的属性和方法" class="headerlink" title="函数的属性和方法"></a>函数的属性和方法</h5><ul>
+<li><p>2个属性：</p>
+<ul>
+<li>length：函数希望接收到参数的个数</li>
+<li>prototype：保存所有实例方法的属性</li>
+</ul>
+</li>
+<li><p>2个方法：每个函数都有两个非继承而来的方法，apply和call，他们的作用是在<strong>特定的作用域中调用函数，相当于设置函数体内this对象的值。</strong></p>
+<ul>
+<li><p>call()：第一个参数是this（运行函数的作用域），其余的参数直接传递给函数（必须逐个列举出来）</p>
+</li>
+<li><p>apply()：第一个参数是this，其余的参数可以是<strong>arguments对象</strong>，也可以是<strong>Array的实例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function sum(n1, n2)&#123;</div><div class="line">    return n1 + n2</div><div class="line">&#125;</div><div class="line">function callSum1(n1, n2)&#123;</div><div class="line">    return sum.call(this, n1, n2) //必须逐个列举</div><div class="line">&#125;</div><div class="line">function callSum2(n1, n2)&#123;</div><div class="line">    return sum.supply(this, arguments)  //传入arguments对象</div><div class="line">&#125;</div><div class="line">function callSum3(n1, n2)&#123;</div><div class="line">    return sum.apply(this, [n1, n2])  //传入数组</div><div class="line">&#125;</div><div class="line">callSum1(10, 10) //20</div><div class="line">callSum2(10, 10) //20</div><div class="line">callSum3(10, 10) //20</div></pre></td></tr></table></figure>
+</li>
+<li><p>bind()：创建一个函数的实例（新函数），this值被绑定到传入bind()函数的第一个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var color = &quot;red&quot;</div><div class="line">var o =&#123;color:&quot;blue&quot;&#125;</div><div class="line">function fn()&#123;</div><div class="line">    console.log(this.color)</div><div class="line">&#125;</div><div class="line">var whatColor = fn.bind(o)</div><div class="line">whatColor()  //blue</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -716,7 +739,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">1.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行环境-amp-作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境&作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性表示"><span class="nav-number">4.</span> <span class="nav-text">对象的属性表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Date"><span class="nav-number">6.</span> <span class="nav-text">Date</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">1.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行环境-amp-作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境&作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性表示"><span class="nav-number">4.</span> <span class="nav-text">对象的属性表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Date"><span class="nav-number">6.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的属性和方法"><span class="nav-number">7.</span> <span class="nav-text">函数的属性和方法</span></a></li></ol></div>
             
 
           </div>
