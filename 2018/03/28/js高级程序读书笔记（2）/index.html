@@ -101,7 +101,7 @@
 12345var num1 = 5var num2 = num1num1 ++num1  //6num2  //5
 
 引用类型：从一个变量向另一个变量复制引用类型的值时，新变量分配的空间中存放的副本是一个指针，这两个变量都指向存储在堆内存中的">
-<meta property="og:updated_time" content="2018-04-02T16:48:25.705Z">
+<meta property="og:updated_time" content="2018-04-03T15:26:53.593Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级程序读书笔记（1）">
 <meta name="twitter:description" content="复制
@@ -527,10 +527,59 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function sum(n1, n2)&#123;</div><div class="line">    return n1 + n2</div><div class="line">&#125;</div><div class="line">function callSum1(n1, n2)&#123;</div><div class="line">    return sum.call(this, n1, n2) //必须逐个列举</div><div class="line">&#125;</div><div class="line">function callSum2(n1, n2)&#123;</div><div class="line">    return sum.supply(this, arguments)  //传入arguments对象</div><div class="line">&#125;</div><div class="line">function callSum3(n1, n2)&#123;</div><div class="line">    return sum.apply(this, [n1, n2])  //传入数组</div><div class="line">&#125;</div><div class="line">callSum1(10, 10) //20</div><div class="line">callSum2(10, 10) //20</div><div class="line">callSum3(10, 10) //20</div></pre></td></tr></table></figure>
 </li>
 <li><p>bind()：创建一个函数的实例（新函数），this值被绑定到传入bind()函数的第一个参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var color = &quot;red&quot;</div><div class="line">var o =&#123;color:&quot;blue&quot;&#125;</div><div class="line">function fn()&#123;</div><div class="line">    console.log(this.color)</div><div class="line">&#125;</div><div class="line">var whatColor = fn.bind(o)</div><div class="line">whatColor()  //blue</div></pre></td></tr></table></figure>
-<p>​</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var o = &#123;color:&quot;red&quot;&#125;</div><div class="line">var color = blue</div><div class="line">function fn()&#123;</div><div class="line">  console.log(this.color)  </div><div class="line">&#125;</div><div class="line">fn()  //blue,这里this引用的是windows环境对象</div><div class="line">-----------</div><div class="line">var xxx = fn.bind(o)    </div><div class="line">xxx()  //red  即fn.bind(o)()</div></pre></td></tr></table></figure>
 </li>
 </ul>
+</li>
+</ul>
+<h5 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h5><p><strong>每当读取一个基本类型值得时候，后台会创建一个对应的基本包装类型的对象，从而让我们能够调用一些方法来操作这些数据</strong>。有了基本包装类型， js中的基本类型值可以被当作对象来访问。三种基本包装类型有string，boolean，number</p>
+<ul>
+<li>每个包装类型都映射到同名的基本类型</li>
+<li>访问基本类型值时，会创建对应的基本包装类型对象，从而方便数据操作</li>
+<li>操作完毕后，立即销毁新创建的包装对象</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var s1 = &quot;heihei&quot;</div><div class="line">var s2 = s1.substr(3,2)  //&quot;hei&quot; s1是基本类型不是对象，逻辑上不应该有方法</div><div class="line">----------实际上执行到第二段代码时，后代自动完成下列处理</div><div class="line">var s1 = new String(&quot;some text&quot;); 创建String实例 s1 instanceof String //true</div><div class="line">var s2 = s1.substring(2);  在实例上调用指定的方法</div><div class="line">s1 = null;  销毁这个实例</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 引用类型与基本包装类型的主要区别就是对象的生存期。使用new 操作符创建的引用类型的实例，在执行流离开当前作用域之前都一直保存在内存中。而自动创建的基本包装类型的对象，则只存在于一行代码的执行瞬间，然后立即被销毁。这意味着我们不能在运行时为基本类型值添加属性和方法。</div><div class="line">var s1 = &quot;some text&quot;;   //与 new String(&quot;some text&quot;)是有区别的</div><div class="line">s1.color = &quot;red&quot;;</div><div class="line">alert(s1.color); //undefined</div></pre></td></tr></table></figure>
+<h5 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h5><ul>
+<li><p><code>str.charAt(index)</code> ：返回位置字符</p>
+</li>
+<li><p><code>str.charCodeAt(index)</code> ：返回字符编码</p>
+</li>
+<li><p><code>str.indexOf(content)</code> ：根据字符查找index</p>
+<p><code>str.lastIndexOf()</code></p>
+<p><code>str.search(RegExp)</code> ：找到首个匹配成功的index，没有返回-1(可以用正则)</p>
+</li>
+<li><p><code>str.concat(str2，str3)</code> ：拼接字符串</p>
+</li>
+<li><p><code>str.slice(start, end)</code> ：如果参数为负数，被str.length + 负数 看待</p>
+<p><code>str.substring(start, end)</code> ：会自动调整start和end，较小的数字在前。任意参数小于0或者为NaN，会被视为0</p>
+<p><code>str.substr(start, length)</code> ：length为0或者负数，返回空字符串””,  start为负数，从末尾开始往右取值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var stringValue = &quot;hello world&quot;;</div><div class="line">alert(stringValue.slice(3, 7)); //&quot;lo w&quot;</div><div class="line">alert(stringValue.substring(3,7)); //&quot;lo w&quot;</div><div class="line">alert(stringValue.substr(3, 7)); //&quot;lo worl&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>str.trim()</code> ：除去字符串两端的空格</p>
+</li>
+<li><p><code>str.toLowerCase() &amp;&amp; str.toUpperCase()</code></p>
+</li>
+<li><p><code>str.match(RegExp)</code> : 返回满足条件的数组，如果正则不带g，与RegExp.exec(str)相同效果，返回第一个匹配到的元素数组，并带有index和input(原字符串)属性</p>
+</li>
+<li><p><code>str.replace(RegExp|str, newStr|function(match,index,str)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">交换两个字符串的位置</div><div class="line">var str = &quot;Tom Jack&quot;</div><div class="line">var reg = /(\w+)\s(\w+)/</div><div class="line">var newStr = str.replace(reg, &quot;$2 $1&quot;) //$n表示第n个被捕获的内容</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>str.split([separator[, limit]])</code> </p>
+</li>
+</ul>
+<h5 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h5><ul>
+<li><p>四舍五入：</p>
+<ul>
+<li><code>Math.floor(num)</code> ：往下舍入</li>
+<li><code>Math.ceil(num)</code> ：往上舍入</li>
+<li><code>Math.round(num)</code> ：四舍五入</li>
+</ul>
+</li>
+<li><p><code>Math.random(num)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#在某个整数范围内随机一个值</div><div class="line">值 = Math.floor(Math.random() * 可能值的总数 + 第一个可能的值)</div><div class="line">---------</div><div class="line">取2～10的随机整数</div><div class="line">var random = Math.floor(Math.random * 10 + 2)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>Math.abs(num)</code> ：绝对值</p>
 </li>
 </ul>
 
@@ -569,8 +618,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/网络是怎样连接的-第一第二章笔记/" rel="next" title="网络是怎样连接的-第一第二章读书笔记">
-                <i class="fa fa-chevron-left"></i> 网络是怎样连接的-第一第二章读书笔记
+              <a href="/2018/03/28/js高级程序读书笔记（1）/" rel="next" title="JS高级程序读书笔记（1）">
+                <i class="fa fa-chevron-left"></i> JS高级程序读书笔记（1）
               </a>
             
           </div>
@@ -578,10 +627,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/28/js高级程序读书笔记（1）/" rel="prev" title="JS高级程序读书笔记（1）">
-                JS高级程序读书笔记（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -739,7 +784,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">1.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行环境-amp-作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境&作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性表示"><span class="nav-number">4.</span> <span class="nav-text">对象的属性表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Date"><span class="nav-number">6.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的属性和方法"><span class="nav-number">7.</span> <span class="nav-text">函数的属性和方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-number">1.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行环境-amp-作用域"><span class="nav-number">2.</span> <span class="nav-text">执行环境&作用域</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#垃圾收集"><span class="nav-number">3.</span> <span class="nav-text">垃圾收集</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对象的属性表示"><span class="nav-number">4.</span> <span class="nav-text">对象的属性表示</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数组"><span class="nav-number">5.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Date"><span class="nav-number">6.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的属性和方法"><span class="nav-number">7.</span> <span class="nav-text">函数的属性和方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#基本包装类型"><span class="nav-number">8.</span> <span class="nav-text">基本包装类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#String类型"><span class="nav-number">9.</span> <span class="nav-text">String类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Math对象"><span class="nav-number">10.</span> <span class="nav-text">Math对象</span></a></li></ol></div>
             
 
           </div>
