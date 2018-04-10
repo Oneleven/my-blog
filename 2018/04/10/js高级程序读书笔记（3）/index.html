@@ -87,22 +87,37 @@
 
 
 
-<meta name="description" content="ECMAScript与JavaScript
-ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象
-JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成">
+<meta name="description" content="属性
+数据描述符：
+
+configurable：表示对象的属性是否可以被删除，以及除writable特性外的其他特性是否可以被修改。
+enumerable：为true时，才能出现在对象的枚举属性中，才能在for...in和Object.keys()被枚举
+writable：能否改写
+value：属性的数据值">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS高级程序读书笔记（1）">
-<meta property="og:url" content="http://yoursite.com/2018/03/28/js高级程序读书笔记（1）/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/10/js高级程序读书笔记（3）/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="ECMAScript与JavaScript
-ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象
-JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成">
-<meta property="og:updated_time" content="2018-03-29T14:12:58.189Z">
+<meta property="og:description" content="属性
+数据描述符：
+
+configurable：表示对象的属性是否可以被删除，以及除writable特性外的其他特性是否可以被修改。
+enumerable：为true时，才能出现在对象的枚举属性中，才能在for...in和Object.keys()被枚举
+writable：能否改写
+value：属性的数据值">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-9/30308722.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-9/61967666.jpg">
+<meta property="og:updated_time" content="2018-04-10T12:26:48.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级程序读书笔记（1）">
-<meta name="twitter:description" content="ECMAScript与JavaScript
-ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象
-JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成">
+<meta name="twitter:description" content="属性
+数据描述符：
+
+configurable：表示对象的属性是否可以被删除，以及除writable特性外的其他特性是否可以被修改。
+enumerable：为true时，才能出现在对象的枚举属性中，才能在for...in和Object.keys()被枚举
+writable：能否改写
+value：属性的数据值">
+<meta name="twitter:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-9/30308722.jpg">
 
 
 
@@ -130,7 +145,7 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（1）/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/10/js高级程序读书笔记（3）/"/>
 
 
 
@@ -308,7 +323,7 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（1）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/10/js高级程序读书笔记（3）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -344,8 +359,8 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T23:38:13+08:00">
-                2018-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T20:26:13+08:00">
+                2018-04-10
               </time>
             
 
@@ -402,114 +417,76 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
       
 
       
-        <h5 id="ECMAScript与JavaScript"><a href="#ECMAScript与JavaScript" class="headerlink" title="ECMAScript与JavaScript"></a>ECMAScript与JavaScript</h5><ul>
-<li>ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象</li>
-<li>JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成</li>
+        <h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ul>
+<li><p>数据描述符：</p>
+<ul>
+<li>configurable：表示对象的属性是否可以被删除，以及除<code>writable</code>特性外的其他特性是否可以被修改。</li>
+<li>enumerable：为true时，才能出现在对象的枚举属性中，才能在<code>for...in</code>和<code>Object.keys()</code>被枚举</li>
+<li>writable：能否改写</li>
+<li>value：属性的数据值</li>
+</ul>
+</li>
 </ul>
 <a id="more"></a>
-<h5 id="文档对象模型DOM"><a href="#文档对象模型DOM" class="headerlink" title="文档对象模型DOM"></a>文档对象模型DOM</h5><blockquote>
-<p>用于HTML的应用程序编程接口，提供访问和操作网页内容的方法和接口。DOM把整个页面映射为一个多层节点的树形结构。开发人员可以通过DOM提供的API进行节点的增删改查操作</p>
-</blockquote>
+<p>  要修改默认属性的特性，需要用<code>Object.defineProperty(obj, prop, descriptor)</code> </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var person = &#123;&#125;</div><div class="line">Object.defineProperty(person, &quot;name&quot;,&#123;</div><div class="line">  writable:true,</div><div class="line">  value:Jack</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <ul>
-<li><p>DOM分为3个级别，支持DOM是浏览器开发商的首要目标</p>
-<p>DOM1级：DOM核心模块+DOM HTML模块，主要是映射文档的结构</p>
-<p>DOM2级：增加DOM事件，DOM试图，DOM样式，DOM遍历和范围</p>
-<p>DOM3级：增加SVG等新接口</p>
+<li><p>定义多个属性<code>Object.defineProperties(obj,{prop1:descriptor1,prop2:descriptor2...})</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">var book = &#123;&#125;</div><div class="line">Object.defineProperties(book, &#123;</div><div class="line">  _year:&#123;</div><div class="line">    writable:true,</div><div class="line">    value:2004</div><div class="line">  &#125;,</div><div class="line">  edition:&#123;</div><div class="line">    writable:true,</div><div class="line">    value:1</div><div class="line">  &#125;,</div><div class="line">  year:&#123;</div><div class="line">    get:function()&#123;</div><div class="line">      return this._year</div><div class="line">    &#125;,</div><div class="line">    set:function(newValue)&#123;</div><div class="line">      if(newValue &gt; 2004)&#123;</div><div class="line">        this._year = newValue</div><div class="line">        this.edition = newValue - 2004</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>存取描述符：get &amp; set</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">var book = &#123;</div><div class="line">  _year:2004,   //下划线默认用于只能通过对象方法访问的属性</div><div class="line">  edition:1</div><div class="line">&#125;</div><div class="line">Object.defineProperty(book,&quot;year&quot;,&#123;   //这里的year属性和_year不是同一个</div><div class="line">  get()&#123;</div><div class="line">    return this._year</div><div class="line">  &#125;,</div><div class="line">  set(newValue)&#123;</div><div class="line">    if(newValue &gt;2004)&#123;</div><div class="line">      this._year = newValue</div><div class="line">      this.edition = newValue - 2004</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">book.year = 2018</div><div class="line">book.edition  //14</div></pre></td></tr></table></figure>
+</li>
+<li><p>读取属性Object.getOwnPropertyDescriptor(obj, prop)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var descriptor = Object.getOwnPropertyDescriptor(book,&quot;_year&quot;)</div><div class="line">console.log(descriptor.value)</div><div class="line">console.log(descriptor.writable)</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="浏览器对象模型BOM"><a href="#浏览器对象模型BOM" class="headerlink" title="浏览器对象模型BOM"></a>浏览器对象模型BOM</h5><blockquote>
-<p>浏览器对象模型，提供与浏览器交互的方法和接口。</p>
-</blockquote>
-<h5 id="lt-script-gt-加载外部js文件标签的位置"><a href="#lt-script-gt-加载外部js文件标签的位置" class="headerlink" title="&lt;script&gt;加载外部js文件标签的位置"></a><code>&lt;script&gt;</code>加载外部js文件标签的位置</h5><p>浏览器在遇到<code>&lt;body&gt;</code>标签时才开始呈现内容，所以一般放在<code>&lt;body&gt;</code>元素中内容的后面。如果放在<code>&lt;head&gt;</code> 标签里，就必须等js代码下载解析和执行完成后才能呈现页面内容，这期间浏览器窗口一片空白。</p>
-<h5 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h5><blockquote>
-<p>变量，函数，属性的名字，一般采用驼峰大小写格式</p>
-</blockquote>
+<h5 id="工厂模式（一个函数返回一个对象）"><a href="#工厂模式（一个函数返回一个对象）" class="headerlink" title="工厂模式（一个函数返回一个对象）"></a>工厂模式（一个函数返回一个对象）</h5><p>解决多个相似对象的问题，但是没有解决对象的识别问题</p>
+<h5 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h5><p>构造函数也是函数，只要通过new操作符调用的，就是构造函数</p>
+<p>用来创建特定类型的对象，与工厂模式的区别是</p>
 <ul>
-<li>第一个字符必须是字母，下划线_ ，美元符号$</li>
-<li>其他字符可以是字母，<code>_</code> ，<code>$</code>，  数字</li>
-</ul>
-<h5 id="关键字和保留字"><a href="#关键字和保留字" class="headerlink" title="关键字和保留字"></a>关键字和保留字</h5><ul>
-<li>关键字是具有特定用途的字符，不能用作标识符，比如new， var， if， return</li>
-<li>保留字是有可能将来被用作关键字，如double，private，package</li>
-</ul>
-<h5 id="null"><a href="#null" class="headerlink" title="null"></a>null</h5><p>null值表示一个空对象的指针，因此用<code>typeof null</code> 得出的结果是object。当定义的变量准备在将来用于保存对象时，可以初始化为null</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if(car !== null)&#123;</div><div class="line">  //对car 对象执行某些操作</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="boolean"><a href="#boolean" class="headerlink" title="boolean"></a>boolean</h5><p>转换为false的值：false , “”（空字符串）, 0 , null , undefined , NaN</p>
-<h5 id="number"><a href="#number" class="headerlink" title="number"></a>number</h5><ul>
-<li>八进制数（0开头）：070</li>
-<li>十六进制（0x开头，后面跟0~9及A~F）：0xA</li>
-</ul>
-<p>在进行计算是，都会被转为十进制数</p>
-<h5 id="NaN"><a href="#NaN" class="headerlink" title="NaN"></a>NaN</h5><p>NaN是一个非数值，<strong>任何值除以非数值都会返回NaN</strong></p>
+<li><p>没有显示地创建对象</p>
+</li>
+<li><p>直接把属性和方法赋给this对象</p>
+</li>
+<li><p>没有return语句</p>
+</li>
+<li><p>创建新实例必须使用new操作符，新的实例person1和person2都有constructor（构造函数）属性，是一个指针，指向Person（prototype属性所在的函数）。构造函数的优势是可以将它的实例标识为一种特定的类型，可以用<code>instanceof</code> 来检测，工厂模式只能检测出来Object。</p>
 <ul>
-<li>NaN不等于任何值，包括自己</li>
-<li>NaN任何计算操作都返回NaN</li>
+<li>创建一个新对象</li>
+<li>将构造函数的作用域赋给这个新对象（this指向这个新对象）</li>
+<li>执行代码，给新对象添加属性</li>
+<li>返回新对象</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">#isNaN(arg): 任何不能转为数字的arg都会返回true</div><div class="line">isNaN(&apos;10&apos;) //false  能转为数值就返回false</div><div class="line">isNaN(&apos;true&apos;)  //false</div><div class="line">isNaN(&apos;hello&apos;)  //true</div><div class="line">----------------</div><div class="line"># Number.isNaN(arg)  //arg值是NaN就返回true，用来判断是否是NaN</div><div class="line">Number.isNaN(0/0)  //true</div><div class="line">Number.isNaN(&apos;NaN&apos;)  //false  字符串“NaN”不会转换为NaN</div></pre></td></tr></table></figure>
-<h5 id="数值转换"><a href="#数值转换" class="headerlink" title="数值转换"></a>数值转换</h5><ul>
-<li><p>Number()：可以用于任何数据类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Boolean值：true返回1，false返回0</div><div class="line">null值：返回0</div><div class="line">&quot;&quot; 空字符串：返回0</div><div class="line">undefined值：返回NaN</div><div class="line">其他进制的数字都转换为：十进制数</div><div class="line">其他类型的值，返回NaN</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">  this.sayName = function()&#123;console.log(this.name)&#125;</div><div class="line">&#125;</div><div class="line">var person1 = new Person(&quot;jacK&quot;,18)</div><div class="line">var person2 = new Person(&quot;tom&quot;,20)</div><div class="line">-------------</div><div class="line">person1 instanceof Object  //true</div><div class="line">person2 instanceof Person  //true</div><div class="line">------------------原型模式prototype</div><div class="line"># 以上定义在this上的方法，每创建一个新的实例，就要创建一个相同任务的方法，完全没有必要，可通过原型来解决。每个函数都有一个prototype属性，这个属性是一个指针，指向一个对象。</div><div class="line">Person.prototype.sayName = function()&#123;console.log(this.name)&#125;</div><div class="line">var person1 = new Person(&quot;jacK&quot;,18)</div><div class="line">var person2 = new Person(&quot;tom&quot;,20)</div><div class="line">person1.sayName()  //jacK  此时他们引用的是同一个函数</div><div class="line">person2.sayName()  //tom</div></pre></td></tr></table></figure>
 </li>
-<li><p>parseInt(str, 进制数)：常用来处理整数的转换，处理字符串，返回数字。第二个参数指定转换的进制数，最好不要省略</p>
+<li><p><code>obj.hasOwnProperty(prop)</code> ：用来检测属性是否存在于实例中，只有属性存在于实例中才返回true，来自原型会返回false。</p>
+<p><code>in</code> 操作符单独使用<code>prop in obj</code>：无论在实例中，还是在原型中，只要能访问到该属性，就返回true</p>
+<p><code>for-in</code> 循环，返回包括原型和实例的<strong>可枚举属性</strong>（enumerable：true），如果要包含不可枚举属性，可以用<code>Object.getOwnPropertyNames()</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">&#125;</div><div class="line">Person.prototype.name = &quot;Nicholas&quot;;</div><div class="line">Person.prototype.age = 29;</div><div class="line">Person.prototype.job = &quot;Software Engineer&quot;;</div><div class="line">Person.prototype.sayName = function()&#123; alert(this.name) &#125;;</div><div class="line">var person1 = new Person();</div><div class="line">var person2 = new Person();</div><div class="line">alert(person1.hasOwnProperty(&quot;name&quot;)); //false</div><div class="line">alert(&quot;name&quot; in person1)  //true</div><div class="line">-------------</div><div class="line">person1.name = &quot;Greg&quot;;</div><div class="line">alert(person1.name); //&quot;Greg&quot;——来自实例</div><div class="line">alert(person1.hasOwnProperty(&quot;name&quot;)); //true</div><div class="line">alert(person2.name); //&quot;Nicholas&quot;——来自原型</div><div class="line">alert(person2.hasOwnProperty(&quot;name&quot;)); //false</div><div class="line">delete person1.name;</div><div class="line">alert(person1.name); //&quot;Nicholas&quot;——来自原型</div><div class="line">alert(person1.hasOwnProperty(&quot;name&quot;)); //false</div></pre></td></tr></table></figure>
+</li>
+<li><p>理解原型对象</p>
+<p>创建一个新函数，就会为该函数创建一个prototype属性，指向函数的原型对象。所有的原型对象都会自动获得一个constructor属性（构造函数），这个属性是一个指向prototype属性所在函数的指针。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function foo(a)&#123;</div><div class="line">  console.log(a)</div><div class="line">&#125;</div><div class="line">//console.dir(foo) 会有prototype属性指向函数原型对象，而原型对象有个constructor属性指向foo函数</div><div class="line">foo.prototype.constructor === foo //true</div></pre></td></tr></table></figure>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-9/30308722.jpg" alt=""></p>
+</li>
+<li><p>两种原型语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">##第一种</div><div class="line">function Person()&#123;&#125;</div><div class="line">Person.prototype.name = &quot;Jack&quot;;</div><div class="line">Person.prototype.age = 29;</div><div class="line">Person.prototype.sayName = function()&#123; alert(this.name) &#125;;</div><div class="line">-----------</div><div class="line">##第二种简写，重写了默认的prototype属性，此时constructor属性指向了Object，不再指向Person，所以需要添加constructor属性，来指定到Person</div><div class="line">function Person()&#123;&#125;</div><div class="line">Person.prototype=&#123;</div><div class="line">	name = &quot;Jack&quot;;</div><div class="line">	age = 29;</div><div class="line">	sayName = function()&#123; alert(this.name) &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数、原型和实例的关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的内部指针。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"># 实现一个原型链，让A的原型对象 = B的实例，那么A重写了原型对象，继承了B。</div><div class="line">function A()&#123;</div><div class="line">  this.name = &quot;heihei&quot;</div><div class="line">&#125;</div><div class="line">A.prototype.getName = function()&#123;</div><div class="line">  return this.name</div><div class="line">&#125;</div><div class="line">function B()&#123;</div><div class="line">  this.age = 18</div><div class="line">&#125;</div><div class="line">----------继承了A</div><div class="line">B.prototype = new A()</div><div class="line">B.prototype.getAge = function()&#123;</div><div class="line">  return this.age</div><div class="line">&#125;</div><div class="line">var person = new B()</div><div class="line">person.getName()  //&quot;heihei&quot; </div><div class="line">这里的person实例的constructor指向的是A</div></pre></td></tr></table></figure>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-9/61967666.jpg" alt=""></p>
+</li>
+</ul>
+<p>#####作用域链和原型继承</p>
+<p>在作用域链中查找变量的过程和原型继承（prototypal inheritance）有着非常相似之处。但是，非常不一样的地方在于，当你在原型链（prototype chain）中找不到一个属性的时候，并不会引发一个错误，而是会得到<code>undefined</code>。但是如果你试图访问一个作用域链中不存在的属性的话，你就会得到一个<code>ReferenceError</code>。</p>
 <ul>
-<li>忽略字符串前的空格，直到找到第一个非空格字符</li>
-<li>忽略字符串数字后面的非数字，只转换数字部分<code>parseInt(&quot;1234blue&quot;,10) //1234</code></li>
-<li>如果第一个字符不是数字或者负号，返回NaN</li>
-<li>只处理有效数字，小数点不是有效数字<code>parseInt(22.5, 10) //22</code></li>
-</ul>
-</li>
-<li><p>parseFloat(str) ：只有一个参数，可以处理浮点数。而parseInt()只能返回整数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">parseFloat(&apos;3.125e7&apos;)  //31250000</div><div class="line">parseInt(&apos;3.125e7&apos;)  //3</div></pre></td></tr></table></figure>
+<li><p>作用域链，作用域对象。作用域链本质上是一个指向作用域对象的指针列表，它只引用但不实际包含作用域对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">js运行时，需要一些空间来存储本地变量，这些空间称作为作用域对象。作用域对象是可以有父作用域对象（parent scope object）的。当代码试图访问一个变量的时候，解释器将在当前的作用域对象中查找这个属性。如果这个属性不存在，那么解释器就会在父作用域对象中查找这个属性。就这样，一直向父作用域对象查找，直到找到该属性或者再也没有父作用域对象。我们将这个查找变量的过程中所经过的作用域对象称作作用域链</div></pre></td></tr></table></figure>
+<p>​</p>
 </li>
 </ul>
-<h5 id="字符字面量（转义序列）"><a href="#字符字面量（转义序列）" class="headerlink" title="字符字面量（转义序列）"></a>字符字面量（转义序列）</h5><ul>
-<li>\r ：回车（把打印头移到开头）<strong>windows系统里 \r\n</strong>表示换行</li>
-</ul>
-<ul>
-<li>\n ：换行（向下移一行）<strong>mac系统里\n</strong>表示换行</li>
-<li>\\：斜杠</li>
-<li>\’：单引号</li>
-</ul>
-<p>#####toString() 和String(value)</p>
-<ul>
-<li><p>除了null和undefined，其他类型都有toString()方法</p>
-</li>
-<li><p>在不知道转换的值是不是null或者undefined的情况下，用String()方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String(null)  //&quot;null&quot;</div><div class="line">String(undefined)  //&quot;undefined&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="递增递减操作符-amp-–"><a href="#递增递减操作符-amp-–" class="headerlink" title="递增递减操作符++ &amp; –"></a>递增递减操作符++ &amp; –</h5><ul>
-<li><p>放在数值变量前面，<strong>前置递增和递减操作符与执行语句的优先级相同</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 2</div><div class="line">var b = 20</div><div class="line">var num1 = --a + b  //21</div><div class="line">var num2 = a + b  //21</div></pre></td></tr></table></figure>
-</li>
-<li><p>放在数值变量后面，<strong>执行语句优先级 &gt; 后置递增和递减操作符</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var a = 2</div><div class="line">var b = 20</div><div class="line">var num1 = a-- + b  //22  这里先执行a+b，再执行a--</div><div class="line">var num2 = a + b  //21</div></pre></td></tr></table></figure>
-</li>
-<li><p>++ &amp; –操作符适用于任何值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var a = &quot;z&quot;  a++  //NaN 对于不能转化为数字的值，结果为NaN（非数字）</div><div class="line">var b = &apos;true&apos;  b++ //2 布尔值true和false转化为1和0</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h5><ul>
-<li><p>逻辑非：<code>!</code> ，返回相反的布尔值</p>
-</li>
-<li><p>逻辑或：<code>a||b||c</code> ，最后一个值可以作为保底值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 || false  //1   第一个值为true的情况下就不会对第二个值求值</div><div class="line">null || 2   //2</div></pre></td></tr></table></figure>
-</li>
-<li><p>逻辑与：<code>a &amp;&amp; b &amp;&amp; c</code> </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 &amp;&amp; 2  //2  都为真的情况下返回第二个值</div><div class="line">undefined &amp;&amp;2 //undefined</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="运算操作符"><a href="#运算操作符" class="headerlink" title="运算操作符"></a>运算操作符</h5><ul>
-<li><p>取余数：<code>var result = 26 % 5 //1</code> </p>
-</li>
-<li><p>加法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var result1 = 5+5 //10</div><div class="line">var result2 = &quot;5&quot;+5  //&quot;55&quot;   字符串+数值 =&gt;字符串</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="switch…case…语句"><a href="#switch…case…语句" class="headerlink" title="switch…case…语句"></a>switch…case…语句</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"># 每个case后面添加break，可以避免同时执行多个case</div><div class="line">switch(expression)&#123;</div><div class="line">  case value:statement</div><div class="line">  	break;</div><div class="line">  case value:statement</div><div class="line">  	break;</div><div class="line">  defalut:statement</div><div class="line">&#125;</div><div class="line">--------------</div><div class="line">var num = 25</div><div class="line">switch(true)&#123;</div><div class="line">  case num&lt;20:</div><div class="line">  	console.log(&apos;less than 20&apos;)</div><div class="line">  	break;</div><div class="line">  default:</div><div class="line">  	console.log(&apos;more than 19&apos;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h5 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h5><p>参数在函数内部是用一个数组来表示的，可以传递任意数量的参数，并且可以通过arguments 对象来访问这些参数数组。arguments对象是个类数组，可以通过arguments[0]等访问，arguments.length表示传进来的传参数个数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function test()&#123;</div><div class="line">  console.log(...arguments)</div><div class="line">  console.log(arguments.length)</div><div class="line">&#125;</div><div class="line">test(1,2,3,4)   //1 2 3 4   4</div></pre></td></tr></table></figure>
-<h5 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h5><p>未指定返回值的函数返回的是一个特殊的undefined值</p>
 
       
     </div>
@@ -546,8 +523,8 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/网络是怎样连接的-第一第二章笔记/" rel="next" title="网络是怎样连接的-第一第二章读书笔记">
-                <i class="fa fa-chevron-left"></i> 网络是怎样连接的-第一第二章读书笔记
+              <a href="/2018/03/28/js高级程序读书笔记（2）/" rel="next" title="JS高级程序读书笔记（1）">
+                <i class="fa fa-chevron-left"></i> JS高级程序读书笔记（1）
               </a>
             
           </div>
@@ -555,10 +532,6 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/28/js高级程序读书笔记（2）/" rel="prev" title="JS高级程序读书笔记（1）">
-                JS高级程序读书笔记（1） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -716,7 +689,7 @@ JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模�
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#ECMAScript与JavaScript"><span class="nav-number">1.</span> <span class="nav-text">ECMAScript与JavaScript</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#文档对象模型DOM"><span class="nav-number">2.</span> <span class="nav-text">文档对象模型DOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浏览器对象模型BOM"><span class="nav-number">3.</span> <span class="nav-text">浏览器对象模型BOM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lt-script-gt-加载外部js文件标签的位置"><span class="nav-number">4.</span> <span class="nav-text"><script>加载外部js文件标签的位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标识符"><span class="nav-number">5.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#关键字和保留字"><span class="nav-number">6.</span> <span class="nav-text">关键字和保留字</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#null"><span class="nav-number">7.</span> <span class="nav-text">null</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#boolean"><span class="nav-number">8.</span> <span class="nav-text">boolean</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#number"><span class="nav-number">9.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NaN"><span class="nav-number">10.</span> <span class="nav-text">NaN</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数值转换"><span class="nav-number">11.</span> <span class="nav-text">数值转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#字符字面量（转义序列）"><span class="nav-number">12.</span> <span class="nav-text">字符字面量（转义序列）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#递增递减操作符-amp-–"><span class="nav-number">13.</span> <span class="nav-text">递增递减操作符++ & –</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#逻辑操作符"><span class="nav-number">14.</span> <span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运算操作符"><span class="nav-number">15.</span> <span class="nav-text">运算操作符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#switch…case…语句"><span class="nav-number">16.</span> <span class="nav-text">switch…case…语句</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的参数"><span class="nav-number">17.</span> <span class="nav-text">函数的参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数的返回值"><span class="nav-number">18.</span> <span class="nav-text">函数的返回值</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#属性"><span class="nav-number">1.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#工厂模式（一个函数返回一个对象）"><span class="nav-number">2.</span> <span class="nav-text">工厂模式（一个函数返回一个对象）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#构造函数"><span class="nav-number">3.</span> <span class="nav-text">构造函数</span></a></li></ol></div>
             
 
           </div>
