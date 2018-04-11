@@ -326,7 +326,7 @@
               
                 
                 <a class="post-title-link" href="/2018/04/11/执行上下文/" itemprop="url">
-                  到底什么是函数执行环境
+                  到底什么是执行环境、作用域和作用域链
                 </a>
               
             
@@ -401,8 +401,11 @@
 
       
         
-          <p>####执行上下文（也称执行环境）</p>
-<p>js中有3种不同的运行环境，为了表示不同的运行环境，js中有<strong>执行上下文（Execution context，EC）</strong>的概念。就是当js代码执行的时候，会进入不同的执行上下文，这些执行上下文就构成了一个<strong>执行上下文栈（Execution context stack，ECS）</strong></p>
+          <h4 id="执行上下文（也称执行环境）"><a href="#执行上下文（也称执行环境）" class="headerlink" title="执行上下文（也称执行环境）"></a>执行上下文（也称执行环境）</h4><p>执行环境也成为<strong>执行上下文（Execution context，EC）</strong>。就是当js代码执行的时候，会进入不同的执行上下文，这些执行上下文就构成了一个<strong>执行上下文栈（Execution context stack，ECS）</strong></p>
+<ul>
+<li>全局执行环境：在浏览器环境中全局执行环境就是windows对象</li>
+<li>函数执行环境：当某函数被调用时，首先会创建一个执行环境及相应的作用域链，然后使用<code>arguments</code>和其他命名参数的值来初始化执行环境的变量对象。</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/04/11/执行上下文/#more" rel="contents">
@@ -601,6 +604,153 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/03/28/js高级程序读书笔记（1）/" itemprop="url">
+                  JS高级程序读书笔记（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T23:38:13+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h5 id="ECMAScript与JavaScript"><a href="#ECMAScript与JavaScript" class="headerlink" title="ECMAScript与JavaScript"></a>ECMAScript与JavaScript</h5><ul>
+<li>ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象</li>
+<li>JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/28/js高级程序读书笔记（1）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（2）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -709,153 +859,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/03/28/js高级程序读书笔记（2）/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/js高级程序读书笔记（1）/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Oneleven">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/cat1.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Oneleven's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2018/03/28/js高级程序读书笔记（1）/" itemprop="url">
-                  JS高级程序读书笔记（1）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T23:38:13+08:00">
-                2018-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">读书笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h5 id="ECMAScript与JavaScript"><a href="#ECMAScript与JavaScript" class="headerlink" title="ECMAScript与JavaScript"></a>ECMAScript与JavaScript</h5><ul>
-<li>ECMAScript定义了JS语言的基础标准，规定了语法、语句、类型、关键字、保留字、操作符、对象</li>
-<li>JS是对ECMAScript的实现。一个完整的JS由ECMAScript、文档对象模型（DOM）、浏览器对象模型（BOM）组成</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/28/js高级程序读书笔记（1）/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
