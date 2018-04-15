@@ -87,16 +87,25 @@
 
 
 
-<meta name="description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
+<meta name="description" content="什么是This
+this是一个与执行上下文相关的特殊对象，当代码访问this的时候，它的值是从执行上下文中获取的，并不需要任何作用域链的查找。this的值在进入上下文的时候进行一次确定。
+
+同一个函数，在不同的上下文中进行调用的时候，this的值是不同的。this的值指向函数被调用时所在的执行环境。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS中的this值">
 <meta property="og:url" content="http://yoursite.com/2017/05/21/JS中的this值/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
-<meta property="og:updated_time" content="2017-05-21T11:49:14.000Z">
+<meta property="og:description" content="什么是This
+this是一个与执行上下文相关的特殊对象，当代码访问this的时候，它的值是从执行上下文中获取的，并不需要任何作用域链的查找。this的值在进入上下文的时候进行一次确定。
+
+同一个函数，在不同的上下文中进行调用的时候，this的值是不同的。this的值指向函数被调用时所在的执行环境。">
+<meta property="og:updated_time" content="2018-04-15T05:22:14.951Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS中的this值">
-<meta name="twitter:description" content="什么是Thisthis总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，this就是这个对象（环境）。也可以近似地认为，this是所有函数运行时的一个隐藏参数，指向函数的运行环境。">
+<meta name="twitter:description" content="什么是This
+this是一个与执行上下文相关的特殊对象，当代码访问this的时候，它的值是从执行上下文中获取的，并不需要任何作用域链的查找。this的值在进入上下文的时候进行一次确定。
+
+同一个函数，在不同的上下文中进行调用的时候，this的值是不同的。this的值指向函数被调用时所在的执行环境。">
 
 
 
@@ -374,7 +383,10 @@
       
 
       
-        <h4 id="什么是This"><a href="#什么是This" class="headerlink" title="什么是This"></a>什么是This</h4><p>this总是返回一个对象，即返回属性或者方法“当前”所在的对象。在JavaScript语言之中，一切皆对象，运行环境也是对象，所以函数都是在某个对象之中运行，<code>this</code>就是这个对象（环境）。也可以近似地认为，<code>this</code>是所有函数运行时的一个隐藏参数，指向函数的运行环境。</p>
+        <h4 id="什么是This"><a href="#什么是This" class="headerlink" title="什么是This"></a>什么是This</h4><blockquote>
+<p>this是一个与执行上下文相关的特殊对象，当代码访问this的时候，它的值是从执行上下文中获取的，并不需要任何作用域链的查找。this的值在进入上下文的时候进行一次确定。</p>
+</blockquote>
+<p>同一个函数，在不同的上下文中进行调用的时候，this的值是不同的。this的值指向函数被调用时所在的执行环境。</p>
 <a id="more"></a>
 <ul>
 <li><p>如果一个函数在全局环境中运行，那么<code>this</code>就是指顶层对象（浏览器中为<code>window</code>对象）。</p>
