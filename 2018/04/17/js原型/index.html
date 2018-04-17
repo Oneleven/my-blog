@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="原型," />
 
 
 
@@ -87,15 +87,22 @@
 
 
 
-<meta name="description" content="Start from zero">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Oneleven's Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+<meta name="description" content="####概念
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="似懂非懂的原型链">
+<meta property="og:url" content="http://yoursite.com/2018/04/17/js原型/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="Start from zero">
+<meta property="og:description" content="####概念
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-16/44266724.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-17/13518647.jpg">
+<meta property="og:updated_time" content="2018-04-17T14:07:25.490Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oneleven's Blog">
-<meta name="twitter:description" content="Start from zero">
+<meta name="twitter:title" content="似懂非懂的原型链">
+<meta name="twitter:description" content="####概念
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+<meta name="twitter:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-16/44266724.jpg">
 
 
 
@@ -123,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/17/js原型/"/>
 
 
 
 
 
-  <title> 归档 | Oneleven's Blog </title>
+  <title> 似懂非懂的原型链 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +170,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,402 +298,222 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-       
-      
-      OK! 目前共计 36 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/js原型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                似懂非懂的原型链
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T22:06:08+08:00">
+                2018-04-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>####概念</p>
+<p><strong>原型是一个对象，通过原型可以实现对象的属性继承。</strong> js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过<code>Object.getPropertyOf(object)</code> 来访问，浏览器中可以通过<code>__proto__</code> 来访问。</p>
+<a id="more"></a>
+<ul>
+<li><p>所有对象有”[[prototype]]”属性，浏览器中通过<code>__proto__</code> 访问，非标准。<strong>这个属性指向该对象的原型对象</strong>。</p>
+<p>作用：构成原型链，同样用于实现基于原型的继承。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&#125;   </div><div class="line">这种叫做字面量对象，所有的字面量对象都是通过Object()构造出来的，所以obj的__proto__属性都指向Object.prototype</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>函数对象有”prototype”属性</strong>，这个是函数特有的属性。当一个函数被用作构造函数来创建实例时，该函数的prototype属性值将被赋值给该函数创建的对象的<code>__proto__</code> 属性。即<code>构造函数.prototype === 实例.__proto__</code></p>
+<p>作用：用来实现基于原型的继承与属性的共享。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">注：Object，Function，Array，Date，Number，String，Boolean都是通过new Function()创建的，是Function的实例。</div></pre></td></tr></table></figure>
+</li>
+<li><p>原型对象有”constructor”属性，指向构造函数</p>
+</li>
+</ul>
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function Person(name, age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">  this.getInfo = function()&#123;</div><div class="line">    console.log(this.name + &quot; &quot; + this.age)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var richMan = new Person(&quot;tom&quot;, 18)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>实例对象richMan的原型是”Person{}”对象：</p>
+<p><code>richMan.__proto__</code> or <code>Object.getPrototypeOf(richMan)</code> </p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-16/44266724.jpg" alt=""></p>
+<p><strong>在js原型对象中，包含一个”constructor”属性</strong> 。</p>
+<ul>
+<li><p>在 js中所有对象的<code>__proto__</code>属性等于其构造函数的 prototype 属性</p>
+<p> <code>obj.__proto__===constructor.prototype===Object.getPrototypeof(obj)</code></p>
+</li>
+<li><p>构造函数的 prototype 属性默认包括一个名为 constructor 属性 而该属性值又等于该构造函数</p>
+<p><code>Person.prototype.constructor === Person</code></p>
+</li>
+</ul>
+</li>
+<li><p>查看对象Object的原型：richMan实例对象的原型是”Person{}”对象，原型的原型是”Object”对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">richMan.__proto__.__proto__ === Person.prototype.__proto__ === Object.prototype</div><div class="line">----------</div><div class="line">console.log(typeof Object); //function  Object对象本身是一个函数对象。对象的构造函数！</div><div class="line">Object.prototype // Object的原型就是&quot;Object&#123;&#125;&quot;对象</div><div class="line">Object.prototype.constructor === Object</div><div class="line">Object.prototype.__proto__ === null // &quot;Object&#123;&#125;&quot;对象的原型是null，是原型链的终点</div></pre></td></tr></table></figure>
+</li>
+<li><p>查看对象Function的原型：Person是一个构造函数，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Person.__proto__ === Function.prototype  </div><div class="line">#所有函数（包括Function， Object）的原型(`__proto__`)都是Function.prototype</div><div class="line"></div><div class="line">Function.prototype.constructor === Function</div><div class="line">Function.prototype.__proto__ // Object&#123;&#125;对象</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-17/13518647.jpg" alt=""></p>
+<h5 id="查找属性"><a href="#查找属性" class="headerlink" title="查找属性"></a>查找属性</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">通过作用域链查找标识符</div><div class="line">通过原型链查找属性</div></pre></td></tr></table></figure>
+<p>当查找一个对象的属性时，js会向上遍历原型链，当查找到原型链的顶部（Object.prototype）也没找到指定的属性，就会返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function Person(name, age)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.MaxNumber = 9999;</div><div class="line">Person.__proto__.MinNumber = -9999;</div><div class="line"></div><div class="line">var will = new Person(&quot;Will&quot;, 28);</div><div class="line"></div><div class="line">console.log(will.MaxNumber);</div><div class="line">// 9999</div><div class="line">console.log(will.MinNumber);</div><div class="line">// undefined</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Person.prototype添加了MaxNumber属性，相当于在will的原型（<code>__proto__</code>）上设置了该属性，在will对象上找不到，会顺着原型链继续查找到。</p>
+</li>
+<li><p><code>Person.__proto__</code> 上添加了MinNumber属性，相当于在Function.prototype上添加了该属性，与will实例毫无关联。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">由于Function.prototype.__proto__ 指向Object.prototype，而Person制造函数的原型的原型就是他，所以可以改写成</div><div class="line">Person.__proto__.__proto__.MinNumber = -99999</div><div class="line">console.log(will.MinNumber)  //-99999</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="hasOwnProperty-NaN"><a href="#hasOwnProperty-NaN" class="headerlink" title="hasOwnProperty()"></a>hasOwnProperty()</h5><blockquote>
+<p>该方法能判断一个对象是否包含自定义属性，而不是原型链上的属性</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原型/" rel="tag"># 原型</a>
+          
         </div>
       
+
+      
+        
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/11/执行上下文/" rel="next" title="到底什么是执行环境、作用域和作用域链">
+                <i class="fa fa-chevron-left"></i> 到底什么是执行环境、作用域和作用域链
+              </a>
+            
+          </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          <span class="post-nav-divider"></span>
 
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/20/模块化es6/" itemprop="url">
-              
-                <span itemprop="name">了解es6之模块化，以及模块化的历史进程</span>
-              
-            </a>
-        
-      </h1>
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-20T14:14:32+08:00"
-              content="2017-10-20" >
-          10-20
-        </time>
-      </div>
-
-    </header>
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
+    <div class="post-spread">
       
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/10/14/Generator函数/" itemprop="url">
-              
-                <span itemprop="name">了解es6之Generator函数</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-14T10:32:09+08:00"
-              content="2017-10-14" >
-          10-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/10/Promise/" itemprop="url">
-              
-                <span itemprop="name">了解Promise</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-10T20:44:00+08:00"
-              content="2017-09-10" >
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/16/array数组的方法/" itemprop="url">
-              
-                <span itemprop="name">JS中数组方法小结</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-16T19:18:40+08:00"
-              content="2017-08-16" >
-          08-16
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/08/07/DOM/" itemprop="url">
-              
-                <span itemprop="name">DOM小结</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-08-07T20:43:31+08:00"
-              content="2017-08-07" >
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/29/string字符串的方法/" itemprop="url">
-              
-                <span itemprop="name">JS中字符串的方法小结</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-29T20:22:47+08:00"
-              content="2017-07-29" >
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/20/属性描述对象/" itemprop="url">
-              
-                <span itemprop="name">属性描述对象</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-20T23:10:12+08:00"
-              content="2017-07-20" >
-          07-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/15/Json对象/" itemprop="url">
-              
-                <span itemprop="name">JSON数据格式</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-15T19:47:06+08:00"
-              content="2017-07-15" >
-          07-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/07/01/正则/" itemprop="url">
-              
-                <span itemprop="name">每次都会忘记的正则！</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-07-01T22:55:43+08:00"
-              content="2017-07-01" >
-          07-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/25/AJAX/" itemprop="url">
-              
-                <span itemprop="name">页面局部刷新的里程碑：AJAX</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-25T18:35:22+08:00"
-              content="2017-06-25" >
-          06-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="page-number" href="/archives/2017/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
+    </div>
+  </div>
 
           
           </div>
@@ -694,6 +521,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -713,8 +544,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat1.jpeg"
@@ -805,6 +645,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#举例"><span class="nav-number">1.</span> <span class="nav-text">举例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#查找属性"><span class="nav-number">1.1.</span> <span class="nav-text">查找属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hasOwnProperty-NaN"><span class="nav-number">1.2.</span> <span class="nav-text">hasOwnProperty()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -917,11 +773,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
