@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="继承," />
 
 
 
@@ -87,15 +87,22 @@
 
 
 
-<meta name="description" content="Start from zero">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Oneleven's Blog">
-<meta property="og:url" content="http://yoursite.com/tags/图像格式/index.html">
+<meta name="description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
+instanceof &amp;amp;&amp;amp; isPrototypeOf()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="似懂非懂的继承">
+<meta property="og:url" content="http://yoursite.com/2018/04/18/继承/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="Start from zero">
+<meta property="og:description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
+instanceof &amp;amp;&amp;amp; isPrototypeOf()">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg">
+<meta property="og:updated_time" content="2018-04-18T15:59:01.182Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Oneleven's Blog">
-<meta name="twitter:description" content="Start from zero">
+<meta name="twitter:title" content="似懂非懂的继承">
+<meta name="twitter:description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
+instanceof &amp;amp;&amp;amp; isPrototypeOf()">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg">
 
 
 
@@ -123,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/图像格式/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/18/继承/"/>
 
 
 
 
 
-  <title> 标签: 图像格式 | Oneleven's Blog </title>
+  <title> 似懂非懂的继承 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -163,7 +170,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -291,46 +298,184 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        图像格式
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                似懂非懂的继承
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T23:58:28+08:00">
+                2018-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h5 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h5><p>js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。</p>
+<p><code>instanceof</code> &amp;&amp; <code>isPrototypeOf()</code></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype.getInfo = function()&#123;</div><div class="line">  console.log(this.name + &quot; &quot; + this.age)</div><div class="line">&#125;</div><div class="line">function Teacher(subject)&#123;</div><div class="line">  this.subject = subject</div><div class="line">&#125;</div><div class="line">Teacher.prototype = new Person() </div><div class="line">var will = new Teacher(&quot;Math&quot;)</div><div class="line">//把创建的新对象new Person()赋值为“Teacher”的原型，此时&quot;Teacher&quot;继承&quot;Person&quot;</div><div class="line">will instanceof Object // true</div><div class="line">will instanceof Person //true</div><div class="line">will instanceof Teacher //true</div><div class="line">------</div><div class="line">Object.prototype.isPrototypeOf(will)  //true</div><div class="line">Person.prototype.isPrototypeOf(will)  //true</div><div class="line">Teacher.prototype.isPrototypeOf(will)  //true</div></pre></td></tr></table></figure>
+<h5 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h5><p>对于所有的js原型对象，有一个constructor属性，该属性对应构造函数。</p>
+<ul>
+<li>上述代码中will的原型是通过构造函数new Person()构造出来的对象（即Person{name:undefined, age:undefined}。will的构造函数是Person，而非Teacher。</li>
+<li>will访问constructor属性的时候，先找到Teacher.prototype，接着是Person.prototype，它的constructor属性指向Person构造函数。</li>
+</ul>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg" alt=""></p>
+<p>重设constructor属性，使wiil对应到正确的构造函数中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype.constructor = Teacher</div><div class="line">#更佳的方式，设置enumerable属性为默认的false</div><div class="line">Object.defineProperty(Teacher.prototype,&quot;constructor&quot;,&#123;</div><div class="line">    enumerable: false,</div><div class="line">    value: Teacher</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg" alt=""></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2018/03/25/gif、jpg、png各种图像格式的区别/" itemprop="url">
-              
-                <span itemprop="name">gif、jpg、png图像的区别</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-03-25T23:59:10+08:00"
-              content="2018-03-25" >
-          03-25
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/继承/" rel="tag"># 继承</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/17/js原型/" rel="next" title="似懂非懂的原型链">
+                <i class="fa fa-chevron-left"></i> 似懂非懂的原型链
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -338,6 +483,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -357,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat1.jpeg"
@@ -449,6 +607,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链继承"><span class="nav-number">1.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor属性"><span class="nav-number">2.</span> <span class="nav-text">constructor属性</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -561,6 +735,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
