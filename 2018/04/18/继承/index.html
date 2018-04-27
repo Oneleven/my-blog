@@ -97,7 +97,11 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
 instanceof &amp;amp;&amp;amp; isPrototypeOf()">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg">
-<meta property="og:updated_time" content="2018-04-18T15:59:01.182Z">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/67351782.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/80439474.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/4450609.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/49863286.jpg">
+<meta property="og:updated_time" content="2018-04-27T13:21:49.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="似懂非懂的继承">
 <meta name="twitter:description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
@@ -415,6 +419,28 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
 <p>重设constructor属性，使wiil对应到正确的构造函数中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype.constructor = Teacher</div><div class="line">#更佳的方式，设置enumerable属性为默认的false</div><div class="line">Object.defineProperty(Teacher.prototype,&quot;constructor&quot;,&#123;</div><div class="line">    enumerable: false,</div><div class="line">    value: Teacher</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg" alt=""></p>
+<h5 id="原型的更新和重写"><a href="#原型的更新和重写" class="headerlink" title="原型的更新和重写"></a>原型的更新和重写</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#原型更新</div><div class="line">Teacher.prototype.getId = function()&#123;</div><div class="line">  console.log(&apos;原型更新&apos;)</div><div class="line">&#125;</div><div class="line">#原型重写</div><div class="line">Teacher.prototype = &#123;</div><div class="line">  getStaffId:function()&#123;</div><div class="line">    console.log(&apos;原型重写&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">相当于Teacher的原型变成了一个字面量对象，里面有一个getStaffId方法。这个字面量对象的方法的原型指向Object.prototype</div></pre></td></tr></table></figure>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/67351782.jpg" alt=""></p>
+<h5 id="组合继承（两个构造函数）"><a href="#组合继承（两个构造函数）" class="headerlink" title="组合继承（两个构造函数）"></a>组合继承（两个构造函数）</h5><p>在子类的构造函数中通过call来调用父类的构造函数进行初始化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype.getId = function()&#123;</div><div class="line">  console.log(this.name + &quot; &quot; + this.age)</div><div class="line">&#125;</div><div class="line">function Teacher(name,age,country)&#123;</div><div class="line">  Person.call(this,name,age)</div><div class="line">  this.country = country</div><div class="line">&#125;</div><div class="line">Teacher.prototype = new Person() //继承</div><div class="line">Object.defineProperty(Teacher.prototype,&quot;constructor&quot;,&#123;  //确定constructor指向</div><div class="line">  enumerable:false,</div><div class="line">  value:Teacher</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var tom = new Teacher(&quot;Tom&quot;,18,&quot;shanghai&quot;)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>不足之处，在调用子类型构造函数的时候会重写超类型对象的属性。</p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/80439474.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="原型式继承（通过字面量定义的对象）"><a href="#原型式继承（通过字面量定义的对象）" class="headerlink" title="原型式继承（通过字面量定义的对象）"></a>原型式继承（通过字面量定义的对象）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function object(o)&#123;</div><div class="line">  function F()&#123;&#125;    //创建一个函数</div><div class="line">  F.prototype = o   //原型等于对象o</div><div class="line">  return new F()    //返回函数的实例</div><div class="line">&#125;</div><div class="line">---------------</div><div class="line">var A = &#123;</div><div class="line">  add:function()&#123;</div><div class="line">    console.log(&apos;addA&apos;)</div><div class="line">  &#125;,</div><div class="line">  sub:function()&#123;</div><div class="line">    console.log(&apos;subA&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var B = object(A)</div><div class="line">B.add = function()&#123;</div><div class="line">  console.log(&apos;addB&apos;)</div><div class="line">&#125;</div><div class="line">B.div = function()&#123;</div><div class="line">  console.log(&apos;divB&apos;)</div><div class="line">&#125;</div><div class="line">-----------</div><div class="line">B.add()   //addB</div><div class="line">B.sub()   //subA</div><div class="line">B.div()   //divB</div></pre></td></tr></table></figure>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/4450609.jpg" alt=""></p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/49863286.jpg" alt=""></p>
+<ul>
+<li><p>以上的方法可以用Object.create()方法来实现原型式继承，两个参数</p>
+<ul>
+<li>用作新对象原型的对象</li>
+<li>为新对象定义的额外属性</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var C = Object.create(A,&#123;</div><div class="line">  sub:&#123;</div><div class="line">    value:function()&#123;</div><div class="line">      console.log(&apos;subC&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  multi:&#123;</div><div class="line">    value:function()&#123;</div><div class="line">      console.log(&apos;multiC&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
 
       
     </div>
@@ -617,7 +643,7 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链继承"><span class="nav-number">1.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor属性"><span class="nav-number">2.</span> <span class="nav-text">constructor属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链继承"><span class="nav-number">1.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor属性"><span class="nav-number">2.</span> <span class="nav-text">constructor属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型的更新和重写"><span class="nav-number">3.</span> <span class="nav-text">原型的更新和重写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合继承（两个构造函数）"><span class="nav-number">4.</span> <span class="nav-text">组合继承（两个构造函数）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型式继承（通过字面量定义的对象）"><span class="nav-number">5.</span> <span class="nav-text">原型式继承（通过字面量定义的对象）</span></a></li></ol></div>
             
 
           </div>
