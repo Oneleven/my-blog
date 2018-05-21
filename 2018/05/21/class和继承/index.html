@@ -1,0 +1,969 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="继承," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="class的继承
+class通过extends实现继承父类所有的属性和方法，用super关键字新建父类的this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="class和继承">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/class和继承/index.html">
+<meta property="og:site_name" content="Oneleven's Blog">
+<meta property="og:description" content="class的继承
+class通过extends实现继承父类所有的属性和方法，用super关键字新建父类的this">
+<meta property="og:updated_time" content="2018-05-21T13:56:17.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="class和继承">
+<meta name="twitter:description" content="class的继承
+class通过extends实现继承父类所有的属性和方法，用super关键字新建父类的this">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/21/class和继承/"/>
+
+
+
+
+
+  <title> class和继承 | Oneleven's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93493881-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Oneleven's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/class和继承/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                class和继承
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T21:55:18+08:00">
+                2018-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="class的继承"><a href="#class的继承" class="headerlink" title="class的继承"></a>class的继承</h5><ul>
+<li>class通过extends实现继承父类所有的属性和方法，用super关键字新建父类的this</li>
+</ul>
+<a id="more"></a>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Point&#123;&#125;</div><div class="line">class ColorPoint extends Point&#123;&#125;   //通过class A extends B， 继承B的属性和方法</div><div class="line">---------------</div><div class="line">class ColorPoint extends Point&#123;</div><div class="line">  constructor(x,y,color)&#123;</div><div class="line">    super(x,y)    //调用父类的constructor构造函数,指定this，必须存在</div><div class="line">    this.color = color</div><div class="line">  &#125;</div><div class="line">  toString()&#123;</div><div class="line">    return this.color + &apos;&apos; + super.toString()   // 调用父类的toString()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">注：子类必须在constructor方法中调用super方法</div><div class="line">    在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错。（这是因为子类实例的构建，是基于对父类实例加工，只有super方法才能返回父类实例。）</div><div class="line">-------------------</div><div class="line">let cp = new ColorPoint(25, 8, &apos;green&apos;);</div><div class="line">cp instanceof ColorPoint // true</div><div class="line">cp instanceof Point // true</div><div class="line">注： instanceof 用来检验是否是它的实例</div></pre></td></tr></table></figure>
+<ul>
+<li><p>Object.getPrototypeOf() 可以从子类上获取父类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.getPrototypeOf(ColorPoint) === Point   //可以用来判断一个类是否继承了另外一个类</div></pre></td></tr></table></figure>
+</li>
+<li><p>super关键字</p>
+<ol>
+<li><p>当做函数来使用时，<strong>代表父类的构造函数</strong> ，ES6 要求，子类的构造函数必须执行一次<code>super</code>函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class A&#123;&#125;</div><div class="line">class B extends A&#123;</div><div class="line">  constructor()&#123;</div><div class="line">    super()              //super是一个函数</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">**这里super()虽然代表了父类A的构造函数，但是返回的是子类B的实例，即super内部的this指的是B，</div></pre></td></tr></table></figure>
+</li>
+<li><p>作为对象时，super指向父类的<strong>原型对象</strong> 。（所以父类实例上的方法或者属性无法取得，只有定义在父类原型对象上的才能取到）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class A = &#123;</div><div class="line">  p()&#123;                </div><div class="line">    return 2        //constructor 是定义实例上的方法或属性，不在这上面的定义在prototype上</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">class B extends A&#123;</div><div class="line">  constructor()&#123;           </div><div class="line">    super()</div><div class="line">    console.log(super.p())    //这里super.p()就相当于A.prototype.p()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">#ES6 规定，通过super调用父类的方法时，super会绑定子类的this。</div><div class="line">class A &#123;</div><div class="line">  constructor()&#123;</div><div class="line">    this.x = 1</div><div class="line">  &#125;</div><div class="line">  print()&#123;</div><div class="line">    console.log(this.x)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">class B extends A&#123;</div><div class="line">  constructor()&#123;</div><div class="line">    super()              //super内部的this指的是B</div><div class="line">    this.x = 2</div><div class="line">  &#125;</div><div class="line">  m()&#123;</div><div class="line">    super.print()</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">let b = new B()</div><div class="line">b.m()   //2</div><div class="line">* super.print()虽然调用的是A.prototype.print()，但是A.prototype.print()会绑定子类B的this，导致输出的是2，而不是1。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<h5 id="class"><a href="#class" class="headerlink" title="class"></a>class</h5><ol>
+<li><p>类的所有方法都定义在prototype对象上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class A&#123;&#125;</div><div class="line">let a = new A()</div><div class="line">a.constructor === A.prototype.constructor</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以用Object.assign()方法来向类添加方法(在类的<strong>原型</strong>上，即原型.prototype)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class A&#123;</div><div class="line">  constructor()&#123;</div><div class="line">    sayHi()&#123;&#125;</div><div class="line">    sayGoodBye()&#123;&#125;  //类中不需要添加逗号</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Object.assign(A.prototype,&#123;   //里面是大括号括起来的对象</div><div class="line">  toString()&#123;&#125;,</div><div class="line">  toValue()&#123;&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>定义在类内部的方法，是<strong>不可枚举</strong>的；但是es5的老写法，是可以枚举的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">class Point &#123;</div><div class="line">  constructor()&#123;&#125;</div><div class="line">  sayHi()&#123;&#125;</div><div class="line">&#125;</div><div class="line">var a = new Point()</div><div class="line">--------</div><div class="line">Object.keys(Point.prototype)  //[]</div><div class="line">Object.getOwnPropertyNames(Point.prototype)  [&quot;constructor&quot;,&quot;sayHi&quot;]</div><div class="line">------</div><div class="line">Object.getPrototypeOf(a)  //a的原型</div><div class="line">原型.prototype.isPropertyOf(实例)</div><div class="line">实例 instanceof 原型</div><div class="line">--------</div><div class="line">a.__proto__.hasOwnProperty(&quot;sayHi&quot;)  //true，拥有自己的属性</div><div class="line">Object.defineProperty()</div><div class="line">Object.getOwnPropertyDescriptor()</div></pre></td></tr></table></figure>
+</li>
+<li><p>类的属性名可以采用表达式，用[]括起来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">let kk = &apos;toString&apos;</div><div class="line">class A&#123;</div><div class="line">  constructor&#123;</div><div class="line">    //....</div><div class="line">  &#125;</div><div class="line">  [kk]()&#123;</div><div class="line">    //....</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>constructor方法是默认方法，当new的时候，自动调用该方法。<strong>该方法默认返回实例对象</strong>（即this）</p>
+</li>
+<li><p>实例的属性除非显式定义在其本身（即定义在<code>this</code>对象上），否则都是定义在原型上（即定义在<code>class</code>上）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">class Point &#123;</div><div class="line">  constructor(x, y) &#123;</div><div class="line">    this.x = x;</div><div class="line">    this.y = y;</div><div class="line">  &#125;</div><div class="line">  toString() &#123;</div><div class="line">    return &apos;(&apos; + this.x + &apos;, &apos; + this.y + &apos;)&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var point = new Point(2, 3);</div><div class="line">point.toString() // (2, 3)</div><div class="line">point.hasOwnProperty(&apos;x&apos;) // true</div><div class="line">point.hasOwnProperty(&apos;y&apos;) // true</div><div class="line">point.hasOwnProperty(&apos;toString&apos;) // false</div><div class="line">point.__proto__.hasOwnProperty(&apos;toString&apos;) // true</div></pre></td></tr></table></figure>
+</li>
+<li><p>表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">const MyClass = class Me&#123;      //这里类的名字是MyClass而不是Me，可以const MyClass = class&#123;&#125;</div><div class="line">  constructor()&#123;</div><div class="line">    //...</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">--------------立即执行的class</div><div class="line">let person = new class&#123;</div><div class="line">  constructor(name)&#123;</div><div class="line">    this.name = name</div><div class="line">  &#125;</div><div class="line">  sayName()&#123;</div><div class="line">    console.log(this.name)</div><div class="line">  &#125;</div><div class="line">&#125;(&apos;tom&apos;)</div><div class="line">person.sayName()</div><div class="line">-------------</div><div class="line">name属性，总是返回紧跟在class后面的类名</div></pre></td></tr></table></figure>
+</li>
+<li><p>this指向</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">class Logger&#123;</div><div class="line">	print(text)&#123;</div><div class="line">      console.log(text)</div><div class="line">	&#125;</div><div class="line">	printName(name = &apos;there&apos;)&#123;</div><div class="line">      this.print(`name:$&#123;name&#125;`)</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">const logger = new Logger();</div><div class="line">const &#123; printName &#125; = logger;</div><div class="line">printName(); // TypeError: Cannot read property &apos;print&apos; of undefined</div><div class="line">//this 指向调用时的坏境，此时找不到print方法</div><div class="line">--------------绑定this只能在constructor中绑定，用bind方法或者箭头函数</div><div class="line">class Logger&#123;</div><div class="line">  constructor()&#123;</div><div class="line">    this.printName = this.printName.bind(this)</div><div class="line">  &#125;</div><div class="line"> //...</div><div class="line">&#125;</div><div class="line">------</div><div class="line">class Logger&#123;</div><div class="line">  constructor()&#123;</div><div class="line">    this.printName = (name = &apos;there&apos;)=&gt;&#123;</div><div class="line">      this.print(`name:$&#123;name&#125;`)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  print(text)&#123;</div><div class="line">      console.log(text)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>静态方法，静态方法里面的this直的是这个类，而不是实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class Foo &#123;</div><div class="line">  static bar () &#123;</div><div class="line">    this.baz();         //静态方法里面的this调用的是 静态方法baz</div><div class="line">  &#125;</div><div class="line">  static baz () &#123;</div><div class="line">    console.log(&apos;hello&apos;);</div><div class="line">  &#125;</div><div class="line">  baz () &#123;</div><div class="line">    console.log(&apos;world&apos;);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">Foo.bar() // hello</div></pre></td></tr></table></figure>
+</li>
+<li><p>静态方法的继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">class Foo &#123;</div><div class="line">  static classMethod() &#123;</div><div class="line">    return &apos;hello&apos;;</div><div class="line">  &#125;</div><div class="line">  a()&#123;</div><div class="line">    console.log(1)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">class Bar extends Foo &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Bar.classMethod() // &apos;hello&apos;</div><div class="line">let a = new Bar()  //这里实例化后再调用类的方法</div><div class="line">a.a()  //1</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">可以通过super.xxx来调用</div><div class="line">class Foo &#123;</div><div class="line">  static classMethod() &#123;</div><div class="line">    return &apos;hello&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">class Bar extends Foo &#123;</div><div class="line">  static classMethod() &#123;</div><div class="line">    return super.classMethod() + &apos;, too&apos;;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">Bar.classMethod() // &quot;hello, too&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>静态属性：静态属性指的是 Class 本身的属性，即Class.propName，而不是定义在实例对象（this）上的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Foo &#123;</div><div class="line">	static a=1</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>继承时，super就是指被继承的构造函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class ColorPoint extends Point &#123;</div><div class="line">  constructor(color) &#123;  //这里的constructor里面传的参数是ColorPoint实例的</div><div class="line">    super(x, y); // 调用父类的constructor(x, y)，必须调用super之后才会有this</div><div class="line">    this.color = color;  //super是可以直接在里面传对应的父类参数</div><div class="line">  &#125;</div><div class="line">  toString() &#123;</div><div class="line">    return this.color + &apos; &apos; + super.toString(); // 调用父类的toString()</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.getPrototypeOf() 用来判断一个类是否继承了另外一个类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.getPrototypeOf(ColorPoint) === Point  //true</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/继承/" rel="tag"># 继承</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/18/git/" rel="next" title="git整理">
+                <i class="fa fa-chevron-left"></i> git整理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cat1.jpeg"
+               alt="Oneleven" />
+          <p class="site-author-name" itemprop="name">Oneleven</p>
+           
+              <p class="site-description motion-element" itemprop="description">Start from zero</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">39</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Oneleven" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/1853938530/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/oneleven101/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#class的继承"><span class="nav-number">1.</span> <span class="nav-text">class的继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#class"><span class="nav-number">2.</span> <span class="nav-text">class</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Oneleven</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
