@@ -88,20 +88,20 @@
 
 
 <meta name="description" content="####概念
-原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPrototypeOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="似懂非懂的原型链">
 <meta property="og:url" content="http://yoursite.com/2018/04/17/js原型/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
 <meta property="og:description" content="####概念
-原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPrototypeOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
 <meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-16/44266724.jpg">
 <meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-17/13518647.jpg">
-<meta property="og:updated_time" content="2018-04-17T14:07:25.490Z">
+<meta property="og:updated_time" content="2018-05-21T13:59:01.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="似懂非懂的原型链">
 <meta name="twitter:description" content="####概念
-原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPropertyOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
+原型是一个对象，通过原型可以实现对象的属性继承。 js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过Object.getPrototypeOf(object) 来访问，浏览器中可以通过__proto__ 来访问。">
 <meta name="twitter:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-16/44266724.jpg">
 
 
@@ -403,7 +403,7 @@
 
       
         <p>####概念</p>
-<p><strong>原型是一个对象，通过原型可以实现对象的属性继承。</strong> js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过<code>Object.getPropertyOf(object)</code> 来访问，浏览器中可以通过<code>__proto__</code> 来访问。</p>
+<p><strong>原型是一个对象，通过原型可以实现对象的属性继承。</strong> js的对象中都包含一个[[Prototype]]属性，这个属性对应的就是该对象的原型。可以通过<code>Object.getPrototypeOf(object)</code> 来访问，浏览器中可以通过<code>__proto__</code> 来访问。</p>
 <a id="more"></a>
 <ul>
 <li><p>所有对象有”[[prototype]]”属性，浏览器中通过<code>__proto__</code> 访问，非标准。<strong>这个属性指向该对象的原型对象</strong>。</p>
