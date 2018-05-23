@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="继承," />
+  <meta name="keywords" content="事件循环," />
 
 
 
@@ -87,26 +87,21 @@
 
 
 
-<meta name="description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
-instanceof &amp;amp;&amp;amp; isPrototypeOf()">
+<meta name="description" content="#####js单线程、同步、异步
+js引擎是单线程的，主线程中的任务一个个排队执行（同步，串行执行任务），当遇到ajax请求，setTimeout和DOM事件的用户交互等延时任务时，中间会出现空等状态，低效，因此出现了异步，通过将任务交给相应的异步模块去处理，主线程继续往下执行其他操作。当异步任务完成，主线程空闲时，主线程去执行对应的callback。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="似懂非懂的继承">
-<meta property="og:url" content="http://yoursite.com/2018/04/18/继承/index.html">
+<meta property="og:title" content="js的事件循环">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/js的事件循环-event loop/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
-instanceof &amp;amp;&amp;amp; isPrototypeOf()">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/67351782.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/80439474.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/4450609.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-4-25/49863286.jpg">
-<meta property="og:updated_time" content="2018-05-21T13:57:07.278Z">
+<meta property="og:description" content="#####js单线程、同步、异步
+js引擎是单线程的，主线程中的任务一个个排队执行（同步，串行执行任务），当遇到ajax请求，setTimeout和DOM事件的用户交互等延时任务时，中间会出现空等状态，低效，因此出现了异步，通过将任务交给相应的异步模块去处理，主线程继续往下执行其他操作。当异步任务完成，主线程空闲时，主线程去执行对应的callback。">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frlrd6oon1j30mf0gqacy.jpg">
+<meta property="og:updated_time" content="2018-05-23T17:26:44.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="似懂非懂的继承">
-<meta name="twitter:description" content="原型链继承js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。
-instanceof &amp;amp;&amp;amp; isPrototypeOf()">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg">
+<meta name="twitter:title" content="js的事件循环">
+<meta name="twitter:description" content="#####js单线程、同步、异步
+js引擎是单线程的，主线程中的任务一个个排队执行（同步，串行执行任务），当遇到ajax请求，setTimeout和DOM事件的用户交互等延时任务时，中间会出现空等状态，低效，因此出现了异步，通过将任务交给相应的异步模块去处理，主线程继续往下执行其他操作。当异步任务完成，主线程空闲时，主线程去执行对应的callback。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frlrd6oon1j30mf0gqacy.jpg">
 
 
 
@@ -134,13 +129,13 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/18/继承/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/js的事件循环-event loop/"/>
 
 
 
 
 
-  <title> 似懂非懂的继承 | Oneleven's Blog </title>
+  <title> js的事件循环 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +307,7 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/js的事件循环-event loop/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -333,7 +328,7 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
             
             
               
-                似懂非懂的继承
+                js的事件循环
               
             
           </h1>
@@ -348,8 +343,8 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T23:58:28+08:00">
-                2018-04-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T01:26:35+08:00">
+                2018-05-24
               </time>
             
 
@@ -406,43 +401,28 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
       
 
       
-        <h5 id="原型链继承"><a href="#原型链继承" class="headerlink" title="原型链继承"></a>原型链继承</h5><p>js中当对象进行属性查找时，如果对象本身找不到对应的属性，就会去搜索原型链，结合这个特性，js就可以来实现对象之间的继承。</p>
-<p><code>instanceof</code> &amp;&amp; <code>isPrototypeOf()</code></p>
+        <p>#####js单线程、同步、异步</p>
+<p>js引擎是单线程的，主线程中的任务一个个排队执行（同步，串行执行任务），当遇到ajax请求，setTimeout和DOM事件的用户交互等延时任务时，中间会出现空等状态，低效，因此出现了异步，通过将任务交给相应的异步模块去处理，主线程继续往下执行其他操作。当异步任务完成，主线程空闲时，主线程去执行对应的callback。</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype.getInfo = function()&#123;</div><div class="line">  console.log(this.name + &quot; &quot; + this.age)</div><div class="line">&#125;</div><div class="line">function Teacher(subject)&#123;</div><div class="line">  this.subject = subject</div><div class="line">&#125;</div><div class="line">Teacher.prototype = new Person() </div><div class="line">var will = new Teacher(&quot;Math&quot;)</div><div class="line">//把创建的新对象new Person()赋值为“Teacher”的原型，此时&quot;Teacher&quot;继承&quot;Person&quot;</div><div class="line">will instanceof Object // true</div><div class="line">will instanceof Person //true</div><div class="line">will instanceof Teacher //true</div><div class="line">------</div><div class="line">Object.prototype.isPrototypeOf(will)  //true</div><div class="line">Person.prototype.isPrototypeOf(will)  //true</div><div class="line">Teacher.prototype.isPrototypeOf(will)  //true</div></pre></td></tr></table></figure>
-<h5 id="constructor属性"><a href="#constructor属性" class="headerlink" title="constructor属性"></a>constructor属性</h5><p>对于所有的js原型对象，有一个constructor属性，该属性对应构造函数。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1frlrd6oon1j30mf0gqacy.jpg" alt=""></p>
+<h5 id="js事件处理流程"><a href="#js事件处理流程" class="headerlink" title="js事件处理流程"></a>js事件处理流程</h5><ol>
+<li><p>主线程读取JS代码，同步执行任务，当遇到异步任务时，将其出栈放到对应的异步进程处理(Web Apis)</p>
+</li>
+<li><p>异步进程处理完毕（ajax返回，DOM事件触发，setTimeout时间到等），将对应的回调函数推入到任务列队中</p>
+</li>
+<li><p>主线程同步任务执行完毕后，查询任务列队</p>
 <ul>
-<li>上述代码中will的原型是通过构造函数new Person()构造出来的对象（即Person{name:undefined, age:undefined}。will的构造函数是Person，而非Teacher。</li>
-<li>will访问constructor属性的时候，先找到Teacher.prototype，接着是Person.prototype，它的constructor属性指向Person构造函数。</li>
-</ul>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fqh8vfn0eaj31em0qgwm8.jpg" alt=""></p>
-<p>重设constructor属性，使wiil对应到正确的构造函数中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Teacher.prototype.constructor = Teacher</div><div class="line">#更佳的方式，设置enumerable属性为默认的false</div><div class="line">Object.defineProperty(Teacher.prototype,&quot;constructor&quot;,&#123;</div><div class="line">    enumerable: false,</div><div class="line">    value: Teacher</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fqh927ypzsj31eq0qe10x.jpg" alt=""></p>
-<h5 id="原型的更新和重写"><a href="#原型的更新和重写" class="headerlink" title="原型的更新和重写"></a>原型的更新和重写</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#原型更新</div><div class="line">Teacher.prototype.getId = function()&#123;</div><div class="line">  console.log(&apos;原型更新&apos;)</div><div class="line">&#125;</div><div class="line">#原型重写</div><div class="line">Teacher.prototype = &#123;</div><div class="line">  getStaffId:function()&#123;</div><div class="line">    console.log(&apos;原型重写&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">相当于Teacher的原型变成了一个字面量对象，里面有一个getStaffId方法。这个字面量对象的方法的原型指向Object.prototype</div></pre></td></tr></table></figure>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/67351782.jpg" alt=""></p>
-<h5 id="组合继承（两个构造函数）"><a href="#组合继承（两个构造函数）" class="headerlink" title="组合继承（两个构造函数）"></a>组合继承（两个构造函数）</h5><p>在子类的构造函数中通过call来调用父类的构造函数进行初始化。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function Person(name,age)&#123;</div><div class="line">  this.name = name</div><div class="line">  this.age = age</div><div class="line">&#125;</div><div class="line">Person.prototype.getId = function()&#123;</div><div class="line">  console.log(this.name + &quot; &quot; + this.age)</div><div class="line">&#125;</div><div class="line">function Teacher(name,age,country)&#123;</div><div class="line">  Person.call(this,name,age)</div><div class="line">  this.country = country</div><div class="line">&#125;</div><div class="line">Teacher.prototype = new Person() //继承</div><div class="line">Object.defineProperty(Teacher.prototype,&quot;constructor&quot;,&#123;  //确定constructor指向</div><div class="line">  enumerable:false,</div><div class="line">  value:Teacher</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var tom = new Teacher(&quot;Tom&quot;,18,&quot;shanghai&quot;)</div></pre></td></tr></table></figure>
-<ul>
-<li><p>不足之处，在调用子类型构造函数的时候会重写超类型对象的属性。</p>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/80439474.jpg" alt=""></p>
+<li><p>先按顺序执行microtask queue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">主要是promise函数，promise函数的第一个参数是在当前任务直接执行，不会放入队列任务之中；promise的回调函数是异步执行的then方法里的参数</div></pre></td></tr></table></figure>
+</li>
+<li><p>microtask queue执行完之后，再按顺序执行macrotask queue</p>
 </li>
 </ul>
-<h5 id="原型式继承（通过字面量定义的对象）"><a href="#原型式继承（通过字面量定义的对象）" class="headerlink" title="原型式继承（通过字面量定义的对象）"></a>原型式继承（通过字面量定义的对象）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">function object(o)&#123;</div><div class="line">  function F()&#123;&#125;    //创建一个函数</div><div class="line">  F.prototype = o   //原型等于对象o</div><div class="line">  return new F()    //返回函数的实例</div><div class="line">&#125;</div><div class="line">---------------</div><div class="line">var A = &#123;</div><div class="line">  add:function()&#123;</div><div class="line">    console.log(&apos;addA&apos;)</div><div class="line">  &#125;,</div><div class="line">  sub:function()&#123;</div><div class="line">    console.log(&apos;subA&apos;)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var B = object(A)</div><div class="line">B.add = function()&#123;</div><div class="line">  console.log(&apos;addB&apos;)</div><div class="line">&#125;</div><div class="line">B.div = function()&#123;</div><div class="line">  console.log(&apos;divB&apos;)</div><div class="line">&#125;</div><div class="line">-----------</div><div class="line">B.add()   //addB</div><div class="line">B.sub()   //subA</div><div class="line">B.div()   //divB</div></pre></td></tr></table></figure>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/4450609.jpg" alt=""></p>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-4-25/49863286.jpg" alt=""></p>
-<ul>
-<li><p>以上的方法可以用Object.create()方法来实现原型式继承，两个参数</p>
-<ul>
-<li>用作新对象原型的对象</li>
-<li>为新对象定义的额外属性</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var C = Object.create(A,&#123;</div><div class="line">  sub:&#123;</div><div class="line">    value:function()&#123;</div><div class="line">      console.log(&apos;subC&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  multi:&#123;</div><div class="line">    value:function()&#123;</div><div class="line">      console.log(&apos;multiC&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 </li>
-</ul>
-<hr>
-<p>以上都是bullshit，又臭又长，现在直接使用es6的class，参照我后面一篇博客。</p>
-<p>  ​</p>
+<li><p>重复过程3（事件循环event loop）</p>
+</li>
+</ol>
+<p><a href="http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D" target="_blank" rel="external">国外大牛把整个过程视觉化了</a></p>
 
       
     </div>
@@ -466,7 +446,7 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
       
         <div class="post-tags">
           
-            <a href="/tags/继承/" rel="tag"># 继承</a>
+            <a href="/tags/事件循环/" rel="tag"># 事件循环</a>
           
         </div>
       
@@ -479,8 +459,8 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/17/js原型/" rel="next" title="似懂非懂的原型链">
-                <i class="fa fa-chevron-left"></i> 似懂非懂的原型链
+              <a href="/2018/05/21/class和继承/" rel="next" title="class和继承">
+                <i class="fa fa-chevron-left"></i> class和继承
               </a>
             
           </div>
@@ -488,10 +468,6 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/18/git/" rel="prev" title="git整理">
-                git整理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +625,7 @@ instanceof &amp;amp;&amp;amp; isPrototypeOf()">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原型链继承"><span class="nav-number">1.</span> <span class="nav-text">原型链继承</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#constructor属性"><span class="nav-number">2.</span> <span class="nav-text">constructor属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型的更新和重写"><span class="nav-number">3.</span> <span class="nav-text">原型的更新和重写</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#组合继承（两个构造函数）"><span class="nav-number">4.</span> <span class="nav-text">组合继承（两个构造函数）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#原型式继承（通过字面量定义的对象）"><span class="nav-number">5.</span> <span class="nav-text">原型式继承（通过字面量定义的对象）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#js事件处理流程"><span class="nav-number">1.</span> <span class="nav-text">js事件处理流程</span></a></li></ol></div>
             
 
           </div>
