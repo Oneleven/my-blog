@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="String," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -87,32 +87,30 @@
 
 
 
-<meta name="description" content="concat() [类似于数组的concat()方法]
-连接两个字符串，返回一个新字符串，不改变原来字符串
+<meta name="description" content="函数
+函数声明：函数声明提升
 
-语法：str.concat(string2, string3[, …, stringN])
-返回值：新的字符串，（原字符串不变）">
+函数表达式：使用前先赋值
+1234sayHi()var sayHi = function()&amp;#123; alert(&amp;quot;hello&amp;quot;)&amp;#125;   //报错">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中字符串的方法小结">
-<meta property="og:url" content="http://yoursite.com/2017/07/29/string字符串的方法/index.html">
+<meta property="og:title" content="JS高级程序读书笔记（4）">
+<meta property="og:url" content="http://yoursite.com/2018/05/24/js高级程序读书笔记（4）/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="concat() [类似于数组的concat()方法]
-连接两个字符串，返回一个新字符串，不改变原来字符串
+<meta property="og:description" content="函数
+函数声明：函数声明提升
 
-语法：str.concat(string2, string3[, …, stringN])
-返回值：新的字符串，（原字符串不变）">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/17-8-9/74630263.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/17-8-9/72652580.jpg">
-<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/17-8-9/75600709.jpg">
-<meta property="og:updated_time" content="2018-02-25T14:08:08.438Z">
+函数表达式：使用前先赋值
+1234sayHi()var sayHi = function()&amp;#123; alert(&amp;quot;hello&amp;quot;)&amp;#125;   //报错">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-5-23/95154912.jpg">
+<meta property="og:updated_time" content="2018-05-24T13:35:39.212Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中字符串的方法小结">
-<meta name="twitter:description" content="concat() [类似于数组的concat()方法]
-连接两个字符串，返回一个新字符串，不改变原来字符串
+<meta name="twitter:title" content="JS高级程序读书笔记（4）">
+<meta name="twitter:description" content="函数
+函数声明：函数声明提升
 
-语法：str.concat(string2, string3[, …, stringN])
-返回值：新的字符串，（原字符串不变）">
-<meta name="twitter:image" content="http://oqwgy1e36.bkt.clouddn.com/17-8-9/74630263.jpg">
+函数表达式：使用前先赋值
+1234sayHi()var sayHi = function()&amp;#123; alert(&amp;quot;hello&amp;quot;)&amp;#125;   //报错">
+<meta name="twitter:image" content="http://oqwgy1e36.bkt.clouddn.com/18-5-23/95154912.jpg">
 
 
 
@@ -140,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/29/string字符串的方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/24/js高级程序读书笔记（4）/"/>
 
 
 
 
 
-  <title> JS中字符串的方法小结 | Oneleven's Blog </title>
+  <title> JS高级程序读书笔记（4） | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -318,7 +316,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/string字符串的方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/24/js高级程序读书笔记（4）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -339,7 +337,7 @@
             
             
               
-                JS中字符串的方法小结
+                JS高级程序读书笔记（4）
               
             
           </h1>
@@ -354,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T20:22:47+08:00">
-                2017-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-24T21:35:35+08:00">
+                2018-05-24
               </time>
             
 
@@ -377,8 +375,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">读书笔记</span>
                   </a>
                 </span>
 
@@ -412,95 +410,122 @@
       
 
       
-        <h4 id="concat-类似于数组的concat-方法"><a href="#concat-类似于数组的concat-方法" class="headerlink" title="concat() [类似于数组的concat()方法]"></a>concat() [类似于数组的concat()方法]</h4><blockquote>
-<p>连接两个字符串，返回一个新字符串，不改变原来字符串</p>
-</blockquote>
-<p>语法：str.concat(string2, string3[, …, stringN])</p>
-<p>返回值：新的字符串，（<strong>原字符串不变</strong>）</p>
+        <h5 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h5><ul>
+<li><p>函数声明：函数声明提升</p>
+</li>
+<li><p>函数表达式：使用前先赋值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sayHi()</div><div class="line">var sayHi = function()&#123;</div><div class="line"> alert(&quot;hello&quot;)</div><div class="line">&#125;   //报错</div></pre></td></tr></table></figure>
+</li>
+</ul>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;&apos;.concat(1,2,&apos;3&apos;)     //&apos;123&apos;   会先转换为字符串再连接</div><div class="line">1+2+&apos;3&apos;       //&apos;33&apos;  数字+字符串  == 字符串</div></pre></td></tr></table></figure>
-<h4 id="slice-类似于数组的slice-方法"><a href="#slice-类似于数组的slice-方法" class="headerlink" title="slice() [类似于数组的slice()方法]"></a>slice() [类似于数组的slice()方法]</h4><blockquote>
-<p>提取一个字符串的一部分，并返回一个新的字符串</p>
-</blockquote>
-<p>语法：str.slice(start[, end])    参数start从index=0开始 , 到end前一个数为止</p>
-<p>返回值：新的字符串 （<strong>原字符串不变</strong>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;tom  tom&apos;.slice(2,6)</div><div class="line">//&apos;m  t&apos;</div></pre></td></tr></table></figure>
-<h4 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h4><blockquote>
-<p><strong>substring() </strong>方法返回一个字符串在开始索引到结束索引之间的一个子集, 或从开始索引直到字符串的末尾的一个子集。</p>
-</blockquote>
-<p>语法：str.substring(indexStart[, indexEnd])</p>
-<p>参数：一个 0 到字符串长度之间的整数  ，这两个参数会<strong>自动调整</strong>到 第一个参数比第二个参数小</p>
-<p>​          (<strong>原字符串不变</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;JavaScript&apos;.substring(9,4) === &apos;JavaScript&apos;.substring(4,9)    /ture</div><div class="line">//&apos;Scrip&apos;</div></pre></td></tr></table></figure>
-<p><strong>注</strong>：slice()可以接受负数，substring()不行。substring()会自动调整，而slice()会变成空字符串。</p>
-<h4 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h4><blockquote>
-<p><strong>substr()</strong>方法返回一个字符串中从指定位置开始到指定字符数的字符。</p>
-</blockquote>
-<p>语法：str.substr(start[, length])     第二个参数是长度，区分substring()的第二个参数是index</p>
-<p>​             (<strong>原字符串不变</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;JavaScript&apos;.substr(4,5)</div><div class="line">//&apos;Scrip&apos;</div></pre></td></tr></table></figure>
-<p>####确定字符是否包含在字符串中</p>
+<h5 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h5><p>参照之前<a href="https://oneleven.github.io/2018/04/11/%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87/" target="_blank" rel="external">执行环境</a>的文章博客。进行深入了解。</p>
+<h5 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h5><p>JavaScript 是一个<em>单线程的解释器</em>，因此一定时间内只能执行一段代码。为了控制要执行的代码，就有一个JavaScript 任务队列。这些任务会按照将它们添加到队列的顺序执行。<code>setTimeout()</code>的第二个参数告诉JavaScript 再过多长时间把当前任务添加到队列中。如果队列是空的，那么添加的代码会立即执行；如果队列不是空的，那么它就要等前面的代码执行完了以后再执行。</p>
+<h5 id="BOM之location对象"><a href="#BOM之location对象" class="headerlink" title="BOM之location对象"></a>BOM之location对象</h5><p>location对象即是window对象，也是document的对象，<code>window.location === document.location</code> 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">location的属性</div><div class="line">1. host           &apos;www.google.com:443&apos;</div><div class="line">2. hostname       &apos;www.google.com&apos;</div><div class="line">3. port           &apos;443&apos;</div><div class="line">4. href           &apos;https://www.google.com&apos;</div><div class="line">5. protocol       &apos;http:&apos;</div><div class="line">6. pathname       &apos;/index.html&apos;</div><div class="line">7. search         &apos;?a=b&amp;c=d&apos;</div><div class="line">8. hash           &apos;#contents&apos;</div></pre></td></tr></table></figure>
 <ul>
-<li>indexOf() &amp; lastIndexOf() [类似于数组的indexIOf()方法]</li>
+<li><code>location.href=&quot;xxx&quot;</code> 和 `location.replace(“xxx”) 都是更新页面，前者会在历史记录中保存，后者不会。</li>
 </ul>
-<blockquote>
-<p>这两个方法用于确定一个字符串在另一个字符串中的位置，都返回一个整数，表示匹配开始的位置。如果返回<code>-1</code>，就表示不匹配。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;Tom is a gay&apos;.indexOf(&apos;a&apos;)</div><div class="line">//7</div></pre></td></tr></table></figure>
+<h5 id="DOM对象（文档对象模型）"><a href="#DOM对象（文档对象模型）" class="headerlink" title="DOM对象（文档对象模型）"></a>DOM对象（文档对象模型）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">BOM和DOM</div><div class="line">BOM：浏览器对象模型，是独立于内容与浏览器窗口进行交互的对象；主要用于操作浏览器的属性和行为。比如新建窗口，获取屏幕分辨率等。</div><div class="line">DOM：文档对象模型，是 HTML 和XML 的应用程序接口（API）。DOM描绘了一个层次化的节点树，允许开发人员添加、移除和修改页面的某一部分</div></pre></td></tr></table></figure>
 <ul>
-<li><p><strong>string.includes(string,startIndex)</strong>：<strong>返回布尔值</strong>，表示是否找到了参数字符串。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;tom is a gay&apos;.includes(&apos;d&apos;)</div><div class="line">//flase</div><div class="line">-----------第二个参数表示开始搜索的位置</div><div class="line">&apos;tom is a gay&apos;.includes(&apos;o&apos;,1)  //ture</div><div class="line">&apos;tom is a gay&apos;.includes(&apos;o&apos;,2)  //flase</div></pre></td></tr></table></figure>
+<li><p>Node类型：DOM1级中定义了Node接口，所有的DOM节点都继承自Node类型，因此所有的节点都具有Node类型的所有属性和方法。Node类型由nodeType属性表明，一共有12个属性，常用的node类型有以下几个</p>
+<ul>
+<li><p>nodeType值为1：表示元素节点，即各种标签</p>
+<p><code>nodeName：元素名  /  nodeValue：null</code></p>
 </li>
-<li><p>str.startsWidth(str,<strong>startIndex</strong>):返回布尔值，表示参数字符串是否在源字符串的头部。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;tom is a gay&apos;.startsWith(&apos;gay&apos;,9)   //ture</div></pre></td></tr></table></figure>
+<li><p>nodeType值为3：表示文本节点，即标签内部的文字</p>
+<p><code>nodeName：#text  /  nodeValue：节点的内容</code></p>
 </li>
-<li><p>str.endsWidth(str,<strong>lastIndex</strong>):返回布尔值，表示参数字符串是否在源字符串的尾部。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;tom is a gay&apos;.endsWith(&apos;is&apos;,6)  //true</div></pre></td></tr></table></figure>
+<li><p>nodeType值为9：表示文档节点，即document节点</p>
+<p><code>nodeName：#document    /  nodeValue：null</code></p>
+</li>
+<li><p>nodeType值为8：表示注释节点</p>
 </li>
 </ul>
-<h4 id="repeat"><a href="#repeat" class="headerlink" title="repeat()"></a>repeat()</h4><p>语法：str.repeat(num)  <code>repeat()</code>方法返回一个新字符串，表示将原字符串重复<code>n</code>次。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">如果是小数，会被取整</div><div class="line">&apos;tom&apos;.repeat(2.9)  //&apos;tomtom&apos;</div><div class="line">如果是-1到0之间，视为0 ；NaN也视为0</div><div class="line">&apos;tom&apos;.repeat(-0.7)  //&apos;&apos;</div><div class="line">&apos;tom&apos;.repeat(NaN)  //&apos;&apos;</div></pre></td></tr></table></figure>
-<h4 id="补全字符串，类似数组push-添加"><a href="#补全字符串，类似数组push-添加" class="headerlink" title="补全字符串，类似数组push()添加"></a>补全字符串，类似数组push()添加</h4><p>语法：str.padStart(targetLength [, padString])  / padEnd()</p>
-<p>返回值：一个新的字符串（<strong>不改变原字符串</strong>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&apos;x&apos;.padStart(3)  //&apos;  x&apos;  没有第二个参数默认用空格代替</div><div class="line">&apos;xx&apos;.padEnd(2,&apos;sdfsd&apos;)    //&apos;xx&apos; 长度如果是原来字符串本身，那么返回原字符串</div><div class="line">&apos;xx&apos;.padStart(4,&apos;kkkkkkk&apos;)   //&apos;kkxx&apos;  多余的会舍去</div><div class="line">&apos;xx&apos;.padEnd(5,&apos;sk&apos;)   //&apos;xxsks&apos;    不够长度的话会重复、</div></pre></td></tr></table></figure>
-<h4 id="trim-trimRight-trimLeft"><a href="#trim-trimRight-trimLeft" class="headerlink" title="trim(),trimRight(),trimLeft()"></a>trim(),trimRight(),trimLeft()</h4><blockquote>
-<p><strong>trim() </strong>方法会从一个字符串的两端删除空白字符。在这个上下文中的空白字符是所有的空白字符 (包括换行符\n、回车符\r、制表符\t、\v) </p>
-</blockquote>
-<p>返回值：新字符串  （<strong>不改变原字符串</strong>）</p>
-<p>参数：不接受参数</p>
-<p>语法：str.trim()</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos; hello world   \n&apos;.trim()   </div><div class="line">// &apos;hello world&apos;</div></pre></td></tr></table></figure>
-<h4 id="chatAt"><a href="#chatAt" class="headerlink" title="chatAt()"></a>chatAt()</h4><p>方法从一个字符串中返回指定的字符。</p>
-<p>语法：str.charAt(index) ；<strong>超出index范围，就返回空字符串</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;tom is a gay&apos;.chatAt(2)   //&apos;m&apos;</div><div class="line">&apos;tom is a gay&apos;.chatAt(99)    //&apos;&apos;</div></pre></td></tr></table></figure>
-<h4 id="toLowerCase-amp-toUpperCase"><a href="#toLowerCase-amp-toUpperCase" class="headerlink" title="toLowerCase()  &amp;  toUpperCase()"></a>toLowerCase()  &amp;  toUpperCase()</h4><blockquote>
-<p><strong>toLowerCase()</strong>方法用于将一个字符串全部转为小写，<code>toUpperCase</code>则是全部转为大写。</p>
-</blockquote>
-<p>语法：str.toLowerCase()</p>
-<p>返回值：新的字符串 （<strong>不改变原字符串</strong>）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;JavaScript&apos;.toUpperCase()</div><div class="line">&quot;JAVASCRIPT&quot;</div></pre></td></tr></table></figure>
-<h4 id="match"><a href="#match" class="headerlink" title="match()"></a>match()</h4><blockquote>
-<p><code>match</code>方法用于确定原字符串是否匹配某个子字符串，返回一个数组，成员为匹配的第一个字符串。如果没有找到匹配，则返回<code>null</code>。</p>
-</blockquote>
-<p>语法：str.match(regexp);</p>
-<p>返回值：满足匹配条件的<strong>数组</strong></p>
-<p>参数：</p>
-<ul>
-<li><p>未使用参数，返回空字符串的数组[‘’]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;hello world&apos;.match()      //[&quot;&quot;]</div></pre></td></tr></table></figure>
 </li>
-<li><p>正则表达式不带有g标志，会返回 RegExp.exec() 相同的结果，返回的数组有index（匹配在原字符串中的索引）和input（原字符串）属性。而且返回的是<strong>第一个</strong>匹配到的元素的数组</p>
+<li><p>Node节点关系：（这里包含了文本节点，包括空格；区别于element的节点）</p>
+<ul>
+<li>childNodes, firstChild, lastChild</li>
+<li>parentNode</li>
+<li>previousSibling, nextSubling</li>
+<li><code>Array.prototype.slice.call(nodeList,0)</code> ：把nodeLIst对象转换为数组</li>
+</ul>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-5-23/95154912.jpg" alt=""></p>
+</li>
+<li><p>Node操作节点的方法：</p>
+<ul>
+<li><p><code>node.appendChild(node)</code>：向childNodes末尾添加节点</p>
+<p><code>node.insertBefore(newnode, existingnode)</code>：<code>insertBefore(newNode,null)</code> ，在末尾添加，等同于appendChild()</p>
+</li>
+<li><p><code>removeChild()</code> ：移除父节点下的子节点</p>
+<p><code>replaceChild(newNode，oldNode)</code> ：替换父节点下的子节点</p>
+</li>
+<li><p>以上方法都是基于父节点操作的</p>
 </li>
 </ul>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/17-8-9/74630263.jpg" alt=""></p>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/17-8-9/72652580.jpg" alt=""></p>
+<hr>
 <ul>
-<li><p>参数带有g的正则表达式，返回<strong>全部</strong>匹配到的数组，而且没有index和input属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&apos;tom is a toy&apos;.match(/to./g)</div><div class="line">//[&apos;tom&apos;,&apos;toy&apos;]</div></pre></td></tr></table></figure>
-<p><img src="http://oqwgy1e36.bkt.clouddn.com/17-8-9/75600709.jpg" alt=""></p>
+<li><code>node.cloneNode(boolean)</code> ：true为深复制，包括子节点 / false为浅复制</li>
+</ul>
 </li>
 </ul>
-<h4 id="遍历字符串：for…of"><a href="#遍历字符串：for…of" class="headerlink" title="遍历字符串：for…of"></a>遍历字符串：for…of</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for(let key of &apos;tom&apos;)&#123;</div><div class="line">  console.log(key)</div><div class="line">&#125;</div><div class="line">//t</div><div class="line">//o</div><div class="line">//m</div></pre></td></tr></table></figure>
+<h5 id="Document类型"><a href="#Document类型" class="headerlink" title="Document类型"></a>Document类型</h5><p>js中通过document类型表示文档。浏览器中的document对象是HTMLDocument的一个实例，表示整个HTML页面。</p>
+<ul>
+<li><p>document的属性：</p>
+<p><code>document.documentElement</code>：始终指向页面的html元素</p>
+<p><code>document.body</code> ：指向body元素</p>
+<p><code>document.title</code> ：获取文档标题的内容，也可以修改<code>document.title=&quot;haha&quot;</code></p>
+<hr>
+<p>关于网页请求有关的属性</p>
+<p><code>document.URL</code> ：页面完整的URL</p>
+<p><code>document.domian</code> ：域名</p>
+<p><code>document.regerrer</code> ：连接到当前页面的那个url</p>
+<hr>
+<p><code>document.readyState</code> ：loading（正在加载文档） 、 complete（已经加载完文档）</p>
+</li>
+<li><p>document查找元素的方法：</p>
+<p><code>document.getElementById()</code> ：标签的id名</p>
+<p><code>document.getElementsByTagName()</code> ：标签名</p>
+</li>
+</ul>
+<h5 id="Element类型"><a href="#Element类型" class="headerlink" title="Element类型"></a>Element类型</h5><p>element类型表示HTML或者XML中的元素。提供对元素标签名，子节点的访问。</p>
+<ul>
+<li><p>获取特性：</p>
+<p><code>element.getAttribute(&quot;name&quot;)</code> ：</p>
+<p><code>element.setAttribute(&quot;name&quot;,&quot;value&quot;)</code></p>
+<p><code>element.removeAttribute(&quot;name&quot;)</code></p>
+<p>简写及设置：<code>document.div=&quot;xxx&quot;</code> / <code>document.className=&quot;xxx&quot;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">classList :操作类名的方法</div><div class="line">div.classList.add(value)</div><div class="line">div.classList.contains(value)</div><div class="line">div.classList.remove(value)</div><div class="line">div.classList.toggle(value)</div></pre></td></tr></table></figure>
+</li>
+<li><p>创建标签：</p>
+<p><code>document.creatElement(&quot;&quot;)</code></p>
+</li>
+<li><p>节点关系：推荐！！<strong>只返回元素节点，不包含文本节点</strong></p>
+<p><code>element.children</code></p>
+<p><code>element.firstElementChild</code></p>
+<p><code>element.lastElementChild</code></p>
+<p><code>element.previousElementSibling</code></p>
+<p><code>element.nextElementSibling</code></p>
+</li>
+</ul>
+<h5 id="Text类型"><a href="#Text类型" class="headerlink" title="Text类型"></a>Text类型</h5><p>text类型表示文本节点</p>
+<ul>
+<li><p>创建文本节点：</p>
+<p><code>document.createTextNode(&quot;text内容&quot;)</code></p>
+</li>
+</ul>
+<h5 id="扩充"><a href="#扩充" class="headerlink" title="扩充"></a>扩充</h5><ul>
+<li><code>document/element.querySelector(&#39;.class&#39;)</code> &amp;&amp;<code>document/element.querySelectorAll()</code> </li>
+<li><code>document/element.getElementByClassName()</code></li>
+</ul>
+<hr>
+<h5 id="table标签"><a href="#table标签" class="headerlink" title="table标签"></a>table标签</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;table border=&quot;1&quot;&gt;</div><div class="line">	&lt;thead&gt;</div><div class="line">		&lt;tr&gt;    //tr表示行</div><div class="line">			&lt;th&gt;xxx&lt;/th&gt;  //表头，即标题</div><div class="line">		&lt;/tr&gt;</div><div class="line">	&lt;/thead&gt;</div><div class="line">	&lt;tbody&gt;</div><div class="line">		&lt;tr&gt;</div><div class="line">			&lt;td&gt;xxx&lt;/td&gt;</div><div class="line">		&lt;/tr&gt;	</div><div class="line">	&lt;/tbody&gt;</div><div class="line">	&lt;tfoot&gt; xxx &lt;/tfoot&gt;</div><div class="line">&lt;/table&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h5 id="自定义数据属性"><a href="#自定义数据属性" class="headerlink" title="自定义数据属性"></a>自定义数据属性</h5><p>添加前缀data- 就可以自定义属性。可以通过元素的dataset属性来访问属性值</p>
+<p><code>element.dataset.name=value</code> 即设置了data-name=”value”</p>
+<hr>
+<p><code>innerHTML</code>：<strong>标签，空格，换行都直出</strong>，遇到 &lt; 等进行转义</p>
+<p><code>innerText</code> ：去掉标签，所有子文本节点的<strong>文本直出</strong>，空格和换行会忽略成一个空格</p>
+<p><code>textContent</code> ：去掉标签，所有都直出</p>
 
       
     </div>
@@ -524,7 +549,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/String/" rel="tag"># String</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -537,8 +562,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/20/属性描述对象/" rel="next" title="属性描述对象">
-                <i class="fa fa-chevron-left"></i> 属性描述对象
+              <a href="/2018/05/24/js的事件循环-event loop/" rel="next" title="js的事件循环">
+                <i class="fa fa-chevron-left"></i> js的事件循环
               </a>
             
           </div>
@@ -546,10 +571,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/07/DOM/" rel="prev" title="DOM小结">
-                DOM小结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -707,7 +728,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#concat-类似于数组的concat-方法"><span class="nav-number">1.</span> <span class="nav-text">concat() [类似于数组的concat()方法]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#slice-类似于数组的slice-方法"><span class="nav-number">2.</span> <span class="nav-text">slice() [类似于数组的slice()方法]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substring"><span class="nav-number">3.</span> <span class="nav-text">substring()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#substr"><span class="nav-number">4.</span> <span class="nav-text">substr()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#repeat"><span class="nav-number">5.</span> <span class="nav-text">repeat()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补全字符串，类似数组push-添加"><span class="nav-number">6.</span> <span class="nav-text">补全字符串，类似数组push()添加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#trim-trimRight-trimLeft"><span class="nav-number">7.</span> <span class="nav-text">trim(),trimRight(),trimLeft()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#chatAt"><span class="nav-number">8.</span> <span class="nav-text">chatAt()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toLowerCase-amp-toUpperCase"><span class="nav-number">9.</span> <span class="nav-text">toLowerCase()  &  toUpperCase()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#match"><span class="nav-number">10.</span> <span class="nav-text">match()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遍历字符串：for…of"><span class="nav-number">11.</span> <span class="nav-text">遍历字符串：for…of</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#setTimeout"><span class="nav-number">3.</span> <span class="nav-text">setTimeout()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BOM之location对象"><span class="nav-number">4.</span> <span class="nav-text">BOM之location对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM对象（文档对象模型）"><span class="nav-number">5.</span> <span class="nav-text">DOM对象（文档对象模型）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Document类型"><span class="nav-number">6.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Element类型"><span class="nav-number">7.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Text类型"><span class="nav-number">8.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩充"><span class="nav-number">9.</span> <span class="nav-text">扩充</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#table标签"><span class="nav-number">10.</span> <span class="nav-text">table标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义数据属性"><span class="nav-number">11.</span> <span class="nav-text">自定义数据属性</span></a></li></ol></div>
             
 
           </div>
