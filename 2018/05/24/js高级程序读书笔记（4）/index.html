@@ -102,7 +102,9 @@
 函数表达式：使用前先赋值
 1234sayHi()var sayHi = function()&amp;#123; alert(&amp;quot;hello&amp;quot;)&amp;#125;   //报错">
 <meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-5-23/95154912.jpg">
-<meta property="og:updated_time" content="2018-05-24T13:35:39.212Z">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1frpx0n9gw0j30z40kg762.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1frpx6sko5hj30gy0ggt91.jpg">
+<meta property="og:updated_time" content="2018-05-27T07:18:27.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS高级程序读书笔记（4）">
 <meta name="twitter:description" content="函数
@@ -526,6 +528,24 @@
 <p><code>innerHTML</code>：<strong>标签，空格，换行都直出</strong>，遇到 &lt; 等进行转义</p>
 <p><code>innerText</code> ：去掉标签，所有子文本节点的<strong>文本直出</strong>，空格和换行会忽略成一个空格</p>
 <p><code>textContent</code> ：去掉标签，所有都直出</p>
+<h5 id="自定义数据属性-1"><a href="#自定义数据属性-1" class="headerlink" title="自定义数据属性"></a>自定义数据属性</h5><p>添加前缀data- 就可以自定义属性。可以通过元素的dataset属性来访问属性值</p>
+<p><code>element.dataset.name=value</code> 即设置了data-name=”value”</p>
+<hr>
+<p><code>innerHTML</code>：<strong>标签，空格，换行都直出</strong>，遇到 &lt; 等进行转义</p>
+<p><code>innerText</code> ：去掉标签，所有子文本节点的<strong>文本直出</strong>，空格和换行会忽略成一个空格</p>
+<p><code>textContent</code> ：去掉标签，所有都直出</p>
+<h5 id="确定元素的大小"><a href="#确定元素的大小" class="headerlink" title="确定元素的大小"></a>确定元素的大小</h5><ul>
+<li><p><code>offsetHeight</code> &amp; <code>offsetWidth</code>：content+padding+border</p>
+</li>
+<li><p><code>clientWidth</code> &amp; <code>clientHeight</code> ：content+ padding</p>
+</li>
+<li><p><code>scrollWidth</code> &amp; <code>scrollHeight</code> ：文档内容区域的大小</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1frpx0n9gw0j30z40kg762.jpg" alt=""></p>
+</li>
+<li><p>element.getBoundingClientRect()：获取元素相对适口左上角的位置</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1frpx6sko5hj30gy0ggt91.jpg" alt=""></p>
+</li>
+</ul>
 
       
     </div>
@@ -728,7 +748,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#setTimeout"><span class="nav-number">3.</span> <span class="nav-text">setTimeout()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BOM之location对象"><span class="nav-number">4.</span> <span class="nav-text">BOM之location对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM对象（文档对象模型）"><span class="nav-number">5.</span> <span class="nav-text">DOM对象（文档对象模型）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Document类型"><span class="nav-number">6.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Element类型"><span class="nav-number">7.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Text类型"><span class="nav-number">8.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩充"><span class="nav-number">9.</span> <span class="nav-text">扩充</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#table标签"><span class="nav-number">10.</span> <span class="nav-text">table标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义数据属性"><span class="nav-number">11.</span> <span class="nav-text">自定义数据属性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">1.</span> <span class="nav-text">函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#闭包"><span class="nav-number">2.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#setTimeout"><span class="nav-number">3.</span> <span class="nav-text">setTimeout()</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#BOM之location对象"><span class="nav-number">4.</span> <span class="nav-text">BOM之location对象</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#DOM对象（文档对象模型）"><span class="nav-number">5.</span> <span class="nav-text">DOM对象（文档对象模型）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Document类型"><span class="nav-number">6.</span> <span class="nav-text">Document类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Element类型"><span class="nav-number">7.</span> <span class="nav-text">Element类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Text类型"><span class="nav-number">8.</span> <span class="nav-text">Text类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩充"><span class="nav-number">9.</span> <span class="nav-text">扩充</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#table标签"><span class="nav-number">10.</span> <span class="nav-text">table标签</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义数据属性"><span class="nav-number">11.</span> <span class="nav-text">自定义数据属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#自定义数据属性-1"><span class="nav-number">12.</span> <span class="nav-text">自定义数据属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#确定元素的大小"><span class="nav-number">13.</span> <span class="nav-text">确定元素的大小</span></a></li></ol></div>
             
 
           </div>
