@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="闭包," />
+  <meta name="keywords" content="Canvas," />
 
 
 
@@ -87,19 +87,23 @@
 
 
 
-<meta name="description" content="模块化
-各种全局变量">
+<meta name="description" content="####Canvas
+\负责在页面中设定一个区域，然后通过js动态地在这个区域中绘制图形。必须先设置width和height属性，然后去的绘图上下文对象的引用，调用getContext(&amp;quot;2d&amp;quot;)方法，就可以取得2D上下文对象。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包">
-<meta property="og:url" content="http://yoursite.com/2017/06/13/闭包/index.html">
+<meta property="og:title" content="Canvas笔记">
+<meta property="og:url" content="http://yoursite.com/2018/06/04/canvas学习篇/index.html">
 <meta property="og:site_name" content="Oneleven's Blog">
-<meta property="og:description" content="模块化
-各种全局变量">
-<meta property="og:updated_time" content="2017-07-21T12:19:53.000Z">
+<meta property="og:description" content="####Canvas
+\负责在页面中设定一个区域，然后通过js动态地在这个区域中绘制图形。必须先设置width和height属性，然后去的绘图上下文对象的引用，调用getContext(&amp;quot;2d&amp;quot;)方法，就可以取得2D上下文对象。">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frzjxfdglnj311k0nwjs5.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-5-29/79356752.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-5-29/91617345.jpg">
+<meta property="og:updated_time" content="2018-06-04T15:17:35.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包">
-<meta name="twitter:description" content="模块化
-各种全局变量">
+<meta name="twitter:title" content="Canvas笔记">
+<meta name="twitter:description" content="####Canvas
+\负责在页面中设定一个区域，然后通过js动态地在这个区域中绘制图形。必须先设置width和height属性，然后去的绘图上下文对象的引用，调用getContext(&amp;quot;2d&amp;quot;)方法，就可以取得2D上下文对象。">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1frzjxfdglnj311k0nwjs5.jpg">
 
 
 
@@ -127,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/13/闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/04/canvas学习篇/"/>
 
 
 
 
 
-  <title> 闭包 | Oneleven's Blog </title>
+  <title> Canvas笔记 | Oneleven's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -305,7 +309,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/13/闭包/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/canvas学习篇/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Oneleven">
@@ -326,7 +330,7 @@
             
             
               
-                闭包
+                Canvas笔记
               
             
           </h1>
@@ -341,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-13T20:18:30+08:00">
-                2017-06-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T23:17:32+08:00">
+                2018-06-04
               </time>
             
 
@@ -399,25 +403,50 @@
       
 
       
-        <h4 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h4><ol>
-<li><p>各种全局变量</p>
+        <p>####Canvas</p>
+<p>\<canvas>负责在页面中设定一个区域，然后通过js动态地在这个区域中绘制图形。必须先设置width和height属性，然后去的绘图上下文对象的引用，调用<code>getContext(&quot;2d&quot;)</code>方法，就可以取得2D上下文对象。 </canvas></p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var $topbar = $(&apos;#topbar&apos;)</div><div class="line">$topbar.on(&apos;click&apos;,functuion()&#123;</div><div class="line">  console.log(&apos;topbar&apos;)</div><div class="line">&#125;)</div><div class="line">var $banners = $(&apos;#banners&apos;)</div><div class="line">$banners.on(&apos;click&apos;,function()&#123;</div><div class="line">  console.log(&apos;banners&apos;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&apos;drawing&apos; width=&apos;1024&apos; height=&apos;768&apos;&gt;</div><div class="line">	当前浏览器不支持Canvas，请更换浏览器再试，并把这个浏览器永远扔进垃圾堆</div><div class="line">&lt;/canvas&gt;</div><div class="line">如果浏览器不支持canvas，会出现以上文字；如果支持，就会忽略</div><div class="line">-----</div><div class="line">##推荐直接在便签里制定大小，即width和height；不能使用css指定大小，因为元素会被拉伸。</div><div class="line">因为canvas默认宽高是300px*150px，如果在css设置宽高，会对默认大小进行拉伸</div><div class="line">##这两个属性的大小不带有单位</div><div class="line">-----</div><div class="line">也可以直接js中设置画布宽高</div><div class="line">var canvas = document.getElementById(&apos;drawing)</div><div class="line">canvas.width = xxx</div><div class="line">canvas.height = yyy</div></pre></td></tr></table></figure>
+<ul>
+<li><p>填充：fillStyle</p>
 </li>
-<li><p>用立即执行函数消除全局变量（或者用{}块级作用域+let）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">!function()&#123;</div><div class="line">  var $topbar = $(&apos;#topbar&apos;)</div><div class="line">  $topbar.on(&apos;click&apos;,functuion()&#123;</div><div class="line">    console.log(&apos;topbar&apos;)</div><div class="line">  &#125;)</div><div class="line">&#125;()   //让这些变量变成局部变量，放进一个函数里并且调用，但是函数前要加上一个符号（+,-,!等）</div><div class="line">!function()&#123;</div><div class="line">  var $banners = $(&apos;#banners&apos;)</div><div class="line">  $banners.on(&apos;click&apos;,functuion()&#123;</div><div class="line">    console.log(&apos;banners&apos;)</div><div class="line">  &#125;)</div><div class="line">&#125;()</div><div class="line">------------------</div><div class="line">&#123;</div><div class="line">  let $topbar = $(&apos;#topbar&apos;)</div><div class="line">  $topbar.on(&apos;click&apos;,functuion()&#123;</div><div class="line">    console.log(&apos;topbar&apos;)</div><div class="line">  &#125;)</div><div class="line">&#125;   //或者用es6语法:块级作用域，局部变量</div></pre></td></tr></table></figure>
+<li><p>描边：strokeStyle</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var context = document.getElementById(&apos;drawing&apos;).getContext(&apos;2d&apos;)</div><div class="line">context.fillStyle=&quot;red&quot;</div><div class="line">context.strokeStyle=&quot;blue&quot;</div><div class="line">#所有涉及描边和填充的操作都将使用这两个样式，直到重新设置这两个值</div><div class="line">-----</div><div class="line">context.canvas //直接获取到canvas对象</div></pre></td></tr></table></figure>
 </li>
-<li><p>按照上述方法，作用域与作用域之间是隔开的，如果作用域B想使用作用域A的变量，怎么办？可以使用两个作用域都能访问到的全局变量window，作为桥梁，赋值给window属性并访问</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">!function()&#123;</div><div class="line">  var $topbar = $(&apos;#topbar&apos;)</div><div class="line">  var user = &#123;</div><div class="line">    name:&apos;yom&apos;,</div><div class="line">    age:20</div><div class="line">  &#125;</div><div class="line">  window.user = user   //全局变量</div><div class="line">&#125;() </div><div class="line"></div><div class="line">!function()&#123;</div><div class="line">  console.log(window.user)</div><div class="line">&#125;()</div></pre></td></tr></table></figure>
-<p>如果不能让别的作用域改user，只能读（暴露一个函数，不要暴露整个变量）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">!function()&#123;</div><div class="line">  var $topbar = $(&apos;#topbar&apos;)</div><div class="line">  var user = &#123;</div><div class="line">    name:&apos;yom&apos;,</div><div class="line">    age:20</div><div class="line">  &#125;</div><div class="line">  window.user = &#123;</div><div class="line">    nameGetter:function()&#123;return user.name&#125;,</div><div class="line">    ageGetter:fucntion()&#123;return user.age&#125;</div><div class="line">  &#125;</div><div class="line">&#125;() </div><div class="line"></div><div class="line">!function()&#123;</div><div class="line">  console.log(window.user.nameGetter)    //yom</div><div class="line">&#125;()</div></pre></td></tr></table></figure>
-<p>什么时候闭包：只要一个函数使用了它外面的变量，这个函数就是闭包，闭包是指这个函数以及它能访问到的这个变量。闭包是作用域的一种特殊的使用方式。</p>
+</ul>
+<ol>
+<li><p>绘制矩形</p>
+<ul>
+<li>fillRect(x, y, width, height)：矩形实体（颜色由上面的fillStyle定义）</li>
+<li>strokeRect(x, y, width, height)：矩形边框（颜色由上面的strokeStyle定义)</li>
+<li>clearRect(x, y, width, height)</li>
+</ul>
 </li>
-<li><p>举例：年龄增长器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function olderMaker()&#123;</div><div class="line">  var user = &#123;</div><div class="line">    name:&apos;jack&apos;,</div><div class="line">    age:18</div><div class="line">  &#125;</div><div class="line">  return function()&#123;</div><div class="line">    user.age += 1</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">var older = olderMaker()  //函数</div><div class="line">older.call()  每call一下，年龄增加一岁</div></pre></td></tr></table></figure>
-<p>​</p>
+<li><p>绘制直线</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">#先状态设置</div><div class="line">context.strokeStyle = &apos;black&apos;</div><div class="line">context.lineWidth = 3</div><div class="line"></div><div class="line">context.moveTo(100,100)  //moveTo表示起点的位置，不会接连在一起</div><div class="line">context.lineTo(300,400)</div><div class="line">context.lineTo(100,600)</div><div class="line"></div><div class="line">context.moveTo(300,200)</div><div class="line">context.lineTo(500,400)</div><div class="line">context.lineTo(300,600)</div><div class="line"></div><div class="line">context.moveTo(500,200)</div><div class="line">context.lineTo(700,400)</div><div class="line">context.lineTo(500,600)</div><div class="line">#再绘制</div><div class="line">context.stroke()</div></pre></td></tr></table></figure>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1frzjxfdglnj311k0nwjs5.jpg" alt=""></p>
+</li>
+<li><p>绘制多段路径：beginPath() &amp; closePath()</p>
+<ul>
+<li><code>baginPath()</code> ：表示开辟一条新路径</li>
+<li><code>closePath()</code> ：表示结束当前路径，如果路径不闭合，<strong>会自动帮你闭合</strong>。closePath()<strong>不一定要和beginPath()成对出现</strong>。</li>
+</ul>
+</li>
+<li><p>绘制弧线：<code>context.arc(centerx, centery, radius, startingAngle, endingAngle, boolean)</code></p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-5-29/79356752.jpg" alt=""></p>
+<ul>
+<li><p>最后一个布尔值：false表示顺时针， true表示逆时针</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">for(var i=0; i++; i&lt;10)&#123;</div><div class="line">  context.beginPath()</div><div class="line">  context.arc(50+ 100*i, 100 , 40 , 0, Math.PI*2*(i+1/10))</div><div class="line">  context.closePath()</div><div class="line">  context.stroke()</div><div class="line">&#125;</div><div class="line">--------------</div><div class="line">for(var i=0; i++; i&lt;10)&#123;</div><div class="line">  context.beginPath()</div><div class="line">  context.arc(50+ 100*i, 100 , 40 , 0, Math.PI*2*(i+1/10),true)</div><div class="line">  context.stroke()</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-5-29/91617345.jpg" alt=""></p>
+</li>
+</ul>
 </li>
 </ol>
+<p>#####实例demo：</p>
+<ul>
+<li><a href="https://oneleven.github.io/canvas-demo/七巧板demo/index.html" target="_blank" rel="external">根据线条路径画七巧板</a></li>
+<li><a href="https://oneleven.github.io/canvas-demo/倒计时demo/index.html" target="_blank" rel="external">时钟倒计时(canvas可以根据点阵数据在作图)</a></li>
+</ul>
 
       
     </div>
@@ -441,7 +470,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/闭包/" rel="tag"># 闭包</a>
+            <a href="/tags/Canvas/" rel="tag"># Canvas</a>
           
         </div>
       
@@ -454,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/05/工厂模式-new/" rel="next" title="工厂模式&new">
-                <i class="fa fa-chevron-left"></i> 工厂模式&new
+              <a href="/2018/05/24/js高级程序读书笔记（4）/" rel="next" title="JS高级程序读书笔记（4）">
+                <i class="fa fa-chevron-left"></i> JS高级程序读书笔记（4）
               </a>
             
           </div>
@@ -463,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/06/18/css总结篇/" rel="prev" title="css小结">
-                css小结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -513,17 +538,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat1.jpeg"
@@ -614,22 +630,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化"><span class="nav-number">1.</span> <span class="nav-text">模块化</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
