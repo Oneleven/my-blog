@@ -1,0 +1,1031 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Vue项目笔记," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="生命周期钩子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于vue-cli3.0开发去哪儿app项目笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/09/基于vue-cli3.0开发去哪儿app笔记/index.html">
+<meta property="og:site_name" content="Oneleven's Blog">
+<meta property="og:description" content="生命周期钩子">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fsovvoku3jj31kw0d441q.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79gy1fsovzjymzxj31ak0qkjx9.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-6-27/46160341.jpg">
+<meta property="og:image" content="http://oqwgy1e36.bkt.clouddn.com/18-6-27/87017011.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fsqyodkvk8j31h60okdq9.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fsqyr47o8vj31fc0kidqa.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fsvzyoncmvj30og06w0t0.jpg">
+<meta property="og:updated_time" content="2018-07-09T13:49:10.644Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于vue-cli3.0开发去哪儿app项目笔记">
+<meta name="twitter:description" content="生命周期钩子">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fsovvoku3jj31kw0d441q.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/09/基于vue-cli3.0开发去哪儿app笔记/"/>
+
+
+
+
+
+  <title> 基于vue-cli3.0开发去哪儿app项目笔记 | Oneleven's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-93493881-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Oneleven's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/09/基于vue-cli3.0开发去哪儿app笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Oneleven">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat1.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Oneleven's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                基于vue-cli3.0开发去哪儿app项目笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-09T21:48:18+08:00">
+                2018-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>生命周期钩子</li>
+</ol>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fsovvoku3jj31kw0d441q.jpg" alt=""></p>
+<a id="more"></a>
+<ol>
+<li><p>mvp $ mvvm</p>
+<ul>
+<li><p>MVP：View视图层：负责显示</p>
+<p>​            Presenter控制器：负责业务逻辑</p>
+<p>​        Model模型层：负责提供数据，一般是ajax请求返回的内容</p>
+<p>所有的业务交互逻辑都在控制器层，是视图层和模型层的中转站，其中大量的代码都是在操作dom。面向dom开发。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fsovzjymzxj31ak0qkjx9.jpg" alt=""></p>
+</li>
+<li><p>MVVM：Model，View，ViewModel（vue负责）：编码的重点在model和view两个层面，不需要操作dom。面向数据开发。</p>
+</li>
+</ul>
+</li>
+<li><p>组件之间传值</p>
+<ul>
+<li><p>父组件——&gt;子组件：通过绑定属性来传值。单项数据流，子组件不要去修改父组件的数据，可以通过在data里面赋值给一个变量，然后再更改变量。</p>
+<p>⚠️组件里的data是一个函数data(){return { } }</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">	&lt;li is=&quot;todo&quot; :content=&quot;item in items&quot;&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line">---------</div><div class="line">Vue.component(&apos;todo&apos;,&#123;</div><div class="line">	props:[&apos;content&apos;],</div><div class="line">    template:&quot;&lt;li&gt;&#123;&#123;content&#125;&#125;&lt;/li&gt;&quot;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>子组件 ——&gt; 父组件：通过this.$emit(‘xxx’,[prop])来给父组件传递事件，父组件通过v-on来监听xxx事件。</p>
+</li>
+</ul>
+</li>
+<li><p>列表渲染 </p>
+<ul>
+<li><p>遍历数组：v-for=”(item, index) of items”</p>
+<p>//改变数组数据的方法</p>
+<ul>
+<li>直接改变引用</li>
+<li>变异方法push    pop    shift    unshift    splice    reserve    sort</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.set(vm.userInfo, index, value) //实时地改变数组里的数据</div></pre></td></tr></table></figure>
+</li>
+<li><p>遍历对象：v-for=”(value, key, index) of items”</p>
+<p>//改变对象数据的方法</p>
+<ul>
+<li>直接改变引用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Vue.set(vm.userInfor, &quot;address&quot;,&quot;beijing&quot;) //来给对象实时添加内容</div><div class="line">vm.$set(vm.userInfor, &quot;address&quot;,&quot;beijing&quot;)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>操作dom， 通过ref=”xxx”引用的方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">	&lt;div ref=&quot;hello&quot; @click=&quot;handleClick&quot;&gt; hello &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">-----</div><div class="line">var rm = new Vue(&#123;</div><div class="line">    el:&apos;#root,</div><div class="line">    methods:&#123;</div><div class="line">        handleClick()&#123;</div><div class="line">            alert(this.$refs.hello.innerHtml)          //表示的是div的dom节点</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>组件参数校验与非props特性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;child :content=&quot;123&quot;&gt;&lt;/child&gt;  //123是数字</div><div class="line">&lt;child content=&quot;123&quot;&gt;&lt;/child&gt;   //这里的123是字符串</div><div class="line">-----</div><div class="line">Vue.component(&apos;child&apos;,&#123;</div><div class="line">    props:&#123;</div><div class="line">    	//content: String  </div><div class="line">        //content:[Number,String]   数组</div><div class="line">        content:&#123;            //也可以是对象</div><div class="line">            type: String,</div><div class="line">            required:true,</div><div class="line">            defalut: &apos;默认值&apos;，</div><div class="line">            validator:(value)=&gt;&#123;</div><div class="line">                return value.length &gt; 5   //通过函数来制定条件</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    template:&apos;&lt;div&gt;&#123;&#123;content&#125;&#125;&lt;/div&gt;&apos;</div><div class="line">&#125;)</div><div class="line">----------</div><div class="line">非prop特性：父组件里传值，子组件里不接收</div><div class="line">1. 子组件里无法使用值</div><div class="line">2. prop属性会显示在标签中</div></pre></td></tr></table></figure>
+</li>
+<li><p>给组件绑定原生事件 @click.native = “handleClick”。 只要在事件后面加.native就ojbk</p>
+</li>
+<li><p>非父子组件之间的传值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">1. vueX</div><div class="line">2. bus/总线/发布订阅模式</div><div class="line">Vue.prototype.bus = new Vue</div><div class="line">------</div><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">	&lt;child content=&quot;Tom&quot;&gt;&lt;/child&gt;</div><div class="line">	&lt;child content=&quot;Jarry&quot;&gt;&lt;/child&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">-------</div><div class="line">Vue.prototype.bus = new Vue()</div><div class="line"></div><div class="line">Vue.component(&apos;child&apos;,&#123;</div><div class="line">	props:&#123;</div><div class="line">        content:String</div><div class="line">	&#125;,</div><div class="line">    template:&apos;&lt;div @click = &quot;handleClick&quot;&gt;&#123;&#123;content&#125;&#125;&lt;/div&gt;&apos;,</div><div class="line">    data()&#123;</div><div class="line">      return &#123;</div><div class="line">          selfContent = this.content</div><div class="line">      &#125;  </div><div class="line">    &#125;,</div><div class="line">    methods:&#123;</div><div class="line">        handleClick()&#123;</div><div class="line">            this.bus.$emit(&apos;change&apos;,this.selfContent)   //发布</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    mounted:function()&#123;</div><div class="line">        this.bus.$on(&apos;change&apos;,(msg)=&gt;&#123;    //订阅</div><div class="line">            this.selfContent = msg</div><div class="line">        &#125;)</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">var vm = new Vue(&#123;</div><div class="line">    el:&apos;#app&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用插槽（slot）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;child&gt;</div><div class="line">	&lt;p slot=&quot;header&quot;&gt; hello &lt;/p&gt;    //在子组件里直接插入dom元素</div><div class="line">	&lt;p slot=&quot;footer&quot;&gt; world &lt;/p&gt;</div><div class="line">&lt;/child&gt;</div><div class="line">-----</div><div class="line">Vue.component(&apos;child&apos;,&#123;</div><div class="line">    template:`&lt;div&gt;</div><div class="line">    			&lt;slot name=&quot;header&quot;&gt; 默认内容 &lt;/slot&gt;  //子组件中插入的内容</div><div class="line">    			&lt;article&gt;content&lt;/article&gt;</div><div class="line">    			&lt;slot name=&quot;footer&quot;&gt;&lt;slot&gt;</div><div class="line">    		&lt;/div&gt;`</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>\<template>\</template>：模板占位标签，不会显示在html代码里，但是有div的包裹效果。</p>
+</li>
+<li><p>作用域插槽</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">	&lt;child&gt;</div><div class="line">		&lt;template slot-scope=&quot;content&quot;&gt;  //使用插槽要使用template标签,并用slot-scope=&quot;content&quot;接收传递的值</div><div class="line">			&lt;li&gt; &#123;&#123;content&#125;&#125; &lt;/li&gt;</div><div class="line">		&lt;/template&gt; </div><div class="line">	&lt;/child&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">-----------</div><div class="line">Vue.component(&apos;child&apos;,&#123;</div><div class="line">  template:&apos;&lt;ul&gt;&lt;slot v-for=&quot;item of list&quot; :content=&quot;item&quot;&gt;  //这里也使用属性传递值</div><div class="line">         &lt;slot&gt;&lt;/ul&gt;&apos;,   //&lt;slot&gt;标签就是父组件将要定义的标签名，如果是li,就是&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</div><div class="line">  data()&#123;</div><div class="line">    return&#123;</div><div class="line">      list:[1,2,3,4]</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">const vm = new Vue(&#123;</div><div class="line">  el:&apos;#app&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>动态组件\<component is="xxx">\</component>  和  v-once</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;app&quot;&gt;</div><div class="line">	&lt;component :is=&quot;type&quot;&gt;&lt;/component&gt;</div><div class="line">	//&lt;child-one v-if=&quot;type===&apos;child-one&apos;&quot;&gt;&lt;/child-one&gt;</div><div class="line">	//&lt;child-two v-if=&quot;type===&apos;child-two&quot;&gt;&lt;/child-two&gt;</div><div class="line">	&lt;button @click=&quot;handleClick&quot;&gt;change&lt;button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">-------</div><div class="line">Vue.component(&apos;child-one&apos;,&#123;</div><div class="line">  //template:&apos;&lt;div v-once&gt;child-one&lt;/div&gt;&apos;   //加了v-once之后性能较好，有缓存，不会频繁删除添加</div><div class="line">  template:&apos;&lt;div&gt;child-one&lt;/div&gt;&apos;</div><div class="line">&#125;)</div><div class="line">Vue.component(&apos;child-two&apos;,&#123;</div><div class="line">  //template:&apos;&lt;div v-once&gt;child-two&lt;/div&gt;&apos;</div><div class="line">  template:&apos;&lt;div&gt;child-two&lt;/div&gt;&apos;</div><div class="line">&#125;)</div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el:&apos;#app&apos;,</div><div class="line">  methods:&#123;</div><div class="line">    handleClick()&#123;</div><div class="line">      this.type = this.type===&apos;child-one&apos;?&apos;child-two&apos;:&apos;child-one&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  data:&#123;</div><div class="line">    type:&apos;child-one&apos;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>动画过渡动画效果\<transition></transition></p>
+<ul>
+<li><p>进入动画：v-enter    ——&gt;  v-enter-to</p>
+<p>​            v-enter-active </p>
+</li>
+<li><p>离开动画：v-leave   ——-&gt; v-leave-to</p>
+<p>​             v-leave-active</p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-6-27/46160341.jpg" alt=""></p>
+<p><img src="http://oqwgy1e36.bkt.clouddn.com/18-6-27/87017011.jpg" alt=""></p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">动画效果用&lt;transition name=&apos;fade&apos;&gt;包裹起来,写了name后动画名就变为fade-enter</div><div class="line">&lt;transition name=&apos;fade&apos;&gt;</div><div class="line">	&lt;div&gt;123&lt;div&gt;</div><div class="line">&lt;/transition&gt;</div><div class="line">-----css样式</div><div class="line">.fade-enter&#123;</div><div class="line">  opacity:0</div><div class="line">&#125;</div><div class="line">.fade-enter-active&#123;</div><div class="line">  transition:opacity 3s    </div><div class="line">&#125;</div><div class="line">##//css,transition参数: property duration timing-function delay;</div></pre></td></tr></table></figure>
+<hr>
+<p>使用Animate.css库 （:duration）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">------&lt;style&gt;</div><div class="line">@keyframes flash&#123;</div><div class="line">  0%&#123;</div><div class="line">    transform:scale(0)</div><div class="line">  &#125;</div><div class="line">  50%&#123;</div><div class="line">    transform:scale(1.5)</div><div class="line">  &#125;</div><div class="line">  100%&#123;</div><div class="line">    transform:scale(1)</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">.fade-enter-active&#123;</div><div class="line">  animation:flash 1s</div><div class="line">&#125;</div><div class="line">##animation: name duration timing-function delay iteration-count direction fill-mode play-state;</div><div class="line">--------可以自定义v-enter-active这些calss的名字</div><div class="line">&lt;transition&gt;</div><div class="line">	&lt;div enter-active-class=&quot;animated swing&quot;   //使用Animate.css的库，更改class名，后面加效果</div><div class="line">		 leave-active-class=&quot;animated shake&quot;</div><div class="line">		 ##如果要在第一次进入页面的时候也有动画效果，使用appear</div><div class="line">		 appear</div><div class="line">		 appear-class=&quot;animated swing&quot;</div><div class="line">	&gt;&lt;/div&gt;</div><div class="line">&lt;/transition&gt;</div><div class="line"></div><div class="line">-------如果过渡效果和Animate库相结合，那么在定义class的时候再定义一个fade-enter-active,然后在style样式中定义过渡动画</div><div class="line">&lt;transition name=&quot;fade&quot;&gt;</div><div class="line">	&lt;div enter-class=&quot;animated swing fade-enter-active&quot;</div><div class="line">		:duration=&apos;1000&apos;  //动画和过渡相结合的时候，可以自定义动画时间，单位为ms</div><div class="line">		//type:&apos;transition&apos;  以过渡的时长为准</div><div class="line">		//:duration=&#123;enter:5000,leave:1000&#125;</div><div class="line">	&gt;&lt;/div&gt;</div><div class="line">&lt;/transition&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue中元素或者组件的过渡</p>
+</li>
+<li><p>单页应用和多页应用</p>
+<ul>
+<li>搜索引擎排名效果比较差。只能识别html文件，无法识别js文件。单页面内容是通过js渲染生成的。</li>
+</ul>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fsqyodkvk8j31h60okdq9.jpg" alt=""></p>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fsqyr47o8vj31fc0kidqa.jpg" alt=""></p>
+</li>
+<li><p>项目初始化</p>
+<ul>
+<li><p>reset.css文件</p>
+</li>
+<li><p>border.css：解决1像素问题。页面上写的是1个css逻辑像素，但是如果到高分屏中，1个css像素对应的可能是2个像素。</p>
+</li>
+<li><p>移动端300ms点击事件：fastclick库: <code>npm install fastclick --save</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">import fastClick from &apos;fastclick&apos;</div><div class="line">fastClick.attach(document.body)</div><div class="line">------</div><div class="line">npm i module_name -S 生产环境，发布时一起发布</div><div class="line">npm i module_name -D 开发环境</div><div class="line">npm i module_name -g 全局环境</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>iconfont：阿里图标项目</p>
+<p><a href="https://blog.csdn.net/jyliyue/article/details/80466499" target="_blank" rel="external">具体引用方法</a></p>
+</li>
+<li><p>css样式，使用stylus</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm i stylus -S</div><div class="line">npm i stylus-loader -S</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue轮播插件 vue-awesome-swiper</p>
+<p><a href="https://github.com/surmon-china/vue-awesome-swiper" target="_blank" rel="external">github地址</a></p>
+<p>⚠️配置轮播不同的配置选项 <a href="http://3.swiper.com.cn/api/index.html" target="_blank" rel="external">awiper</a> , 可以在data中定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">swiperOption:&#123;</div><div class="line">                    pagination: &apos;.swiper-pagination&apos;,</div><div class="line">                    paginationType:&apos;fraction&apos;</div><div class="line">                &#125;</div></pre></td></tr></table></figure>
+<p>⚠️当改变swiper的样式（例如隐藏/显示）或者修改swiper的子元素时，需要自动初始化swiper，否则会有bug，需要以下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">swiperOption:&#123;</div><div class="line">                   observeParents:true,</div><div class="line">                   observer:true</div><div class="line">               &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>通过css来对图片未加载时用灰色背景div占位。ie盒模型时content+padding+border；当内容溢出到padding也是可以的。所以overflow:hidden不会影响到padding里的内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//#可以给wrapper添加一下css特性</div><div class="line">overflow:hidden;</div><div class="line">width:100%;</div><div class="line">height:0;</div><div class="line">padding-bottom:30%;</div><div class="line">background:#eee</div><div class="line">----------</div><div class="line">或者直接写</div><div class="line">width:100%</div><div class="line">height:30vw</div></pre></td></tr></table></figure>
+</li>
+<li><p>把一个数组a[1,2,3,4,5,6,7,8,9]分成2个数组，并且内容最多8个</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var a = [1,2,3,4,5,6,7,8,9]</div><div class="line">function newarray()&#123;</div><div class="line">    var newarray = []</div><div class="line">    a.forEach((item,index)=&gt;&#123;</div><div class="line">        var page = Math.floor(index/8)</div><div class="line">        if(!newarray[page])&#123;</div><div class="line">            newarray[page]=[]</div><div class="line">        &#125;</div><div class="line">        newarray[page].push(item)</div><div class="line">    &#125;)</div><div class="line">    return newarray</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>通过axios来发送ajax请求<code>npm i axios -S</code></p>
+<p>在主入口Home组件中去发送ajax请求</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">import axios from &apos;axios&apos;</div><div class="line">---并在生命周期函数中的mounted中发送</div><div class="line">mounted()&#123;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>块级元素平等分布在同一行，并且中间有1像素的border</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fsvzyoncmvj30og06w0t0.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">在css中用calc()的计算方法,以及box-sizing:border-box ，以及:nth-child(3n-1)</div><div class="line">&lt;ul&gt;</div><div class="line"> &lt;li&gt;&lt;a&gt;北京&lt;/a&gt;&lt;/li&gt;</div><div class="line"> &lt;li&gt;&lt;a&gt;上海&lt;/a&gt;&lt;/li&gt;</div><div class="line"> &lt;li&gt;&lt;a&gt;西安&lt;/a&gt;&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>vue的路由</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1. 可以使用&lt;router-link to=&apos;/xxx&apos;&gt;标签来实现路由跳转</div><div class="line">2. 也可以调用this.$router.push(&apos;/xxx&apos;) 来实现页面跳转</div></pre></td></tr></table></figure>
+</li>
+<li><p>css中块级元素绝对定位并且撑满整个画布</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">position:fixed;</div><div class="line">left:0;</div><div class="line">bottom:0;</div><div class="line">top:0;</div><div class="line">right:0;</div><div class="line">background-color:#666   撑满了整个画布</div></pre></td></tr></table></figure>
+</li>
+<li><p>在vue组件中监听windows事件，比如window.addEventListener(‘scroll’,xxx)，需要及时地解绑window.removeEventListener(‘scroll’,xxx)，防止对整个页面产生负面影响</p>
+</li>
+<li><p>父组件在mounted中获取ajax数据请求后，传递给子组件。如果json数据是嵌套的，比如a.b.c ，那么在标签页加入一个判断<code>v-if=&quot;a.b&quot;</code> , 只有在a.b存在的情况下再展示渲染页面。否则出错</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Vue项目笔记/" rel="tag"># Vue项目笔记</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/21/canvas学习篇/" rel="next" title="canvas学习笔记">
+                <i class="fa fa-chevron-left"></i> canvas学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cat1.jpeg"
+               alt="Oneleven" />
+          <p class="site-author-name" itemprop="name">Oneleven</p>
+           
+              <p class="site-description motion-element" itemprop="description">Start from zero</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Oneleven" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.weibo.com/1853938530/profile?topnav=1&wvr=6" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.instagram.com/oneleven101/" target="_blank" title="Instagram">
+                  
+                    <i class="fa fa-fw fa-instagram"></i>
+                  
+                  Instagram
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Oneleven</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
